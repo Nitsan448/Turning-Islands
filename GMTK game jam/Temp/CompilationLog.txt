@@ -1,28 +1,54 @@
 # Starting compiling UnityEngine.TestRunner.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-9f836eb770d3a0f4486cce6599f7e20b
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-ad9fada552b36bf45ba43b4c028e3cf6
 # Starting compiling UnityEngine.UI.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-8de5f0ba4a857894a81acaf49f3807c1
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-6679ececc383be748af0464532e47241
 # Starting compiling UnityEditor.TestRunner.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-8bf94cad8dedbf048b35345b8d97f10b
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-5773064d9ee67424680f55d39bb6d8a1
 # Starting compiling UnityEditor.UI.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-5070ae16cd5efe44b94c2fcdfa02553b
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-1c4ec3cb226165347a9e0bacf583fe5d
 # Starting compiling Unity.Services.Core.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-a26c2ec65439bbd408350229f66eebcd
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-b531635dca05c2a4fb96a98ac39df9bb
 # Starting compiling Unity.VSCode.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-1237791132dc90043973df7655d8b32a
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-53d52b3658578524097a9dce414d3105
 # Starting compiling Unity.VisualStudio.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-fc703eba26585bf45bfcd7ad7b0e2fa2
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-7608c6e6a69a3e145b7243250eb23412
 # Starting compiling Unity.Timeline.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-99f3a6147ea99df4faced798ca370d8e
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-316d03383f9c79841868f08377eca580
 # Starting compiling Unity.TextMeshPro.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-4254280d3357476409bdd41ffb37fdc6
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-80abdedada2f5e74a8142f9fb73a1c16
 # Starting compiling Unity.PlasticSCM.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-aee1e03a86805834cbf76ae0c2063210
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-bc60eb14d5a99b14483ba7ae9ce6f741
 # Starting compiling Unity.Rider.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-7a7a76b05f2702d45b044dd3691857f0
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-c62c3e1f33d88ea4090b20e88445ba3d
+# Starting compiling Unity.RenderPipelines.Universal.Shaders.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-e33f4e85e1990a048a112e045c393734
+# Starting compiling Unity.ShaderGraph.Utilities.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-b902584605b3e1347924c2d1d5e23c2c
+# Starting compiling Unity.RenderPipelines.Core.Runtime.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-72679f6ab50cad64682c05fe4c1dc7e8
+# Starting compiling Unity.Searcher.Editor.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-d71e898c6f0333f46b2139f1d0319e0c
+# Starting compiling Unity.RenderPipelines.Core.ShaderLibrary.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-29fe761716138f14dac6883e77f9b488
+# Starting compiling Unity.Mathematics.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-b053452b032ff66458b069766495ea6a
+# Starting compiling Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-bafecfeacfdf4f548a96171b546eac48
 # Starting compiling Unity.Timeline.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-e5eeb858ec33d5947883986680d8eedf
-# Starting compiling Unity.CollabProxy.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-20cb60eefe2818444a8842e5b28ccb29
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-b9c01f44454014741a1d8f6fc7ca023a
 # Starting compiling Unity.TextMeshPro.Editor.dll
-C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-4ab9c36065f18204fac8ca8871527730
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-dffbf52d6824f894a82454641b72c4f6
+# Starting compiling Unity.CollabProxy.Editor.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-4b3858ebd0f98794c8612c1fea5b0994
+# Starting compiling Unity.RenderPipeline.Universal.ShaderLibrary.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-78cde8e5beb44d8478fbb8de68c9a945
+# Starting compiling Unity.RenderPipelines.Core.Editor.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-f1bc61b43051d2a47bee5ed7116785a4
+# Starting compiling Unity.ShaderGraph.Editor.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-105089bcdda356744901d545c38a188c
+# Starting compiling Unity.Mathematics.Editor.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-82af33ad7926d7043ad57c2548d868e2
+# Starting compiling Unity.RenderPipelines.Universal.Runtime.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-7273e3364ca908843adabf57ac10d353
+# Starting compiling Unity.RenderPipelines.Universal.Editor.dll
+C:\Users\nitsa\Desktop\Unity\Editors\2020.3.30f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-d54ca1ffbc73eeb40a55e8b4e0645463
