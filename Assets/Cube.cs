@@ -11,6 +11,8 @@ public class Cube : MonoBehaviour
 
 	[SerializeField] private float _rotationTime = 0.5f;
 
+	private bool coroutineActive = false;
+
 	private BouncyObject[] BouncyObjects;
 
     public bool Selected;
@@ -60,18 +62,22 @@ public class Cube : MonoBehaviour
 
     private void UpdateCubeRotation()
 	{
-		if (Input.GetKeyDown(KeyCode.E))
+		if (!coroutineActive)
 		{
-			StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Right));
-		}
-		if (Input.GetKeyDown(KeyCode.Q))
-		{
-			StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Left));
+			if (Input.GetKeyDown(KeyCode.E))
+			{
+				StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Right));
+			}
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Left));
+			}
 		}
 	}
 
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
 	{
+		coroutineActive = true;
 		Quaternion currentRotation = transform.rotation;
 		Quaternion targetRotation;
 		if(direction == eDirection.Left)
@@ -99,10 +105,10 @@ public class Cube : MonoBehaviour
 
 		foreach(BouncyObject bouncyObject in BouncyObjects)
 		{
-			Debug.Log(bouncyObject);
 			bouncyObject.UpdateDirection(direction);
 		}
 
+		coroutineActive = false;
 		yield return null;
 	}
 }
