@@ -498,11 +498,28 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &1173065076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6926417424577982444, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
+  m_PrefabInstance: {fileID: 6926417425615315608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1173065077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6926417424577982445, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
   m_PrefabInstance: {fileID: 6926417425615315608}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173065078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173065076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ae0d8bdf0a42a44b1a4a40c58ae2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406618272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4605138686255455002, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
@@ -524,6 +541,17 @@ MonoBehaviour:
   _direction: 0
   _connectedPortal: {fileID: 651830873}
   portalDisableTime: 1
+--- !u!114 &1419061137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8225013002676731425, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
+  m_PrefabInstance: {fileID: 6926417425615315608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806d718676439fd4392775921669bcf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1927538534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 976125317291665694, guid: 08d41519841f95746b9881107e757d31, type: 3}
@@ -718,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6926417424577982444, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
       propertyPath: m_Name
-      value: Boxes
+      value: Cubes
       objectReference: {fileID: 0}
     - target: {fileID: 6926417424577982445, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
       propertyPath: m_RootOrder
@@ -783,6 +811,14 @@ PrefabInstance:
     - target: {fileID: 8225013001175393478, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
       propertyPath: Selected
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225013001175393478, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
+      propertyPath: downCube
+      value: 
+      objectReference: {fileID: 1419061137}
+    - target: {fileID: 8225013001175393478, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
+      propertyPath: leftCube
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8225013001175393531, guid: c84144a80a4ffa94291853ba4ee46b49, type: 3}
       propertyPath: m_ForceMagnitude

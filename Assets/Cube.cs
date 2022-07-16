@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private Cube rightCube;
-    [SerializeField] private Cube leftCube;
-    [SerializeField] private Cube upCube;
-    [SerializeField] private Cube downCube;
+    public Cube rightCube;
+    public Cube leftCube;
+	public Cube upCube;
+	public Cube downCube;
 
 	[SerializeField] private float _rotationTime = 0.5f;
 
@@ -26,39 +26,9 @@ public class Cube : MonoBehaviour
     {
 		if (Selected)
 		{
-			UpdateSelectedCubesState();
 			UpdateCubeRotation();
 		}
     }
-
-    private void UpdateSelectedCubesState()
-	{
-		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			UpdateSelectedCube(upCube);
-		}
-		if (Input.GetKeyDown(KeyCode.RightArrow))
-		{
-			UpdateSelectedCube(rightCube);
-		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			UpdateSelectedCube(leftCube);
-		}
-		if (Input.GetKeyDown(KeyCode.DownArrow))
-		{
-			UpdateSelectedCube(downCube);
-		}
-	}
-
-	private void UpdateSelectedCube(Cube cubeToSelect)
-	{
-		if(cubeToSelect != null)
-		{
-			Selected = false;
-			cubeToSelect.Selected = true;
-		}
-	}
 
     private void UpdateCubeRotation()
 	{
