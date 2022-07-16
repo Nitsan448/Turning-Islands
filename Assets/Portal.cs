@@ -13,7 +13,7 @@ public class Portal : CubeFace
 		if (ball != null)
 		{
 			Vector3 newPosition = _connectedPortal.transform.position;
-			ball.transform.position = new Vector3(newPosition.x, newPosition.y + 0.1f, newPosition.z);
+			ball.transform.position = new Vector3(newPosition.x, newPosition.y + 0.05f, newPosition.z);
 			StartCoroutine(DisableConnectedPortal());
 			ball.ChangeVelocity(_connectedPortal.GetVelocityFromDirection());
 			Debug.Log(ball.gameObject.GetComponent<Rigidbody2D>().velocity);

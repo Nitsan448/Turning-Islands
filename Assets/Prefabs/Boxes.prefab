@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6926417424577982445}
+  - component: {fileID: 1173065078}
   m_Layer: 0
   m_Name: Boxes
   m_TagString: Untagged
@@ -37,6 +38,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1173065078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926417424577982444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ae0d8bdf0a42a44b1a4a40c58ae2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6926417423956440245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,16 +127,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958094, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -3.2
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: upCube
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
-      propertyPath: leftCube
+      propertyPath: Selected
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: downCube
       value: 
       objectReference: {fileID: 8225013002676731425}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: leftCube
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: rightCube
       value: 
@@ -255,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958094, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -3.2
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: upCube
@@ -301,7 +322,8 @@ PrefabInstance:
       propertyPath: _direction
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3041313267225007001, guid: ca29d46185919944cb4a1df5544be179, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca29d46185919944cb4a1df5544be179, type: 3}
 --- !u!4 &8225013001609049538 stripped
 Transform:
@@ -396,11 +418,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958094, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -3.2
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: upCube
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: Selected
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: downCube
@@ -541,12 +567,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958094, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -3.2
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: upCube
       value: 
       objectReference: {fileID: 8225013001032542641}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: Selected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: leftCube
       value: 
@@ -587,7 +617,8 @@ PrefabInstance:
       propertyPath: _direction
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3041313267225007001, guid: ca29d46185919944cb4a1df5544be179, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca29d46185919944cb4a1df5544be179, type: 3}
 --- !u!4 &8225013002371827414 stripped
 Transform:
@@ -682,12 +713,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958094, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -3.2
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: upCube
       value: 
       objectReference: {fileID: 8225013001175393478}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: Selected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: downCube
       value: 
@@ -823,11 +858,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958094, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -3.2
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: upCube
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: Selected
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: downCube
