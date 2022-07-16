@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
+	public void EndGame()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
 	public void StartGame()
 	{
 		Managers.GameManager.GameStarted = true;
