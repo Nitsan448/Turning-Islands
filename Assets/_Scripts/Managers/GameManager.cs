@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
@@ -17,8 +18,10 @@ public class GameManager : MonoBehaviour, IGameManager
 		Status = eManagerStatus.Started;
 	}
 
-	public void UpdateWorldGravity()
+	public void StartGame()
 	{
-
+		Managers.GameManager.GameStarted = true;
+		Camera.main.GetComponent<Camera2D>().enabled = false;
+		Camera.main.GetComponent<CinemachineVirtualCamera>().enabled = true;
 	}
 }
