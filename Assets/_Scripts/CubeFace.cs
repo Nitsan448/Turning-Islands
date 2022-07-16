@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CubeFace : MonoBehaviour
+public class CubeFace : MonoBehaviour
 {
-	[SerializeField] private float _velocityWhenLeavingFace;
+	[SerializeField] private float _velocityWhenLeavingFace = 10;
 	[SerializeField] private eDirection _direction;
 
-	protected Vector2 GetVelocityFromDirection()
+	public Vector2 GetVelocityFromDirection()
 	{
 		switch (_direction)
 		{

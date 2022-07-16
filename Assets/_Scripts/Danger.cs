@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouncyObject : MonoBehaviour
+public class Danger : MonoBehaviour
 {
-	private void OnCollisionEnter2D(Collision2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		Ball ball = collision.gameObject.GetComponent<Ball>();
 		if (ball != null)
 		{
-			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocityFromDirection());
+			Managers.GameManager.EndGame();
 		}
 	}
 }
