@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
@@ -18,10 +19,37 @@ public class GameManager : MonoBehaviour, IGameManager
 		Status = eManagerStatus.Started;
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
+	}
+
 	public void StartGame()
 	{
 		Managers.GameManager.GameStarted = true;
 		Camera.main.GetComponent<Camera2D>().enabled = false;
 		Camera.main.GetComponent<CinemachineVirtualCamera>().enabled = true;
+		//StartCoroutine(LerpCamera());
+	}
+
+	private IEnumerator LerpCamera()
+	{
+		Camera camera = Camera.main;
+		Vector3 startingPosition = camera.transform.position;
+		Vector3 targetPosition = Ball.transform.position;
+		float currentTime = 0;
+
+		while(currentTime < 1)
+		{
+			camera.transform.position = Vector3.Lerp(startingPosition, targetPosition, currentTime / 1);
+			currentTime += Time.deltaTime;
+			yield return null;
+		}
+		camera.transform.position = targetPosition;
+
+		camera.GetComponent<CinemachineVirtualCamera>().enabled = true;
 	}
 }

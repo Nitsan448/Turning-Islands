@@ -4823,7 +4823,6 @@ GameObject:
   - component: {fileID: 7705354976166963490}
   - component: {fileID: 5284555841355912906}
   - component: {fileID: 9170866825283968095}
-  - component: {fileID: 7705354976166963491}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
@@ -4925,20 +4924,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &7705354976166963491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6587858049803450129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9458c64708b06342bbe2a2778f1839b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  _direction: 0
-  _connectedPortal: {fileID: 0}
-  portalDisableTime: 1
-  _timeInsidePortal: 0
