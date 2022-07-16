@@ -7,7 +7,7 @@ public class CubeFace : MonoBehaviour
 	[SerializeField] private float _velocityWhenLeavingFace = 10;
 	[SerializeField] private eDirection _direction;
 
-	public Vector2 GetVelocityFromDirection()
+	public Vector2 GetVelocity()
 	{
 		switch (_direction)
 		{

@@ -20,12 +20,16 @@ public class Cubes : MonoBehaviour
 
 	void Update()
     {
-		UpdateSelectedCubesState();
+		if (!Managers.GameManager.GameStarted)
+		{
+			UpdateSelectedCubesState();
+		}
 		foreach(Cube cube in GetComponentsInChildren<Cube>())
 		{
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				Managers.GameManager.StartGame();
+				cube.SelectedSprite.SetActive(false);
 				cube.GetComponent<PointEffector2D>().enabled = true;
 			}
 		}
@@ -55,8 +59,10 @@ public class Cubes : MonoBehaviour
 		if (cubeToSelect != null)
 		{
 			_selectedCube.Selected = false;
-			cubeToSelect.Selected = true;
+			_selectedCube.SelectedSprite.SetActive(false);
 			_selectedCube = cubeToSelect;
+			cubeToSelect.Selected = true;
+			cubeToSelect.SelectedSprite.SetActive(true);
 		}
 	}
 }

@@ -33,7 +33,7 @@ public class Portal : MonoBehaviour
 		yield return new WaitForSeconds(_timeInsidePortal);
 		ConnectedPortal.GetComponent<BoxCollider2D>().enabled = false;
 		ball.transform.position = new Vector3(newPosition.x, newPosition.y + 0.05f, newPosition.z);
-		ball.ChangeVelocity(ConnectedPortal.GetComponent<CubeFace>().GetVelocityFromDirection());
+		ball.ChangeVelocity(ConnectedPortal.GetComponent<CubeFace>().GetVelocity());
 		ball.gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		yield return new WaitForSeconds(portalDisableTime);
 		ConnectedPortal.GetComponent<BoxCollider2D>().enabled = true;

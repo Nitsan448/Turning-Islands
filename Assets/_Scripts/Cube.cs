@@ -9,6 +9,7 @@ public class Cube : MonoBehaviour
 	public Cube upCube;
 	public Cube downCube;
 
+	public GameObject SelectedSprite;
 	[SerializeField] private float _rotationTime = 0.5f;
 
 	private bool coroutineActive = false;
