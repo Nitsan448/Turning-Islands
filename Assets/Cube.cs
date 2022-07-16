@@ -13,13 +13,13 @@ public class Cube : MonoBehaviour
 
 	private bool coroutineActive = false;
 
-	private BouncyObject[] BouncyObjects;
+	private CubeFace[] cubeFaces;
 
     public bool Selected;
 
 	private void Awake()
 	{
-		BouncyObjects = GetComponentsInChildren<BouncyObject>();
+		cubeFaces = GetComponentsInChildren<CubeFace>();
 	}
 
 	void Update()
@@ -103,9 +103,9 @@ public class Cube : MonoBehaviour
 
 		transform.rotation = targetRotation;
 
-		foreach(BouncyObject bouncyObject in BouncyObjects)
+		foreach(CubeFace cubeFace in cubeFaces)
 		{
-			bouncyObject.UpdateDirection(direction);
+			cubeFace.UpdateDirection(direction);
 		}
 
 		coroutineActive = false;
