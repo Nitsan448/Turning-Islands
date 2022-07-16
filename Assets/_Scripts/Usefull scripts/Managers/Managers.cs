@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class Managers : MonoBehaviour
 {
-    public static ExampleManager Example { get; private set; }
+    public static GameManager GameManager { get; private set; }
 
     private List<IGameManager> startSequence;
 
     void Awake()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
         GetManagers();
         SetStartSequenceOrder();
         StartupManagers();
         Debug.Log("All managers started up");
-        //StartCoroutine(StartupManagers());
     }
 
     private void GetManagers()
 	{
-        Example = GetComponentInChildren<ExampleManager>();
+        GameManager = GetComponentInChildren<GameManager>();
     }
 
     private void SetStartSequenceOrder()
 	{
         startSequence = new List<IGameManager>();
-        startSequence.Add(Example);
+        startSequence.Add(GameManager);
     }
 
     private void StartupManagers()
