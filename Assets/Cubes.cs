@@ -11,6 +11,10 @@ public class Cubes : MonoBehaviour
 		foreach(Cube cube in GetComponentsInChildren<Cube>())
 		{
 			cube.GetComponent<PointEffector2D>().enabled = false;
+			if (cube.Selected)
+			{
+				_selectedCube = cube;
+			}
 		}
 	}
 
@@ -19,12 +23,9 @@ public class Cubes : MonoBehaviour
 		UpdateSelectedCubesState();
 		foreach(Cube cube in GetComponentsInChildren<Cube>())
 		{
-			if (cube.Selected)
-			{
-				_selectedCube = cube;
-			}
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
+				Managers.GameManager.GameStarted = true;
 				cube.GetComponent<PointEffector2D>().enabled = true;
 			}
 		}

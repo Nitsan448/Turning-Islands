@@ -11,7 +11,11 @@ public class Ball : MonoBehaviour
 	private void Awake()
 	{
         _rigidBody = GetComponent<Rigidbody2D>();
-        Managers.GameManager.Ball = this;
+	}
+
+	private void Start()
+	{
+		Managers.GameManager.Ball = this;
 	}
 
 	public void ChangeVelocity(Vector2 velocity)

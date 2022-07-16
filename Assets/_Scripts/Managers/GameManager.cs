@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour, IGameManager
 	public Ball Ball { get; set; }
 	//public GameObject World { }
 
+	public bool GameStarted = false;
+
 	public eManagerStatus Status { get; set; }
 
 	public void Startup()

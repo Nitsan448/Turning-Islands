@@ -10,7 +10,6 @@ public class BouncyObject : CubeFace
 		if (ball != null)
 		{
 			ball.ChangeVelocity(GetVelocityFromDirection());
-			Debug.Log(ball.GetComponent<Rigidbody2D>().velocity);
 		}
 	}
 }

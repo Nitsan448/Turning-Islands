@@ -24,7 +24,7 @@ public class Cube : MonoBehaviour
 
 	void Update()
     {
-		if (Selected)
+		if (Selected && !Managers.GameManager.GameStarted)
 		{
 			UpdateCubeRotation();
 		}
