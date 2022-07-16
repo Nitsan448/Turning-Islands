@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cube
+    uniqueID: 3386979749
+    locked: 0
+  - name: In Front
+    uniqueID: 149272215
+    locked: 0

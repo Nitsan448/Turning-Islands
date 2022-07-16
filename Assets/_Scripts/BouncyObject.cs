@@ -10,6 +10,7 @@ public class BouncyObject : MonoBehaviour
 		if (ball != null)
 		{
 			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocityFromDirection());
+			ball.GetComponent<Animator>().Play("Squish");
 		}
 	}
 }
