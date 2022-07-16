@@ -34,6 +34,7 @@ public class BouncyObject : MonoBehaviour
 
 	public void UpdateDirection(eDirection direction)
 	{
+		Debug.Log(_direction);
 		_direction = Helpers.GetNewDirection(_direction, direction);
 		Debug.Log(_direction);
 	}

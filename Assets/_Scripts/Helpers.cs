@@ -6,7 +6,7 @@ public static class Helpers
 {
 	public static eDirection GetNewDirection(eDirection oldDirection, eDirection directionChange)
 	{
-		if (directionChange == eDirection.Right)
+		if (directionChange == eDirection.Left)
 		{
 			if (oldDirection == eDirection.Up)
 			{
