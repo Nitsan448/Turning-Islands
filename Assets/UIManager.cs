@@ -28,6 +28,11 @@ public class UIManager : MonoBehaviour
         GetComponent<Fader>().FadeOutCanvasGroup(Controls);
     }
 
+    public void PlaySound()
+	{
+        GetComponent<AudioSource>().Play();
+	}
+
     void Awake()
     {
         Managers.GameManager.UIManager = this;

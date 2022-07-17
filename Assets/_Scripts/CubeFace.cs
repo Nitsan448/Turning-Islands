@@ -6,6 +6,20 @@ public class CubeFace : MonoBehaviour
 {
 	[SerializeField] private float _velocityWhenLeavingFace = 10;
 	[SerializeField] private eDirection _direction;
+	private AudioSource _audioSource;
+
+	private void Awake()
+	{
+		if(GetComponent<BouncyObject>() != null)
+		{
+			_audioSource = GetComponent<AudioSource>();
+		}
+		else
+		{
+			Destroy(GetComponent<AudioSource>());
+			_audioSource = GetComponentInChildren<AudioSource>();
+		}
+	}
 
 	public Vector2 GetVelocity()
 	{
@@ -31,5 +45,9 @@ public class CubeFace : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Managers.GameManager.ResetTimeUntilGameOver();
+		if(GetComponentInChildren<AudioSource>() != null)
+		{
+			GetComponentInChildren<AudioSource>().Play();
+		}
 	}
 }

@@ -5,9 +5,11 @@ using UnityEngine;
 public class Cubes : MonoBehaviour
 {
 	private Cube _selectedCube;
+	private AudioSource _selectionAudio;
 
 	private void Awake()
 	{
+		_selectionAudio = GetComponent<AudioSource>();
 		foreach(Cube cube in GetComponentsInChildren<Cube>())
 		{
 			cube.GetComponent<PointEffector2D>().enabled = false;
@@ -52,6 +54,7 @@ public class Cubes : MonoBehaviour
 
 	private void UpdateSelectedCube(Cube cubeToSelect)
 	{
+		_selectionAudio.Play();
 		if (cubeToSelect != null)
 		{
 			_selectedCube.Selected = false;

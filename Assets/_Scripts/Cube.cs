@@ -53,6 +53,7 @@ public class Cube : MonoBehaviour
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
 	{
 		coroutineActive = true;
+		GetComponent<AudioSource>().Play();
 		Quaternion currentRotation = transform.rotation;
 		Quaternion targetRotation;
 		if(direction == eDirection.Left)
