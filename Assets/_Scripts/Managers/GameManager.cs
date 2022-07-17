@@ -37,7 +37,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	public void EndGame()
+	public void LevelWon()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		Debug.Log("Level won");
+	}
+
+	public void GameOver()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
