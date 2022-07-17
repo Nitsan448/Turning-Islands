@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour, IGameManager
 
 	public bool GameStarted = false;
 
+	public Cubes Cubes;
+
 	public eManagerStatus Status { get; set; }
 
 	public void Startup()
@@ -27,6 +29,14 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
+	public void ChangeEffectorsState(bool newState)
+	{
+		foreach (Cube cube in Cubes.gameObject.GetComponentsInChildren<Cube>())
+		{
+			cube.GetComponent<PointEffector2D>().enabled = newState;
+		}
+	}
+
 	public void EndGame()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -37,6 +47,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		Managers.GameManager.GameStarted = true;
 		Camera.main.GetComponent<Camera2D>().enabled = false;
 		Camera.main.GetComponent<CinemachineVirtualCamera>().enabled = true;
+		ChangeEffectorsState(true);
 		//StartCoroutine(LerpCamera());
 	}
 

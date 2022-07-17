@@ -18,6 +18,11 @@ public class Cubes : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		Managers.GameManager.Cubes = this;
+	}
+
 	void Update()
     {
 		if (!Managers.GameManager.GameStarted)
@@ -30,7 +35,6 @@ public class Cubes : MonoBehaviour
 			{
 				Managers.GameManager.StartGame();
 				cube.SelectedSprite.SetActive(false);
-				cube.GetComponent<PointEffector2D>().enabled = true;
 			}
 		}
 	}
