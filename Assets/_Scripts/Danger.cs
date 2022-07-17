@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Danger : MonoBehaviour
 {
-	[SerializeField] private float _timeToGameOver;
+	[SerializeField] private float _timeToGameOver = 2;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
