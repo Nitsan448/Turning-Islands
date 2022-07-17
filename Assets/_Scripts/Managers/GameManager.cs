@@ -11,14 +11,21 @@ public class GameManager : MonoBehaviour, IGameManager
 	//public GameObject World { }
 
 	public bool GameStarted = false;
+	public bool GameEnded = false;
 
 	public Cubes Cubes;
+
+	public UIManager UIManager;
+
+	public float StartingTimeUntilGameOver = 3;
+	public float TimeUntilGameOver = 3;
 
 	public eManagerStatus Status { get; set; }
 
 	public void Startup()
 	{
 		Status = eManagerStatus.Started;
+		ResetTimeUntilGameOver();
 	}
 
 	private void Update()
@@ -27,6 +34,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
+		if(TimeUntilGameOver <= 0)
+		{
+			GameOver();
+		}
+		else if(GameStarted && !GameEnded)
+		{
+			TimeUntilGameOver -= Time.deltaTime;
+		}
+	}
+
+	public void ResetTimeUntilGameOver()
+	{
+		TimeUntilGameOver = StartingTimeUntilGameOver;
 	}
 
 	public void ChangeEffectorsState(bool newState)
@@ -39,17 +59,30 @@ public class GameManager : MonoBehaviour, IGameManager
 
 	public void LevelWon()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-		Debug.Log("Level won");
+		GameEnded = true;
+		UIManager.FadeInWinScreen();
 	}
 
 	public void GameOver()
 	{
+		GameEnded = true;
+		UIManager.FadeInLoseScreen();
+	}
+
+	public void Restart()
+	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void NextLevel()
+	{
+		Debug.Log("dsa");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	public void StartGame()
 	{
+		ResetTimeUntilGameOver();
 		Managers.GameManager.GameStarted = true;
 		Camera.main.GetComponent<Camera2D>().enabled = false;
 		Camera.main.GetComponent<CinemachineVirtualCamera>().enabled = true;

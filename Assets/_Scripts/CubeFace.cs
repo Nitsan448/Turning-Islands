@@ -27,4 +27,9 @@ public class CubeFace : MonoBehaviour
 	{
 		_direction = Helpers.GetNewDirection(_direction, direction);
 	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		Managers.GameManager.ResetTimeUntilGameOver();
+	}
 }
