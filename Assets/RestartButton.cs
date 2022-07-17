@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RestartButton : MonoBehaviour
 {
-	private void OnEnable()
+	private void Start()
 	{
         GetComponent<Button>().onClick.AddListener(delegate { Managers.GameManager.Restart(); });
     }
