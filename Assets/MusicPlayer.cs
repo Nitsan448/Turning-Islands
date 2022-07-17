@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+    public static MusicPlayer Instance { get; set; }
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if(Instance == null)
+		{
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+		else
+		{
+            Destroy(gameObject);
+		}
     }
 }

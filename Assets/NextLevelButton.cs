@@ -8,7 +8,6 @@ public class NextLevelButton : MonoBehaviour
 	// Start is called before the first frame update
 	private void OnEnable()
 	{
-		Debug.Log("dsa");
 		Debug.Log(GetComponent<Button>());
 		gameObject.GetComponent<Button>().onClick.AddListener(delegate { Managers.GameManager.NextLevel(); });
 	}

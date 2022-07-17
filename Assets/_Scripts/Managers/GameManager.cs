@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour, IGameManager
 
 	public void Restart()
 	{
+		
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 

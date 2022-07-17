@@ -28,9 +28,9 @@ public class UIManager : MonoBehaviour
         GetComponent<Fader>().FadeOutCanvasGroup(Controls);
     }
 
-    void Start()
+    void Awake()
     {
-        
+        Managers.GameManager.UIManager = this;
     }
 
     // Update is called once per frame
