@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
-    public eDirection GravityDirection = eDirection.Down;
 	public Ball Ball { get; set; }
 	//public GameObject World { }
 
@@ -37,6 +36,16 @@ public class GameManager : MonoBehaviour, IGameManager
 		else if(GameStarted && !GameEnded)
 		{
 			TimeUntilGameOver -= Time.deltaTime;
+		}
+		if(!GameStarted && !GameEnded)
+		{
+			if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+			{
+				StartGame();
+			}
+		}
+		if(Input.GetKeyDown(KeyCode.R)){
+			Restart();
 		}
 	}
 
