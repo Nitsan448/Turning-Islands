@@ -39,11 +39,11 @@ public class Cube : MonoBehaviour
 	{
 		if (!coroutineActive)
 		{
-			if (Input.GetKeyDown(KeyCode.E))
+			if (Input.GetKeyDown(KeyCode.Q))
 			{
 				StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Right));
 			}
-			if (Input.GetKeyDown(KeyCode.Q))
+			if (Input.GetKeyDown(KeyCode.E))
 			{
 				StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Left));
 			}

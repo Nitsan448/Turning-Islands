@@ -17,6 +17,7 @@ public class WinCollider : MonoBehaviour
 	private IEnumerator CountToLevelWon()
 	{
 		Managers.GameManager.ChangeEffectorsState(false);
+		GetComponentInChildren<Animator>().Play("Sploosh");
 		yield return new WaitForSeconds(_timeUntilWin);
 		Managers.GameManager.LevelWon();
 	}
