@@ -29,14 +29,6 @@ public class Cubes : MonoBehaviour
 		{
 			UpdateSelectedCubesState();
 		}
-		foreach(Cube cube in GetComponentsInChildren<Cube>())
-		{
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				Managers.GameManager.StartGame();
-				cube.SelectedSprite.SetActive(false);
-			}
-		}
 	}
 	private void UpdateSelectedCubesState()
 	{

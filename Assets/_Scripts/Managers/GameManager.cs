@@ -30,10 +30,6 @@ public class GameManager : MonoBehaviour, IGameManager
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
 		if(TimeUntilGameOver <= 0)
 		{
 			GameOver();
@@ -82,6 +78,10 @@ public class GameManager : MonoBehaviour, IGameManager
 
 	public void StartGame()
 	{
+		foreach (Cube cube in GetComponentsInChildren<Cube>())
+		{
+			cube.SelectedSprite.SetActive(false);
+		}
 		ResetTimeUntilGameOver();
 		Managers.GameManager.GameStarted = true;
 		Camera.main.GetComponent<Camera2D>().enabled = false;
