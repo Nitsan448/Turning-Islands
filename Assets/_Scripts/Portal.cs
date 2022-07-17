@@ -1,25 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Portal : MonoBehaviour
 {
 	public Portal ConnectedPortal;
 	[SerializeField] private float portalDisableTime = 1;
 	[SerializeField] private float _timeInsidePortal;
+	[SerializeField] private bool _tube;
+
+	[SerializeField] private bool _open = true;
+	private GameObject _portalSprite;
 
 	private void Awake()
 	{
-		if(ConnectedPortal != null)
+		if (ConnectedPortal != null)
 		{
 			ConnectedPortal.ConnectedPortal = this;
 		}
+		if (!_tube)
+		{
+			_portalSprite = GetComponentInChildren<Light2D>().gameObject;
+			_portalSprite.GetComponentInChildren<Light2D>().enabled = _open;
+		}
+		else
+		{
+			_open = true;
+		}
+	}
+
+	public void ChangeOpenState()
+	{
+		_open = !_open;
+		_portalSprite.GetComponentInChildren<Light2D>().enabled = _open;
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Ball ball = collision.gameObject.GetComponent<Ball>();
-		if (ball != null)
+		if (ball != null && _open)
 		{
 			Vector3 newPosition = ConnectedPortal.transform.position;
 			StartCoroutine(SwitchPortals(ball));

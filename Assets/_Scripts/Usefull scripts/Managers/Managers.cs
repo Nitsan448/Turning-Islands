@@ -14,7 +14,6 @@ public class Managers : MonoBehaviour
         GetManagers();
         SetStartSequenceOrder();
         StartupManagers();
-        Debug.Log("All managers started up");
     }
 
     private void GetManagers()

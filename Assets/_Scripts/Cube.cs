@@ -21,6 +21,10 @@ public class Cube : MonoBehaviour
 	private void Awake()
 	{
 		cubeFaces = GetComponentsInChildren<CubeFace>();
+		if (Selected)
+		{
+			SelectedSprite.SetActive(true);
+		}
 	}
 
 	void Update()
