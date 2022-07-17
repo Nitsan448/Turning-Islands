@@ -44,6 +44,11 @@ public class Portal : MonoBehaviour
 			Vector3 newPosition = ConnectedPortal.transform.position;
 			StartCoroutine(SwitchPortals(ball));
 		}
+		else if(ball != null && !_open)
+		{
+			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+			ball.GetComponent<Animator>().Play("Squish");
+		}
 	}
 
 	private IEnumerator SwitchPortals(Ball ball)

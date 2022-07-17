@@ -12,6 +12,8 @@ public class PortalButton : MonoBehaviour
 		{
 			connectedPortal.ChangeOpenState();
 			connectedPortal.ConnectedPortal.ChangeOpenState();
+			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+			ball.GetComponent<Animator>().Play("Squish");
 		}
 	}
 }

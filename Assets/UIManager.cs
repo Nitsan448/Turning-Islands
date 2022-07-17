@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup WinScreen;
     [SerializeField] private CanvasGroup LoseScreen;
+    [SerializeField] private CanvasGroup Controls;
 
     public void FadeInWinScreen()
 	{
@@ -15,6 +16,16 @@ public class UIManager : MonoBehaviour
     public void FadeInLoseScreen()
     {
         GetComponent<Fader>().FadeInCanvasGroup(LoseScreen);
+    }
+
+    public void FadeInControls()
+    {
+        GetComponent<Fader>().FadeInCanvasGroup(Controls);
+    }
+
+    public void FadeOutControls()
+    {
+        GetComponent<Fader>().FadeOutCanvasGroup(Controls);
     }
 
     void Start()

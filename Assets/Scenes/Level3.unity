@@ -2810,6 +2810,10 @@ PrefabInstance:
       propertyPath: UIManager
       value: 
       objectReference: {fileID: 241155958}
+    - target: {fileID: 8445877493246807376, guid: a943221577323ef45817ff3bf5844a8b, type: 3}
+      propertyPath: TimeUntilGameOver
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8445877493246807377, guid: a943221577323ef45817ff3bf5844a8b, type: 3}
       propertyPath: m_RootOrder
       value: 0

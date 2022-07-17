@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour, IGameManager
 
 	public void StartGame()
 	{
-		foreach (Cube cube in GetComponentsInChildren<Cube>())
+		foreach (Cube cube in Cubes.GetComponentsInChildren<Cube>())
 		{
 			cube.SelectedSprite.SetActive(false);
 		}
