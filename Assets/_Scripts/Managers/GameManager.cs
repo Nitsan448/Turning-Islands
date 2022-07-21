@@ -6,115 +6,103 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
-	public Ball Ball { get; set; }
-	//public GameObject World { }
+	public CubesManager Cubes { get; set; }
+	public eGameState GameState { get; private set; } = eGameState.Editing;
 
-	public bool GameStarted = false;
-	public bool GameEnded = false;
-
-	public Cubes Cubes;
-
-	public UIManager UIManager;
-
-	public float StartingTimeUntilGameOver = 3;
-	public float TimeUntilGameOver = 3;
-
-	public eManagerStatus Status { get; set; }
+	private float _startingTimeUntilGameOver = 3;
+	private float _timeUntilGameOver= 3;
+	private float _timeUntilLevelEndedScreen = 0.5f;
 
 	public void Startup()
 	{
-		Status = eManagerStatus.Started;
 		ResetTimeUntilGameOver();
 	}
 
 	private void Update()
 	{
-		if(TimeUntilGameOver <= 0)
+		CheckIfGameEnded();
+		if(GameState == eGameState.GameRunning)
+		{
+			_timeUntilGameOver -= Time.deltaTime;
+		}
+		HandleSpaceAndReturnInputs();
+		HandleRestartInput();
+	}
+
+	private void CheckIfGameEnded()
+	{
+		if (_timeUntilGameOver <= 0)
 		{
 			GameOver();
 		}
-		else if(GameStarted && !GameEnded)
+	}
+
+	private void HandleSpaceAndReturnInputs()
+	{
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
 		{
-			TimeUntilGameOver -= Time.deltaTime;
-		}
-		if(!GameStarted && !GameEnded)
-		{
-			if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+			if(GameState == eGameState.Editing)
 			{
 				StartGame();
 			}
-		}
-		if(Input.GetKeyDown(KeyCode.R)){
-			Restart();
+			else if(GameState == eGameState.GameEnded)
+			{
+				GoToNextLevel();
+			}
 		}
 	}
 
-	public void ResetTimeUntilGameOver()
+	private void HandleRestartInput()
 	{
-		TimeUntilGameOver = StartingTimeUntilGameOver;
-	}
-
-	public void ChangeEffectorsState(bool newState)
-	{
-		foreach (Cube cube in Cubes.gameObject.GetComponentsInChildren<Cube>())
+		if (Input.GetKeyDown(KeyCode.R))
 		{
-			cube.GetComponent<PointEffector2D>().enabled = newState;
+			RestartLevel();
 		}
 	}
 
 	public void LevelWon()
 	{
-		GameEnded = true;
-		UIManager.FadeInWinScreen();
+		GameState = eGameState.GameEnded;
+		Managers.Cubes.ChangeEffectorsState(false);
+		Managers.UI.Invoke("FadeInWinScreen", _timeUntilLevelEndedScreen);
 	}
 
 	public void GameOver()
 	{
-		GameEnded = true;
-		UIManager.FadeInLoseScreen();
+		GameState = eGameState.GameEnded;
+		Managers.Cubes.ChangeEffectorsState(false);
+		Managers.UI.Invoke("FadeInLoseScreen", _timeUntilLevelEndedScreen);
 	}
 
-	public void Restart()
+	public void RestartLevel()
 	{
-		
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	public void NextLevel()
+	public void GoToNextLevel()
 	{
-		Debug.Log("dsa");
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
 	public void StartGame()
 	{
-		foreach (Cube cube in Cubes.GetComponentsInChildren<Cube>())
-		{
-			cube.SelectedSprite.SetActive(false);
-		}
+		GameState = eGameState.GameRunning;
+
+		Managers.Cubes.SelectedCube.SelectedSprite.SetActive(false);
+
 		ResetTimeUntilGameOver();
-		Managers.GameManager.GameStarted = true;
-		Camera.main.GetComponent<Camera2D>().enabled = false;
-		Camera.main.GetComponent<CinemachineVirtualCamera>().enabled = true;
-		ChangeEffectorsState(true);
-		//StartCoroutine(LerpCamera());
+		ChangeToGameCamera();
+		Managers.Cubes.ChangeEffectorsState(true);
 	}
 
-	private IEnumerator LerpCamera()
+	private void ChangeToGameCamera()
 	{
-		Camera camera = Camera.main;
-		Vector3 startingPosition = camera.transform.position;
-		Vector3 targetPosition = Ball.transform.position;
-		float currentTime = 0;
+		Camera.main.GetComponent<FreeCamera>().enabled = false;
+		Camera.main.GetComponent<CinemachineVirtualCamera>().enabled = true;
+	}
 
-		while(currentTime < 1)
-		{
-			camera.transform.position = Vector3.Lerp(startingPosition, targetPosition, currentTime / 1);
-			currentTime += Time.deltaTime;
-			yield return null;
-		}
-		camera.transform.position = targetPosition;
-
-		camera.GetComponent<CinemachineVirtualCamera>().enabled = true;
+	public void ResetTimeUntilGameOver()
+	{
+		_timeUntilGameOver = _startingTimeUntilGameOver;
 	}
 }

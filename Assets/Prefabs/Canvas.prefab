@@ -120,31 +120,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9060039488398412956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: FadeOutControls
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &452769112616163914
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +132,6 @@ GameObject:
   - component: {fileID: 6805687133924219070}
   - component: {fileID: 2814084896639598316}
   - component: {fileID: 865860734337496278}
-  - component: {fileID: 1942722694719506589}
   - component: {fileID: 8932505676922626139}
   m_Layer: 0
   m_Name: PlayButton
@@ -223,18 +198,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1942722694719506589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 452769112616163914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c391ddec9ccef46960c3ba5978ff27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8932505676922626139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,19 +241,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 865860734337496278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &828214492175294173
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +254,6 @@ GameObject:
   - component: {fileID: 3241206645106454961}
   - component: {fileID: 382303249245962144}
   - component: {fileID: 4495161064962432145}
-  - component: {fileID: 4601894907081307660}
   m_Layer: 0
   m_Name: ExitButton
   m_TagString: Untagged
@@ -412,31 +362,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 382303249245962144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4601894907081307660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828214492175294173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e1a3a44adf5aa409fe4ae5fb12fec6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls: []
 --- !u!1 &2514365320421954577
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +450,6 @@ GameObject:
   - component: {fileID: 5195298751059880896}
   - component: {fileID: 6468526740882419723}
   - component: {fileID: 1240414172195390867}
-  - component: {fileID: 1647094843184022649}
   - component: {fileID: 8679099954556391464}
   m_Layer: 0
   m_Name: RestartButton
@@ -591,18 +516,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1647094843184022649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763578124722200480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b3a2b038881f947b308e4293c57748, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8679099954556391464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,19 +559,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1240414172195390867}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &3339820050764802658
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,19 +680,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3339820050764802656}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &3339820050828816570
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,19 +852,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3339820050869684826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &3339820051647403334
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,9 +865,9 @@ GameObject:
   - component: {fileID: 3339820051647403330}
   - component: {fileID: 3339820051647403331}
   - component: {fileID: 3339820051647403332}
-  - component: {fileID: 3339820051647403329}
-  - component: {fileID: 3339820051647403328}
   - component: {fileID: 7305558936447100417}
+  - component: {fileID: 4287959187781157224}
+  - component: {fileID: 4150438136111999152}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1084,34 +961,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3339820051647403329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3339820051647403334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f650f3f0a5290134e972693ddc2efdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinScreen: {fileID: 3339820051712239115}
-  LoseScreen: {fileID: 3339820050828816568}
-  Controls: {fileID: 6992784906695375990}
---- !u!114 &3339820051647403328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3339820051647403334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3fc978a31d5b544c9e20135ca974b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FadeDuration: 0.25
 --- !u!82 &7305558936447100417
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1208,6 +1057,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4287959187781157224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339820051647403334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e79cfbffd0694645a7a6e3fc06ad3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WinScreen: {fileID: 3339820051712239115}
+  LoseScreen: {fileID: 3339820050828816568}
+  ControlsScreen: {fileID: 6992784906695375990}
+--- !u!114 &4150438136111999152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339820051647403334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417fe3b58829f03479a82b81395358d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextLevelButton: {fileID: 1552259411531290933}
+  _restartButton: {fileID: 5755045676165388377}
+  _restartButtonBottomBorder: {fileID: 8679099954556391464}
+  _exitControlsMenuButton: {fileID: 1539225140664004297}
+  _exitButton: {fileID: 4495161064962432145}
+  _controlsMenuButton: {fileID: 138177563361840503}
+  _playButton: {fileID: 8932505676922626139}
 --- !u!1 &3339820051712239117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,31 +1798,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1353179767300151540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: FadeInControls
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3339820051647403329}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8418689240086204099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,7 +2024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5567541326311967419, guid: 3217329e1d2d4034a8ca942bed5d0993, type: 3}
       propertyPath: m_Name
-      value: Controls (1)
+      value: NewControls
       objectReference: {fileID: 0}
     - target: {fileID: 5567541326311967419, guid: 3217329e1d2d4034a8ca942bed5d0993, type: 3}
       propertyPath: m_IsActive

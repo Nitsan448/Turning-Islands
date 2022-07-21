@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    public Cube rightCube;
-    public Cube leftCube;
-	public Cube upCube;
-	public Cube downCube;
+    public Cube RightCube;
+    public Cube LeftCube;
+	public Cube TopCube;
+	public Cube BottomCube;
 
 	public GameObject SelectedSprite;
 	[SerializeField] private float _rotationTime = 0.5f;
@@ -16,37 +16,16 @@ public class Cube : MonoBehaviour
 
 	private CubeFace[] cubeFaces;
 
-    public bool Selected;
-
 	private void Awake()
 	{
 		cubeFaces = GetComponentsInChildren<CubeFace>();
-		if (Selected)
-		{
-			SelectedSprite.SetActive(true);
-		}
 	}
 
-	void Update()
-    {
-		if (Selected && !Managers.GameManager.GameStarted)
-		{
-			UpdateCubeRotation();
-		}
-    }
-
-    private void UpdateCubeRotation()
+    public void RotateCube(eDirection direction)
 	{
 		if (!coroutineActive)
 		{
-			if (Input.GetKeyDown(KeyCode.Q))
-			{
-				StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Right));
-			}
-			if (Input.GetKeyDown(KeyCode.E))
-			{
-				StartCoroutine(UpdateCubeRotationCoroutine(eDirection.Left));
-			}
+			StartCoroutine(UpdateCubeRotationCoroutine(direction));
 		}
 	}
 
@@ -59,13 +38,13 @@ public class Cube : MonoBehaviour
 		if(direction == eDirection.Left)
 		{
 			targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y,
-													(transform.eulerAngles.z - 90) % 360);
+													(transform.eulerAngles.z + 90) % 360);
 
 		}
 		else
 		{
 			targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y,
-														(transform.eulerAngles.z + 90) % 360);
+														(transform.eulerAngles.z - 90) % 360);
 
 		}
 		float currentTime = 0;

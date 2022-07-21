@@ -184,7 +184,7 @@ PointEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313518699087958090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
@@ -209,10 +209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806d718676439fd4392775921669bcf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightCube: {fileID: 0}
-  leftCube: {fileID: 0}
-  upCube: {fileID: 0}
-  downCube: {fileID: 0}
+  RightCube: {fileID: 0}
+  LeftCube: {fileID: 0}
+  TopCube: {fileID: 0}
+  BottomCube: {fileID: 0}
   SelectedSprite: {fileID: 455629607884901443}
   _rotationTime: 0.25
   Selected: 0
@@ -530,7 +530,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocityWhenLeavingFace: 10
-  _direction: 1
+  _direction: 3
+  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
+  _createdPortalIndex: 0
 --- !u!4 &7288675617421771847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
@@ -716,7 +718,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocityWhenLeavingFace: 10
-  _direction: 3
+  _direction: 1
+  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
+  _createdPortalIndex: 0
 --- !u!114 &8414276148080732798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocityWhenLeavingFace: 10
   _direction: 2
+  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
+  _createdPortalIndex: 0
 --- !u!1001 &8171704874962722435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1126,3 +1132,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocityWhenLeavingFace: 10
   _direction: 0
+  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
+  _createdPortalIndex: 0

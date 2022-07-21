@@ -13,11 +13,6 @@ public class Ball : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody2D>();
 	}
 
-	private void Start()
-	{
-		Managers.GameManager.Ball = this;
-	}
-
 	public void ChangeVelocity(Vector2 velocity)
 	{
 		_rigidBody.velocity = velocity;
