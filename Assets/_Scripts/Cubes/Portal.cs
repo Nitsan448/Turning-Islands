@@ -9,7 +9,6 @@ public class Portal : MonoBehaviour
 	[SerializeField] private float portalDisableTime = 1;
 	[SerializeField] private float _timeInsidePortal;
 	[SerializeField] private bool _tube;
-
 	[SerializeField] private bool _open = true;
 	public int PortalIndex;
 	private GameObject _portalSprite;
@@ -40,28 +39,32 @@ public class Portal : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Ball ball = collision.gameObject.GetComponent<Ball>();
-		if (ball != null && _open)
+		if(ball != null)
 		{
-			Vector3 newPosition = ConnectedPortal.transform.position;
-			StartCoroutine(SwitchPortals(ball));
-		}
-		else if(ball != null && !_open)
-		{
-			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-			ball.GetComponent<Animator>().Play("Squish");
+			if (_open)
+			{
+				StartCoroutine(SwitchPortals(ball));
+			}
+			else
+			{
+				ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+				ball.GetComponent<Animator>().Play("Squish");
+			}
 		}
 	}
 
 	private IEnumerator SwitchPortals(Ball ball)
 	{
 		ball.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-		Vector3 newPosition = ConnectedPortal.transform.position;
 		yield return new WaitForSeconds(_timeInsidePortal);
+
 		ConnectedPortal.GetComponent<BoxCollider2D>().enabled = false;
+		Vector3 newPosition = ConnectedPortal.transform.position;
 		ball.transform.position = new Vector3(newPosition.x, newPosition.y + 0.05f, newPosition.z);
 		ball.ChangeVelocity(ConnectedPortal.GetComponent<CubeFace>().GetVelocity());
 		ball.gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		yield return new WaitForSeconds(portalDisableTime);
+
 		ConnectedPortal.GetComponent<BoxCollider2D>().enabled = true;
 	}
 }

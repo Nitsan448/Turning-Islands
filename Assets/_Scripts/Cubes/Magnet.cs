@@ -24,6 +24,7 @@ public class Magnet : MonoBehaviour
 	{
 		if (ballHitMagnet)
 		{
+			//TODO: Do this using normal animation!
 			BallInMagnetAnimation();
 		}
 	}

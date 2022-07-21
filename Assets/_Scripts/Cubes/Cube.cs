@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    public Cube RightCube;
+	public Cube RightCube;
     public Cube LeftCube;
 	public Cube TopCube;
 	public Cube BottomCube;
@@ -12,18 +12,17 @@ public class Cube : MonoBehaviour
 	public GameObject SelectedSprite;
 	[SerializeField] private float _rotationTime = 0.5f;
 
-	private bool coroutineActive = false;
-
-	private CubeFace[] cubeFaces;
+	private bool _coroutineActive = false;
+	private CubeFace[] _cubeFaces;
 
 	private void Awake()
 	{
-		cubeFaces = GetComponentsInChildren<CubeFace>();
+		_cubeFaces = GetComponentsInChildren<CubeFace>();
 	}
 
     public void RotateCube(eDirection direction)
 	{
-		if (!coroutineActive)
+		if (!_coroutineActive)
 		{
 			StartCoroutine(UpdateCubeRotationCoroutine(direction));
 		}
@@ -31,22 +30,10 @@ public class Cube : MonoBehaviour
 
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
 	{
-		coroutineActive = true;
+		_coroutineActive = true;
 		GetComponent<AudioSource>().Play();
 		Quaternion currentRotation = transform.rotation;
-		Quaternion targetRotation;
-		if(direction == eDirection.Left)
-		{
-			targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y,
-													(transform.eulerAngles.z + 90) % 360);
-
-		}
-		else
-		{
-			targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y,
-														(transform.eulerAngles.z - 90) % 360);
-
-		}
+		Quaternion targetRotation = getTargetRotation(direction);
 		float currentTime = 0;
 
 		while(currentTime < _rotationTime)
@@ -57,13 +44,28 @@ public class Cube : MonoBehaviour
 		}
 
 		transform.rotation = targetRotation;
+		UpdateCubeFacesDirection(direction);
 
-		foreach(CubeFace cubeFace in cubeFaces)
+		_coroutineActive = false;
+		yield return null;
+	}
+
+	private Quaternion getTargetRotation(eDirection direction)
+	{
+		int zRotationIncrement = 90;
+		if (direction == eDirection.Right)
+		{
+			zRotationIncrement = -90;
+		}
+		return Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y,
+								(transform.eulerAngles.z + zRotationIncrement) % 360);
+	}
+
+	private void UpdateCubeFacesDirection(eDirection direction)
+	{
+		foreach (CubeFace cubeFace in _cubeFaces)
 		{
 			cubeFace.UpdateDirection(direction);
 		}
-
-		coroutineActive = false;
-		yield return null;
 	}
 }
