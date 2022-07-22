@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Magnet : MonoBehaviour
+public class Magnet : CubeFace
 {
 	private bool ballHitMagnet;
 	private float currentTime = 0;
@@ -10,14 +10,12 @@ public class Magnet : MonoBehaviour
 	private int velocitySign = 1;
 	private Ball _ball;
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	protected override void OnCollisionOrTrigger(Ball ball)
 	{
-		_ball = collision.gameObject.GetComponent<Ball>();
-		if (_ball != null)
-		{
-			_ball.ChangeVelocity(Vector2.zero);
-			Managers.Game.GameOver();
-		}
+		_ball = ball;
+		base.OnCollisionOrTrigger(ball);
+		ball.ChangeVelocity(Vector2.zero);
+		Managers.Game.GameOver();
 	}
 
 	private void FixedUpdate()

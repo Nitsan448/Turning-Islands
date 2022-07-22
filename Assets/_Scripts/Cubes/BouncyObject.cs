@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouncyObject : MonoBehaviour
+public class BouncyObject : CubeFace
 {
-	private void OnCollisionEnter2D(Collision2D collision)
+	protected override void OnCollisionOrTrigger(Ball ball)
 	{
-		Ball ball = collision.gameObject.GetComponent<Ball>();
-		if (ball != null)
-		{
-			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-			ball.GetComponent<Animator>().Play("Squish");
-		}
+		base.OnCollisionOrTrigger(ball);
+		ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+		ball.GetComponent<Animator>().Play("Squish");
 	}
 }

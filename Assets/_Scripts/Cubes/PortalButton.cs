@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalButton : MonoBehaviour
+public class PortalButton : CubeFace
 {
     [SerializeField] private Portal connectedPortal;
-	private void OnCollisionEnter2D(Collision2D collision)
+
+	protected override void OnCollisionOrTrigger(Ball ball)
 	{
-		Ball ball = collision.gameObject.GetComponent<Ball>();
-		if(ball != null)
-		{
-			connectedPortal.ChangeOpenState();
-			connectedPortal.ConnectedPortal.ChangeOpenState();
-			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-			ball.GetComponent<Animator>().Play("Squish");
-		}
+		connectedPortal.ChangeOpenState();
+		connectedPortal.ConnectedPortal.ChangeOpenState();
+		ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+		ball.GetComponent<Animator>().Play("Squish");
 	}
 }

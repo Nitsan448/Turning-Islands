@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(CubeFace))]
-public class CubeFaceEditor : Editor
+[CustomEditor(typeof(CubeFaceBuilder))]
+public class CubeFaceBuilderEditor : Editor
 {
+    private static bool ShowPortalFoldout = false;
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
-        CubeFace cubeFace = (CubeFace)target;
-
-        if (GUILayout.Button("Create Portal"))
-        {
-            cubeFace.CreatePortal();
+        base.OnInspectorGUI();
+        CubeFaceBuilder cubeFaceBuilder = (CubeFaceBuilder)target;
+        
+        ShowPortalFoldout = EditorGUILayout.Foldout(ShowPortalFoldout, "Portal");
+		if (ShowPortalFoldout)
+		{
+            if (GUILayout.Button("Create Portal"))
+            {
+                cubeFaceBuilder.CreatePortal();
+            }
         }
     }
 }

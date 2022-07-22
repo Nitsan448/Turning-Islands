@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CubeFace : MonoBehaviour
 {
 	[SerializeField] private float _velocityWhenLeavingFace = 10;
-	[SerializeField] private eDirection _direction;
+	public eDirection Direction;
 
-	[HeaderAttribute("Portals")]
-	[SerializeField] private Color _createdPortalColor;
-	[SerializeField] private int _createdPortalIndex;
 	private AudioSource _audioSource;
 
 	private void Awake()
@@ -27,7 +25,7 @@ public class CubeFace : MonoBehaviour
 
 	public Vector2 GetVelocity()
 	{
-		switch (_direction)
+		switch (Direction)
 		{
 			case eDirection.Up:
 				return new Vector2(0, _velocityWhenLeavingFace);
@@ -43,46 +41,33 @@ public class CubeFace : MonoBehaviour
 
 	public void UpdateDirection(eDirection direction)
 	{
-		_direction = DirectionExtensions.GetNewDirection(_direction, DirectionExtensions.GetIntByDirection(direction));
+		Direction = DirectionExtensions.GetNewDirection(Direction, DirectionExtensions.GetIntByDirection(direction));
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		Managers.Game.ResetTimeUntilGameOver();
-		if(GetComponentInChildren<AudioSource>() != null)
+		Ball ball = collision.gameObject.GetComponent<Ball>();
+		if (ball != null)
 		{
-			GetComponentInChildren<AudioSource>().Play();
+			OnCollisionOrTrigger(ball);
 		}
 	}
 
-	public void CreatePortal()
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (GetComponent<BouncyObject>() != null)
+		Ball ball = collision.GetComponent<Ball>();
+		if(ball != null)
 		{
-			DestroyImmediate(GetComponent<BouncyObject>());
+			OnCollisionOrTrigger(ball);
 		}
-		if (GetComponent<AudioSource>() != null)
+	}
+
+	protected virtual void OnCollisionOrTrigger(Ball ball)
+	{
+		Managers.Game.ResetTimeUntilGameOver();
+		if (GetComponentInChildren<AudioSource>() != null)
 		{
-			DestroyImmediate(GetComponent<AudioSource>());
+			GetComponentInChildren<AudioSource>().Play();
 		}
-		GameObject portalGameObject = Instantiate(FindObjectOfType<PrefabManager>().Portal, transform);
-		if(_direction == eDirection.Right || _direction == eDirection.Down)
-		{
-			portalGameObject.transform.eulerAngles = new Vector3(0, 0, 180);
-		}
-		Portal createdPortal = gameObject.AddComponent<Portal>();
-		createdPortal.GetComponentInChildren<SpriteRenderer>().color = _createdPortalColor;
-		createdPortal.PortalIndex = -1;
-		foreach (Portal portal in FindObjectsOfType<Portal>())
-		{
-			if(portal.PortalIndex == _createdPortalIndex)
-			{
-				createdPortal.ConnectedPortal = portal;
-				portal.ConnectedPortal.ConnectedPortal = createdPortal;
-				createdPortal.GetComponentInChildren<SpriteRenderer>().color = 
-					portal.ConnectedPortal.GetComponentInChildren<SpriteRenderer>().color;
-			}
-		}
-		createdPortal.PortalIndex = _createdPortalIndex;
 	}
 }

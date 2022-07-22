@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinCollider : MonoBehaviour
+public class WinCollider : CubeFace
 {
-	private void OnCollisionEnter2D(Collision2D collision)
+	protected override void OnCollisionOrTrigger(Ball ball)
 	{
-		Ball ball = collision.gameObject.GetComponent<Ball>();
-		if (ball != null)
-		{
-			GetComponentInChildren<Animator>().Play("Sploosh");
-			Managers.Game.LevelWon();
-		}
+		base.OnCollisionOrTrigger(ball);
+		GetComponentInChildren<Animator>().Play("Sploosh");
+		Managers.Game.LevelWon();
 	}
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-	public Cube RightCube;
-    public Cube LeftCube;
-	public Cube TopCube;
-	public Cube BottomCube;
+	[HideInInspector] public Cube RightCube;
+	[HideInInspector] public Cube LeftCube;
+	[HideInInspector] public Cube TopCube;
+	[HideInInspector] public Cube BottomCube;
 
 	public GameObject SelectedSprite;
 	[SerializeField] private float _rotationTime = 0.5f;
@@ -68,4 +68,5 @@ public class Cube : MonoBehaviour
 			cubeFace.UpdateDirection(direction);
 		}
 	}
+
 }

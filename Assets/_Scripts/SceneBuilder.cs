@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Cinemachine;
 
 public class SceneBuilder : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class SceneBuilder : MonoBehaviour
 		InstantiateSingletons();
 		InstantiateCubes();
 		ConnectCubes();
+		HandleReferences();
 	}
 
 	private void LoadAllPrefabs()
@@ -41,13 +43,12 @@ public class SceneBuilder : MonoBehaviour
 	
 	private void InstantiateSingletons()
 	{
-		PrefabUtility.InstantiatePrefab(_managers);
-		PrefabUtility.InstantiatePrefab(_ui);
-		PrefabUtility.InstantiatePrefab(_mainCamera);
-		PrefabUtility.InstantiatePrefab(_background);
+		_managers = PrefabUtility.InstantiatePrefab(_managers) as GameObject;
+		_ui = PrefabUtility.InstantiatePrefab(_ui) as GameObject;
+		_mainCamera = PrefabUtility.InstantiatePrefab(_mainCamera) as GameObject;
+		_background = PrefabUtility.InstantiatePrefab(_background) as GameObject;
 		_cubesManager = PrefabUtility.InstantiatePrefab(_cubesManager) as GameObject;
-		PrefabUtility.InstantiatePrefab(_globalLight);
-		//PrefabUtility.InstantiatePrefab(_cube);
+		_globalLight = PrefabUtility.InstantiatePrefab(_globalLight) as GameObject;
 	}
 
 	private void InstantiateCubes()
@@ -67,7 +68,6 @@ public class SceneBuilder : MonoBehaviour
 				_cubes[row, column] = cube.GetComponent<Cube>();
 			}
 		}
-		_cubesManager.GetComponent<CubesManager>().SelectedCube = _cubes[_numberOfRows - 1, 0];
 	}
 
 	private void ConnectCubes()
@@ -118,5 +118,11 @@ public class SceneBuilder : MonoBehaviour
 			_cubes[rowIndex, columnIndex].TopCube = _cubes[rowIndex + 1, columnIndex];
 			_cubes[rowIndex + 1, columnIndex].BottomCube = _cubes[rowIndex, columnIndex];
 		}
+	}
+
+	private void HandleReferences()
+	{
+		_cubesManager.GetComponent<CubesManager>().SelectedCube = _cubes[_numberOfRows - 1, 0];
+		_mainCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = _background.GetComponent<PolygonCollider2D>();
 	}
 }

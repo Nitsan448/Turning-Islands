@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class Portal : MonoBehaviour
+public class Portal : CubeFace
 {
 	public Portal ConnectedPortal;
 	[SerializeField] private float portalDisableTime = 1;
@@ -36,20 +36,17 @@ public class Portal : MonoBehaviour
 		_portalSprite.GetComponentInChildren<Light2D>().enabled = _open;
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	protected override void OnCollisionOrTrigger(Ball ball)
 	{
-		Ball ball = collision.gameObject.GetComponent<Ball>();
-		if(ball != null)
+		base.OnCollisionOrTrigger(ball);
+		if (_open)
 		{
-			if (_open)
-			{
-				StartCoroutine(SwitchPortals(ball));
-			}
-			else
-			{
-				ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-				ball.GetComponent<Animator>().Play("Squish");
-			}
+			StartCoroutine(SwitchPortals(ball));
+		}
+		else
+		{
+			ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+			ball.GetComponent<Animator>().Play("Squish");
 		}
 	}
 

@@ -119,8 +119,8 @@ Transform:
   m_Children:
   - {fileID: 1585236170909159849}
   - {fileID: 7194373619422909070}
-  - {fileID: 7288675617421771847}
   - {fileID: 925656071225897016}
+  - {fileID: 7288675617421771847}
   - {fileID: 8840209790122003369}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -516,7 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6661632554654171294
+  _velocityWhenLeavingFace: 10
+  Direction: 0
+--- !u!114 &2803637544176987875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -525,12 +527,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6099208306448587380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51b50a6a36174b48bd8592d8b6ebece, type: 3}
+  m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  _direction: 3
-  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
   _createdPortalIndex: 0
 --- !u!4 &7288675617421771847 stripped
 Transform:
@@ -704,22 +703,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8364005863490272296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932827067642531005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51b50a6a36174b48bd8592d8b6ebece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  _direction: 1
-  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
-  _createdPortalIndex: 0
 --- !u!114 &8414276148080732798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +715,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _velocityWhenLeavingFace: 10
+  Direction: 0
+--- !u!114 &7320362901191156139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932827067642531005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _createdPortalIndex: 0
 --- !u!4 &7194373619422909070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
@@ -754,11 +752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6132345609712832793, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_Name
-      value: Down
+      value: Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -921,7 +919,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2305437134246485872
+  _velocityWhenLeavingFace: 10
+  Direction: 0
+--- !u!114 &642710503786172188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -930,12 +930,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4421049610665553419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51b50a6a36174b48bd8592d8b6ebece, type: 3}
+  m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  _direction: 2
-  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
   _createdPortalIndex: 0
 --- !u!1001 &8171704874962722435
 PrefabInstance:
@@ -950,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6132345609712832793, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_Name
-      value: up
+      value: Top
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_RootOrder
@@ -1117,7 +1114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8837141387738595650
+  _velocityWhenLeavingFace: 10
+  Direction: 0
+--- !u!114 &6127160814128665519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1126,10 +1125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2629483838688399258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51b50a6a36174b48bd8592d8b6ebece, type: 3}
+  m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  _direction: 0
-  _createdPortalColor: {r: 0, g: 0, b: 0, a: 0}
   _createdPortalIndex: 0
