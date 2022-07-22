@@ -12,7 +12,7 @@ public class CubeFace : MonoBehaviour
 
 	private void Awake()
 	{
-		if(GetComponent<BouncyObject>() != null)
+		if(GetComponent<BouncySurface>() != null)
 		{
 			_audioSource = GetComponent<AudioSource>();
 		}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouncyObject : CubeFace
+public class BouncySurface : CubeFace
 {
 	protected override void OnCollisionOrTrigger(Ball ball)
 	{

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1637287353297208314}
   - component: {fileID: 1637287353297208315}
   m_Layer: 0
-  m_Name: stright tube
+  m_Name: StraightTube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

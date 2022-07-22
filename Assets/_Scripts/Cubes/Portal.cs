@@ -5,12 +5,13 @@ using UnityEngine.Rendering.Universal;
 
 public class Portal : CubeFace
 {
-	public Portal ConnectedPortal;
-	[SerializeField] private float portalDisableTime = 1;
-	[SerializeField] private float _timeInsidePortal;
-	[SerializeField] private bool _tube;
-	[SerializeField] private bool _open = true;
-	public int PortalIndex;
+	public Portal ConnectedPortal { get; set; }
+	public bool IsOpen { get; set; } = true;
+	public int PortalIndex { get; set; } = -1;
+	public bool IsTube { get; set; }
+	public float TimeInsidePortal { get; set; } = 0;
+
+	private float portalDisableTime = 1;
 	private GameObject _portalSprite;
 
 	private void Awake()
@@ -19,27 +20,27 @@ public class Portal : CubeFace
 		{
 			ConnectedPortal.ConnectedPortal = this;
 		}
-		if (!_tube)
+		if (!IsTube)
 		{
 			_portalSprite = GetComponentInChildren<Light2D>().gameObject;
-			_portalSprite.GetComponentInChildren<Light2D>().enabled = _open;
+			_portalSprite.GetComponentInChildren<Light2D>().enabled = IsOpen;
 		}
 		else
 		{
-			_open = true;
+			IsOpen = true;
 		}
 	}
 
 	public void ChangeOpenState()
 	{
-		_open = !_open;
-		_portalSprite.GetComponentInChildren<Light2D>().enabled = _open;
+		IsOpen = !IsOpen;
+		GetComponentInChildren<Light2D>().enabled = IsOpen;
 	}
 
 	protected override void OnCollisionOrTrigger(Ball ball)
 	{
 		base.OnCollisionOrTrigger(ball);
-		if (_open)
+		if (IsOpen)
 		{
 			StartCoroutine(SwitchPortals(ball));
 		}
@@ -53,7 +54,7 @@ public class Portal : CubeFace
 	private IEnumerator SwitchPortals(Ball ball)
 	{
 		ball.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-		yield return new WaitForSeconds(_timeInsidePortal);
+		yield return new WaitForSeconds(TimeInsidePortal);
 
 		ConnectedPortal.GetComponent<BoxCollider2D>().enabled = false;
 		Vector3 newPosition = ConnectedPortal.transform.position;

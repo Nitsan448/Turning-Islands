@@ -374,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.x
@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.z
@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 270
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2367120259427580944, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
@@ -504,20 +504,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6291727754859161198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6099208306448587380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  Direction: 0
 --- !u!114 &2803637544176987875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +516,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _createdPortalIndex: 0
+--- !u!114 &7503887445963965858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099208306448587380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _velocityWhenLeavingFace: 10
+  Direction: 3
 --- !u!4 &7288675617421771847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
@@ -703,7 +702,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8414276148080732798
+--- !u!114 &5436086089722117074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -712,11 +711,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5932827067642531005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _velocityWhenLeavingFace: 10
-  Direction: 0
+  Direction: 1
 --- !u!114 &7320362901191156139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _createdPortalIndex: 0
 --- !u!4 &7194373619422909070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
@@ -772,7 +770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.x
@@ -784,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -796,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2367120259427580944, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
@@ -907,20 +905,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &241364370888147602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421049610665553419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  Direction: 0
 --- !u!114 &642710503786172188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +917,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _createdPortalIndex: 0
+--- !u!114 &8749107732030010667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421049610665553419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _velocityWhenLeavingFace: 10
+  Direction: 2
 --- !u!1001 &8171704874962722435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1102,20 +1099,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1587011712084391175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2629483838688399258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908871f0087415546a5ef61b351efb68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
-  Direction: 0
 --- !u!114 &6127160814128665519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,4 +1111,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400b1013c0d4bbc4291695ed19f53bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _createdPortalIndex: 0
+--- !u!114 &9198474056434557933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629483838688399258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _velocityWhenLeavingFace: 10
+  Direction: 0

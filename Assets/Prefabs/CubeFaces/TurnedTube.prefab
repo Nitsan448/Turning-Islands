@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 803230292033638401}
   - component: {fileID: 4494811279752337239}
   m_Layer: 0
-  m_Name: gay tube
+  m_Name: TurnedTube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
