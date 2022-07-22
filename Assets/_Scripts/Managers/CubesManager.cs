@@ -52,7 +52,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 
 	private void UpdateSelectedCube(Cube cubeToSelect)
 	{
-		_selectionAudio.Play();
+		//_selectionAudio.Play();
 		if (cubeToSelect != null)
 		{
 			SelectedCube.SelectedSprite.SetActive(false);

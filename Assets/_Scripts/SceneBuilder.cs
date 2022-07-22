@@ -8,7 +8,6 @@ public class SceneBuilder : MonoBehaviour
 	[SerializeField] private int _numberOfRows;
 	[SerializeField] private int _numberOfColumns;
 	[SerializeField] private Vector2 _distanceBetweenCubes = new Vector2(8, 8);
-	//[SerializeField] private eSceneLayout _sceneLayout;
 
 	private string _sceneBuilderPrefabsPath = "Assets/Prefabs/SceneBuilder/";
 	private GameObject _cubesManager;
@@ -19,11 +18,14 @@ public class SceneBuilder : MonoBehaviour
 	private GameObject _globalLight;
 	private GameObject _cube;
 
+	private Cube[,] _cubes;
+
 	public void BuildScene()
 	{
 		LoadAllPrefabs();
 		InstantiateSingletons();
 		InstantiateCubes();
+		ConnectCubes();
 	}
 
 	private void LoadAllPrefabs()
@@ -39,8 +41,6 @@ public class SceneBuilder : MonoBehaviour
 	
 	private void InstantiateSingletons()
 	{
-		Debug.Log("Instantiating");
-		Debug.Log(_managers.name);
 		PrefabUtility.InstantiatePrefab(_managers);
 		PrefabUtility.InstantiatePrefab(_ui);
 		PrefabUtility.InstantiatePrefab(_mainCamera);
@@ -52,18 +52,71 @@ public class SceneBuilder : MonoBehaviour
 
 	private void InstantiateCubes()
 	{
-		float topLeftCubeXPosition = -(_distanceBetweenCubes.x * (_numberOfRows / 2));
-		float topLeftCubeYPosition = -(_distanceBetweenCubes.y * (_numberOfColumns / 2));
-		for(int i = 0; i < _numberOfRows; i++)
+		_cubes = new Cube[_numberOfRows, _numberOfColumns];
+		float bottomLeftCubeXPosition = -(_distanceBetweenCubes.x * (_numberOfColumns / 2)) + _distanceBetweenCubes.x / 2;
+		float bottomLeftCubeYPosition = -(_distanceBetweenCubes.y * (_numberOfRows / 2)) + _distanceBetweenCubes.y / 2;
+		for(int row = 0; row < _numberOfRows; row++)
 		{
-			for(int j = 0; j < _numberOfColumns; j++)
+			for(int column = 0; column < _numberOfColumns; column++)
 			{
 				GameObject cube = PrefabUtility.InstantiatePrefab(_cube) as GameObject;
-				float cubeXPosition = topLeftCubeXPosition + _distanceBetweenCubes.x * i;
-				float cubeYPosition = topLeftCubeXPosition + _distanceBetweenCubes.y * j;
+				float cubeXPosition = bottomLeftCubeXPosition + _distanceBetweenCubes.x * column;
+				float cubeYPosition = bottomLeftCubeYPosition + _distanceBetweenCubes.y * row;
 				cube.transform.position = new Vector2(cubeXPosition, cubeYPosition);
 				cube.transform.parent = _cubesManager.transform;
+				_cubes[row, column] = cube.GetComponent<Cube>();
 			}
+		}
+		_cubesManager.GetComponent<CubesManager>().SelectedCube = _cubes[_numberOfRows - 1, 0];
+	}
+
+	private void ConnectCubes()
+	{
+		for (int row = 0; row < _numberOfRows; row++)
+		{
+			for (int column = 0; column < _numberOfColumns; column++)
+			{
+				ConnectWithLeftCube(row, column);
+				ConnectWithRightCube(row, column);
+				ConnectWithTopCube(row, column);
+				ConnectWithBottomCube(row, column);
+			}
+		}
+	}
+
+	private void ConnectWithLeftCube(int rowIndex, int columnIndex)
+	{
+		if(columnIndex > 0)
+		{
+			_cubes[rowIndex, columnIndex].LeftCube = _cubes[rowIndex, columnIndex - 1];
+			_cubes[rowIndex, columnIndex - 1].RightCube = _cubes[rowIndex, columnIndex];
+		}
+	}
+
+	private void ConnectWithRightCube(int rowIndex, int columnIndex)
+	{
+		if (columnIndex != _numberOfColumns - 1)
+		{
+			_cubes[rowIndex, columnIndex].RightCube = _cubes[rowIndex, columnIndex + 1];
+			_cubes[rowIndex, columnIndex + 1].LeftCube = _cubes[rowIndex, columnIndex];
+		}
+	}
+
+	private void ConnectWithBottomCube(int rowIndex, int columnIndex)
+	{
+		if (rowIndex != 0)
+		{
+			_cubes[rowIndex, columnIndex].BottomCube = _cubes[rowIndex - 1, columnIndex];
+			_cubes[rowIndex - 1, columnIndex].TopCube = _cubes[rowIndex, columnIndex];
+		}
+	}
+
+	private void ConnectWithTopCube(int rowIndex, int columnIndex)
+	{
+		if (rowIndex != _numberOfRows - 1)
+		{
+			_cubes[rowIndex, columnIndex].TopCube = _cubes[rowIndex + 1, columnIndex];
+			_cubes[rowIndex + 1, columnIndex].BottomCube = _cubes[rowIndex, columnIndex];
 		}
 	}
 }

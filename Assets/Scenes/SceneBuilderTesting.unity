@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberOfRows: 2
-  _numberOfColumns: 3
-  _distanceBetweenCubes: {x: 6, y: 6}
+  _numberOfColumns: 4
+  _distanceBetweenCubes: {x: 8, y: 8}
 --- !u!4 &1398806752
 Transform:
   m_ObjectHideFlags: 0
