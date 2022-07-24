@@ -8,6 +8,7 @@ public class Managers : MonoBehaviour
     public static GameManager Game { get; private set; }
     public static UIManager UI { get; private set; }
     public static CubesManager Cubes { get; private set; }
+    public static AudioManager Audio { get; private set; }
 
     private List<IGameManager> startSequence;
 
@@ -22,6 +23,7 @@ public class Managers : MonoBehaviour
 	{
         Game = GetComponentInChildren<GameManager>();
         UI = GetComponentInChildren<UIManager>();
+        Audio = GetComponentInChildren<AudioManager>();
         Cubes = FindObjectOfType<CubesManager>();
     }
 
@@ -31,6 +33,7 @@ public class Managers : MonoBehaviour
         startSequence.Add(Game);
         startSequence.Add(UI);
         startSequence.Add(Cubes);
+        startSequence.Add(Audio);
     }
 
     private void StartUpManagers()

@@ -3,33 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CubeFace : MonoBehaviour
+public abstract class CubeFace : MonoBehaviour
 {
 	[SerializeField] private float _velocityWhenLeavingFace = 10;
 	public eDirection Direction;
 
-	private AudioSource _audioSource;
-
-	private void Awake()
-	{
-		if(GetComponent<BouncySurface>() != null)
-		{
-			_audioSource = GetComponent<AudioSource>();
-		}
-		else
-		{
-			Destroy(GetComponent<AudioSource>());
-			_audioSource = GetComponentInChildren<AudioSource>();
-		}
-	}
+	protected abstract string SoundName { get; set; }
+	protected abstract void OnCollisionOrTrigger(Ball ball);
 
 	public Vector2 GetVelocity()
 	{
 		switch (Direction)
 		{
-			case eDirection.Up:
+			case eDirection.Top:
 				return new Vector2(0, _velocityWhenLeavingFace);
-			case eDirection.Down:
+			case eDirection.Bottom:
 				return new Vector2(0, -_velocityWhenLeavingFace);
 			case eDirection.Right:
 				return new Vector2(_velocityWhenLeavingFace, 0);
@@ -49,6 +37,12 @@ public class CubeFace : MonoBehaviour
 		Ball ball = collision.gameObject.GetComponent<Ball>();
 		if (ball != null)
 		{
+			Managers.Game.ResetTimeUntilGameOver();
+			Managers.Audio.PlaySound(SoundName);
+			if (GetComponentInChildren<AudioSource>() != null)
+			{
+				GetComponentInChildren<AudioSource>().Play();
+			}
 			OnCollisionOrTrigger(ball);
 		}
 	}
@@ -58,16 +52,14 @@ public class CubeFace : MonoBehaviour
 		Ball ball = collision.GetComponent<Ball>();
 		if(ball != null)
 		{
+			Managers.Game.ResetTimeUntilGameOver();
+			Managers.Audio.PlaySound(SoundName);
+			if (GetComponentInChildren<AudioSource>() != null)
+			{
+				GetComponentInChildren<AudioSource>().Play();
+			}
 			OnCollisionOrTrigger(ball);
 		}
 	}
 
-	protected virtual void OnCollisionOrTrigger(Ball ball)
-	{
-		Managers.Game.ResetTimeUntilGameOver();
-		if (GetComponentInChildren<AudioSource>() != null)
-		{
-			GetComponentInChildren<AudioSource>().Play();
-		}
-	}
 }

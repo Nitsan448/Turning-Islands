@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour, IGameManager
 {
@@ -9,6 +10,10 @@ public class UIManager : MonoBehaviour, IGameManager
     public void Startup()
     {
         _fader = GetComponent<Fader>();
+        foreach(Button button in FindObjectsOfType<Button>(true))
+		{
+            button.onClick.AddListener(delegate { Managers.Audio.PlaySound("UIClick"); });
+		}
     }
 
     public void FadeInWinScreen()

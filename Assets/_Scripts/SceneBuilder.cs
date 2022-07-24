@@ -54,18 +54,19 @@ public class SceneBuilder : MonoBehaviour
 	private void InstantiateCubes()
 	{
 		_cubes = new Cube[_numberOfRows, _numberOfColumns];
-		float bottomLeftCubeXPosition = -(_distanceBetweenCubes.x * (_numberOfColumns / 2)) + _distanceBetweenCubes.x / 2;
-		float bottomLeftCubeYPosition = -(_distanceBetweenCubes.y * (_numberOfRows / 2)) + _distanceBetweenCubes.y / 2;
+		float topLeftCubeXPosition = -(_distanceBetweenCubes.x * (_numberOfColumns / 2)) + _distanceBetweenCubes.x / 2;
+		float topLeftCubeYPosition = (_distanceBetweenCubes.y * (_numberOfRows / 2)) - _distanceBetweenCubes.y / 2;
 		for(int row = 0; row < _numberOfRows; row++)
 		{
 			for(int column = 0; column < _numberOfColumns; column++)
 			{
 				GameObject cube = PrefabUtility.InstantiatePrefab(_cube) as GameObject;
-				float cubeXPosition = bottomLeftCubeXPosition + _distanceBetweenCubes.x * column;
-				float cubeYPosition = bottomLeftCubeYPosition + _distanceBetweenCubes.y * row;
+				float cubeXPosition = topLeftCubeXPosition + _distanceBetweenCubes.x * column;
+				float cubeYPosition = topLeftCubeYPosition - _distanceBetweenCubes.y * row;
 				cube.transform.position = new Vector2(cubeXPosition, cubeYPosition);
 				cube.transform.parent = _cubesManager.transform;
 				_cubes[row, column] = cube.GetComponent<Cube>();
+				cube.name = "Cube: " + (row + 1) + ", " + (column + 1);
 			}
 		}
 	}
@@ -104,25 +105,25 @@ public class SceneBuilder : MonoBehaviour
 
 	private void ConnectWithBottomCube(int rowIndex, int columnIndex)
 	{
-		if (rowIndex != 0)
+		if (rowIndex != _numberOfRows - 1)
 		{
-			_cubes[rowIndex, columnIndex].BottomCube = _cubes[rowIndex - 1, columnIndex];
-			_cubes[rowIndex - 1, columnIndex].TopCube = _cubes[rowIndex, columnIndex];
+			_cubes[rowIndex, columnIndex].BottomCube = _cubes[rowIndex + 1, columnIndex];
+			_cubes[rowIndex + 1, columnIndex].TopCube = _cubes[rowIndex, columnIndex];
 		}
 	}
 
 	private void ConnectWithTopCube(int rowIndex, int columnIndex)
 	{
-		if (rowIndex != _numberOfRows - 1)
+		if (rowIndex != 0)
 		{
-			_cubes[rowIndex, columnIndex].TopCube = _cubes[rowIndex + 1, columnIndex];
-			_cubes[rowIndex + 1, columnIndex].BottomCube = _cubes[rowIndex, columnIndex];
+			_cubes[rowIndex, columnIndex].TopCube = _cubes[rowIndex - 1, columnIndex];
+			_cubes[rowIndex - 1, columnIndex].BottomCube = _cubes[rowIndex, columnIndex];
 		}
 	}
 
 	private void HandleReferences()
 	{
-		_cubesManager.GetComponent<CubesManager>().SelectedCube = _cubes[_numberOfRows - 1, 0];
+		_cubesManager.GetComponent<CubesManager>().SelectedCube = _cubes[0, 0];
 		_mainCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = _background.GetComponent<PolygonCollider2D>();
 	}
 }

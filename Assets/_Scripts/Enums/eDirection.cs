@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum eDirection
 {
-	Up,
+	Top,
 	Right,
-	Down,
+	Bottom,
 	Left,
 }

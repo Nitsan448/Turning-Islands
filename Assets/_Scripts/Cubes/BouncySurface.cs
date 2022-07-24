@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BouncySurface : CubeFace
 {
+	protected override string SoundName { get; set; } = "Bounce";
+
 	protected override void OnCollisionOrTrigger(Ball ball)
 	{
-		base.OnCollisionOrTrigger(ball);
 		ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
 		ball.GetComponent<Animator>().Play("Squish");
 	}

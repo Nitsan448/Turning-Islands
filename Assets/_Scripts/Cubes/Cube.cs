@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-	[HideInInspector] public Cube RightCube;
-	[HideInInspector] public Cube LeftCube;
-	[HideInInspector] public Cube TopCube;
-	[HideInInspector] public Cube BottomCube;
+	public Cube RightCube;
+	public Cube LeftCube;
+	public Cube TopCube;
+	public Cube BottomCube;
 
 	public GameObject SelectedSprite;
 	[SerializeField] private float _rotationTime = 0.5f;
@@ -31,7 +31,7 @@ public class Cube : MonoBehaviour
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
 	{
 		_coroutineActive = true;
-		GetComponent<AudioSource>().Play();
+		Managers.Audio.PlaySound("CubeRotation");
 		Quaternion currentRotation = transform.rotation;
 		Quaternion targetRotation = getTargetRotation(direction);
 		float currentTime = 0;
@@ -69,4 +69,15 @@ public class Cube : MonoBehaviour
 		}
 	}
 
+	public CubeFaceBuilder GetCubeBuilderByDirection(eDirection direction)
+	{
+		foreach(CubeFaceBuilder cubeFaceBuilder in GetComponentsInChildren<CubeFaceBuilder>())
+		{
+			if(direction == cubeFaceBuilder.gameObject.GetComponent<CubeFace>().Direction)
+			{
+				return cubeFaceBuilder;
+			}
+		}
+		return null;
+	}
 }

@@ -22,11 +22,11 @@ public class CubeFaceBuilderEditor : Editor
         }
         if (GUILayout.Button("Create Turned Tube"))
         {
-            cubeFaceBuilder.CreateTurnedTube();
+            cubeFaceBuilder.CreateTube(true, true);
         }
         if (GUILayout.Button("Create Straight Tube"))
         {
-            cubeFaceBuilder.CreateStraightTube();
+            cubeFaceBuilder.CreateTube(true, false);
         }
         if (GUILayout.Button("Create Magnet"))
         {
@@ -35,6 +35,10 @@ public class CubeFaceBuilderEditor : Editor
         if (GUILayout.Button("Create Win Flag"))
         {
             cubeFaceBuilder.CreateWinFlag();
+        }
+        if (GUILayout.Button("Create Ball"))
+        {
+            cubeFaceBuilder.CreateBall();
         }
     }
 }

@@ -11,6 +11,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 	{
 		_selectionAudio = GetComponent<AudioSource>();
 		SelectedCube.SelectedSprite.SetActive(true);
+		ConnectAllPortals();
 	}
 
 	public void ChangeEffectorsState(bool newState)
@@ -52,10 +53,10 @@ public class CubesManager : MonoBehaviour, IGameManager
 
 	private void UpdateSelectedCube(Cube cubeToSelect)
 	{
-		//_selectionAudio.Play();
 		if (cubeToSelect != null)
 		{
 			SelectedCube.SelectedSprite.SetActive(false);
+			Managers.Audio.PlaySound("CubeSelection");
 			SelectedCube = cubeToSelect;
 			cubeToSelect.SelectedSprite.SetActive(true);
 		}
@@ -71,5 +72,29 @@ public class CubesManager : MonoBehaviour, IGameManager
 		{
 			SelectedCube.RotateCube(eDirection.Right);
 		}
+	}
+
+	private void ConnectAllPortals()
+	{
+		Portal[] portals = GetComponentsInChildren<Portal>();
+		for(int i = 0; i < portals.Length; i++)
+		{
+			int portalIndex = portals[i].PortalIndex;
+			portals[i].PortalIndex = -1;
+			portals[i].ConnectedPortal = findPortalByIndex(portalIndex, portals);
+			portals[i].PortalIndex = portalIndex;
+		}
+	}
+
+	private Portal findPortalByIndex(int portalIndex, Portal[] portals)
+	{
+		foreach(Portal portal in GetComponentsInChildren<Portal>())
+		{
+			if(portal.PortalIndex == portalIndex)
+			{
+				return portal;
+			}
+		}
+		return null;
 	}
 }

@@ -9,12 +9,13 @@ public class Magnet : CubeFace
 	private float timeInterval = 0.3f;
 	private int velocitySign = 1;
 	private Ball _ball;
+	protected override string SoundName { get; set; } = "Magnet";
 
 	protected override void OnCollisionOrTrigger(Ball ball)
 	{
 		_ball = ball;
-		base.OnCollisionOrTrigger(ball);
 		ball.ChangeVelocity(Vector2.zero);
+		ballHitMagnet = true;
 		Managers.Game.GameOver();
 	}
 
