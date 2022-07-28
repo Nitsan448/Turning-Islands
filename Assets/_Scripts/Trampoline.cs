@@ -5,21 +5,28 @@ using UnityEngine;
 public class Trampoline : CubeFace
 {
     protected override string SoundName { get; set; } = "No sound";
-	[SerializeField] private float _velocityOtherFactor = 1.5f;
+	[SerializeField] private eDirection _trampolineDirection = eDirection.Right;
 
 	protected override void OnCollisionOrTrigger(Ball ball)
 	{
 		Vector2 cubeFaceVelocity = GetComponent<CubeFace>().GetVelocity();
-		Vector2 trampolineVelocity;
-		if (cubeFaceVelocity.x > 0)
+		ball.ChangeVelocity(Vector2.zero);
+		Cube neighborCube = FindNeighborCube();
+		StartCoroutine(ball.MoveTowardInArc(8, neighborCube.GetCubeFaceObjectByDirection(Direction).transform.position, Direction));
+		ball.GetComponent<Animator>().Play("Squish");
+	}
+
+	private Cube FindNeighborCube()
+	{
+		Cube neighborCube = null;
+		if (_trampolineDirection == eDirection.Right)
 		{
-			trampolineVelocity = new Vector2(cubeFaceVelocity.x, _velocityOtherFactor * cubeFaceVelocity.x);
+			neighborCube = transform.parent.GetComponent<Cube>().RightCube;
 		}
 		else
 		{
-			trampolineVelocity = new Vector2(_velocityOtherFactor * cubeFaceVelocity.y, cubeFaceVelocity.y);
+			neighborCube = transform.parent.GetComponent<Cube>().LeftCube;
 		}
-		ball.ChangeVelocity(trampolineVelocity);
-		ball.GetComponent<Animator>().Play("Squish");
+		return neighborCube;
 	}
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
-	public CubesManager Cubes { get; set; }
+	public event Action GameStarted;
 	public eGameState GameState { get; private set; } = eGameState.Editing;
 
 	private float _startingTimeUntilGameOver = 3;
@@ -63,14 +64,12 @@ public class GameManager : MonoBehaviour, IGameManager
 	public void LevelWon()
 	{
 		GameState = eGameState.GameEnded;
-		Managers.Cubes.ChangeEffectorsState(false);
 		Managers.UI.Invoke("FadeInWinScreen", _timeUntilLevelEndedScreen);
 	}
 
 	public void GameOver()
 	{
 		GameState = eGameState.GameEnded;
-		Managers.Cubes.ChangeEffectorsState(false);
 		Managers.UI.Invoke("FadeInLoseScreen", _timeUntilLevelEndedScreen);
 	}
 
@@ -87,12 +86,10 @@ public class GameManager : MonoBehaviour, IGameManager
 	public void StartGame()
 	{
 		GameState = eGameState.GameRunning;
-
 		Managers.Cubes.SelectedCube.SelectedSprite.SetActive(false);
-
+		GameStarted?.Invoke();
 		ResetTimeUntilGameOver();
 		ChangeToGameCamera();
-		Managers.Cubes.ChangeEffectorsState(true);
 	}
 
 	private void ChangeToGameCamera()

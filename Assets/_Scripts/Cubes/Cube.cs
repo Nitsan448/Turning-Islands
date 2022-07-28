@@ -69,13 +69,13 @@ public class Cube : MonoBehaviour
 		}
 	}
 
-	public CubeFaceBuilder GetCubeBuilderByDirection(eDirection direction)
+	public GameObject GetCubeFaceObjectByDirection(eDirection direction)
 	{
-		foreach(CubeFaceBuilder cubeFaceBuilder in GetComponentsInChildren<CubeFaceBuilder>())
+		foreach(CubeFace cubeFace in GetComponentsInChildren<CubeFace>())
 		{
-			if(direction == cubeFaceBuilder.gameObject.GetComponent<CubeFace>().Direction)
+			if(direction == cubeFace.Direction)
 			{
-				return cubeFaceBuilder;
+				return cubeFace.gameObject;
 			}
 		}
 		return null;

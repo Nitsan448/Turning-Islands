@@ -14,14 +14,6 @@ public class CubesManager : MonoBehaviour, IGameManager
 		ConnectAllPortals();
 	}
 
-	public void ChangeEffectorsState(bool newState)
-	{
-		foreach (Cube cube in GetComponentsInChildren<Cube>())
-		{
-			cube.GetComponent<PointEffector2D>().enabled = newState;
-		}
-	}
-
 	void Update()
     {
 		if (Managers.Game.GameState == eGameState.Editing)
@@ -81,12 +73,12 @@ public class CubesManager : MonoBehaviour, IGameManager
 		{
 			int portalIndex = portals[i].PortalIndex;
 			portals[i].PortalIndex = -1;
-			portals[i].ConnectedPortal = findPortalByIndex(portalIndex, portals);
+			portals[i].ConnectedPortal = FindPortalByIndex(portalIndex, portals);
 			portals[i].PortalIndex = portalIndex;
 		}
 	}
 
-	private Portal findPortalByIndex(int portalIndex, Portal[] portals)
+	private Portal FindPortalByIndex(int portalIndex, Portal[] portals)
 	{
 		foreach(Portal portal in GetComponentsInChildren<Portal>())
 		{

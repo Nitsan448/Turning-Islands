@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1313518699087958088}
   - component: {fileID: 4890799529151308416}
-  - component: {fileID: 1313518699087958094}
   - component: {fileID: 1313518699087958131}
   - component: {fileID: 2248032652865884885}
   m_Layer: 0
@@ -176,26 +175,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!250 &1313518699087958094
-PointEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313518699087958090}
-  m_Enabled: 0
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceMagnitude: -15
-  m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 1
-  m_ForceTarget: 0
-  m_ForceMode: 2
-  m_Drag: 0
-  m_AngularDrag: 0
 --- !u!114 &1313518699087958131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
+  _velocityWhenLeavingFace: 6
   Direction: 3
 --- !u!4 &7288675617421771847 stripped
 Transform:
@@ -427,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
+  _velocityWhenLeavingFace: 6
   Direction: 1
 --- !u!114 &7320362901191156139
 MonoBehaviour:
@@ -550,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
+  _velocityWhenLeavingFace: 6
   Direction: 2
 --- !u!1001 &8171704874962722435
 PrefabInstance:
@@ -650,5 +629,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 10
+  _velocityWhenLeavingFace: 6
   Direction: 0

@@ -9,11 +9,11 @@ public static class DirectionExtensions
 		int newDirection = (int)oldDirection + directionChange;
 		if (newDirection > 3)
 		{
-			newDirection = 0;
+			newDirection = directionChange - 1;
 		}
 		else if(newDirection < 0)
 		{
-			newDirection = 3;
+			newDirection = 4 - directionChange;
 		}
 		return (eDirection)newDirection;
 	}

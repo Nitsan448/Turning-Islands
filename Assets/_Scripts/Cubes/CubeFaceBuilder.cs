@@ -227,7 +227,7 @@ public class CubeFaceBuilder : MonoBehaviour
 		{
 			neighborCubeDirection = DirectionExtensions.GetNewDirection(neighborCubeDirection, 1);
 		}
-		CubeFaceBuilder neighborCubeBuilder = transform.parent.GetComponent<Cube>().GetCubeBuilderByDirection(neighborCubeDirection);
+		CubeFaceBuilder neighborCubeBuilder = transform.parent.GetComponent<Cube>().GetCubeFaceObjectByDirection(neighborCubeDirection).GetComponent<CubeFaceBuilder>();
 		neighborCubeBuilder.CreateTube(false, turned);
 		Tube neighborTube = neighborCubeBuilder.transform.GetComponent<Tube>();
 		return neighborTube;

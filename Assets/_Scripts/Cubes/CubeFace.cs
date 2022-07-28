@@ -5,9 +5,7 @@ using System;
 
 public abstract class CubeFace : MonoBehaviour
 {
-	[SerializeField] private float _velocityWhenLeavingFace = 10;
 	public eDirection Direction;
-
 	protected abstract string SoundName { get; set; }
 	protected abstract void OnCollisionOrTrigger(Ball ball);
 
@@ -16,13 +14,13 @@ public abstract class CubeFace : MonoBehaviour
 		switch (Direction)
 		{
 			case eDirection.Top:
-				return new Vector2(0, _velocityWhenLeavingFace);
+				return new Vector2(0, 1);
 			case eDirection.Bottom:
-				return new Vector2(0, -_velocityWhenLeavingFace);
+				return new Vector2(0, -1);
 			case eDirection.Right:
-				return new Vector2(_velocityWhenLeavingFace, 0);
+				return new Vector2(1, 0);
 			case eDirection.Left:
-				return new Vector2(-_velocityWhenLeavingFace, 0);
+				return new Vector2(-1, 0);
 		}
 		return Vector2.zero;
 	}
