@@ -11,10 +11,14 @@ public class CubeFaceBuilderEditor : Editor
     {
         base.OnInspectorGUI();
         CubeFaceBuilder cubeFaceBuilder = (CubeFaceBuilder)target;
-        
+
         if (GUILayout.Button("Create Portal"))
         {
             cubeFaceBuilder.CreatePortal();
+        }
+        if (GUILayout.Button("Create Portal Button"))
+        {
+            cubeFaceBuilder.CreatePortalButton();
         }
         if (GUILayout.Button("Create Bouncy Surface"))
         {
@@ -35,6 +39,14 @@ public class CubeFaceBuilderEditor : Editor
         if (GUILayout.Button("Create Win Flag"))
         {
             cubeFaceBuilder.CreateWinFlag();
+        }
+        if (GUILayout.Button("Create Right Trampoline"))
+        {
+            cubeFaceBuilder.CreateTrampoline(eDirection.Right);
+        }
+        if (GUILayout.Button("Create Left Trampoline"))
+        {
+            cubeFaceBuilder.CreateTrampoline(eDirection.Left);
         }
         if (GUILayout.Button("Create Ball"))
         {

@@ -5,16 +5,18 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     public static MusicPlayer Instance { get; set; }
+
     void Start()
     {
-        if(Instance == null)
-		{
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            GetComponent<AudioSource>().Play();
         }
-		else
-		{
+        else
+        {
             Destroy(gameObject);
-		}
+        }
     }
 }

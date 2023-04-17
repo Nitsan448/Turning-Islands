@@ -9,7 +9,6 @@ public class Managers : MonoBehaviour
     public static UIManager UI { get; private set; }
     public static CubesManager Cubes { get; private set; }
     public static AudioManager Audio { get; private set; }
-
     private List<IGameManager> startSequence;
 
     void Awake()
@@ -19,8 +18,8 @@ public class Managers : MonoBehaviour
         StartUpManagers();
     }
 
-	private void GetManagers()
-	{
+    private void GetManagers()
+    {
         Game = GetComponentInChildren<GameManager>();
         UI = GetComponentInChildren<UIManager>();
         Audio = GetComponentInChildren<AudioManager>();
@@ -28,7 +27,7 @@ public class Managers : MonoBehaviour
     }
 
     private void SetStartSequenceOrder()
-	{
+    {
         startSequence = new List<IGameManager>();
         startSequence.Add(Game);
         startSequence.Add(UI);
@@ -37,10 +36,10 @@ public class Managers : MonoBehaviour
     }
 
     private void StartUpManagers()
-	{
+    {
         foreach (IGameManager manager in startSequence)
         {
             manager.Startup();
         }
-	}
+    }
 }

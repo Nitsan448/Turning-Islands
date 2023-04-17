@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 1313518699087958088}
   - component: {fileID: 4890799529151308416}
   - component: {fileID: 1313518699087958131}
-  - component: {fileID: 2248032652865884885}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Cube
@@ -193,32 +192,6 @@ MonoBehaviour:
   BottomCube: {fileID: 0}
   SelectedSprite: {fileID: 455629607884901443}
   _rotationTime: 0.25
---- !u!61 &2248032652865884885
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313518699087958090}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
-    newSize: {x: 3, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 8, y: 8}
-  m_EdgeRadius: 0
 --- !u!1001 &125760442099747693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 6
   Direction: 3
 --- !u!4 &7288675617421771847 stripped
 Transform:
@@ -406,7 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 6
   Direction: 1
 --- !u!114 &7320362901191156139
 MonoBehaviour:
@@ -529,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 6
   Direction: 2
 --- !u!1001 &8171704874962722435
 PrefabInstance:
@@ -629,5 +599,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41bcbb7cc748242aa624b04691c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityWhenLeavingFace: 6
   Direction: 0
