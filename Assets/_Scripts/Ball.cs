@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public Vector2 _startingVelocity = new Vector2(0, -1);
+    public Vector2 StartingVelocity = new Vector2(0, -1);
 
     [SerializeField]
     private float _speed = 4;
@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour
 
     public void StartMoving()
     {
-        _velocity = _startingVelocity;
+        _velocity = StartingVelocity;
     }
 
     private void FixedUpdate()

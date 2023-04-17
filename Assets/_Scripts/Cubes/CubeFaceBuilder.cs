@@ -94,6 +94,8 @@ public class CubeFaceBuilder : MonoBehaviour
             portalButtonRotation.z - 90
         );
         ChangeGraphicsPosition(0.4f, portalButtonGraphics);
+        createdPortalButton.GetComponentInChildren<SpriteRenderer>().color =
+            PortalColors.ColorByIndex[_createdPortalIndex];
         gameObject.name = _cubeFaceDirection + ": Portal Button";
         EditorUtility.SetDirty(createdPortalButton);
     }
@@ -300,23 +302,24 @@ public class CubeFaceBuilder : MonoBehaviour
         GameObject ball = PrefabUtility.InstantiatePrefab(ballPrefab) as GameObject;
         float ballPositionOffSetAmount = 3;
         Vector3 ballPostionOffset = Vector3.zero;
+        Debug.Log(_cubeFaceDirection);
         switch (_cubeFaceDirection)
         {
             case eDirection.Top:
                 ballPostionOffset = new Vector2(0, ballPositionOffSetAmount);
-                ball.GetComponent<Ball>().ChangeVelocity(new Vector2(0, -1));
+                ball.GetComponent<Ball>().StartingVelocity = new Vector2(0, -1);
                 break;
             case eDirection.Right:
                 ballPostionOffset = new Vector2(ballPositionOffSetAmount, 0);
-                ball.GetComponent<Ball>().ChangeVelocity(new Vector2(-1, 0));
+                ball.GetComponent<Ball>().StartingVelocity = new Vector2(-1, 0);
                 break;
             case eDirection.Bottom:
                 ballPostionOffset = new Vector2(0, -ballPositionOffSetAmount);
-                ball.GetComponent<Ball>().ChangeVelocity(new Vector2(0, 1));
+                ball.GetComponent<Ball>().StartingVelocity = new Vector2(0, 1);
                 break;
             case eDirection.Left:
                 ballPostionOffset = new Vector2(-ballPositionOffSetAmount, 0);
-                ball.GetComponent<Ball>().ChangeVelocity(new Vector2(1, 0));
+                ball.GetComponent<Ball>().StartingVelocity = new Vector2(1, 0);
                 break;
         }
         ball.transform.position = transform.parent.position + ballPostionOffset;
