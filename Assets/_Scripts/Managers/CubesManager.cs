@@ -11,7 +11,6 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         _selectionAudio = GetComponent<AudioSource>();
         SelectedCube.SelectedSprite.SetActive(true);
-        ConnectAllPortals();
     }
 
     void Update()
@@ -66,7 +65,7 @@ public class CubesManager : MonoBehaviour, IGameManager
         }
     }
 
-    private void ConnectAllPortals()
+    public void ConnectAllPortalsAndButtons()
     {
         PortalButton[] portalButtons = GetComponentsInChildren<PortalButton>();
         Portal[] portals = GetComponentsInChildren<Portal>();

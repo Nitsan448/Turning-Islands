@@ -21,6 +21,7 @@ public class CubeFaceBuilder : MonoBehaviour
         Portal createdPortal = gameObject.AddComponent<Portal>();
         SetPortalFields(createdPortal);
         gameObject.name = _cubeFaceDirection + ": Portal";
+        FindObjectOfType<CubesManager>().ConnectAllPortalsAndButtons();
         EditorUtility.SetDirty(createdPortal);
     }
 
@@ -97,6 +98,7 @@ public class CubeFaceBuilder : MonoBehaviour
         createdPortalButton.GetComponentInChildren<SpriteRenderer>().color =
             PortalColors.ColorByIndex[_createdPortalIndex];
         gameObject.name = _cubeFaceDirection + ": Portal Button";
+        FindObjectOfType<CubesManager>().ConnectAllPortalsAndButtons();
         EditorUtility.SetDirty(createdPortalButton);
     }
 

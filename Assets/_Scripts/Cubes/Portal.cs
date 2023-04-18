@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class Portal : CubeFace
 {
-    public Portal ConnectedPortal { get; set; }
+    public Portal ConnectedPortal;
     public bool IsOpen = true;
     public int PortalIndex = -1;
     public float TimeInsidePortal = 0;

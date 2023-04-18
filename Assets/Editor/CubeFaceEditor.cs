@@ -6,7 +6,6 @@ using UnityEditor;
 [CustomEditor(typeof(CubeFaceBuilder))]
 public class CubeFaceBuilderEditor : Editor
 {
-    //private static bool ShowPortalFoldout = false;
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
