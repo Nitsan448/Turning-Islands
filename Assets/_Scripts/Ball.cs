@@ -38,13 +38,20 @@ public class Ball : MonoBehaviour
         _velocity = velocity;
     }
 
-    public IEnumerator MoveTowardInArc(float duration, Vector2 targetPosition, eDirection direction)
+    public IEnumerator MoveTowardInArc(
+        float duration,
+        Vector2 startingTargetPosition,
+        eDirection direction
+    )
     {
         Vector2 startPosition = transform.position;
+        Vector2 targetPosition = startingTargetPosition;
         float currentTime = 0;
-
         while (currentTime < duration)
         {
+            targetPosition = startingTargetPosition;
+            float offset = 2 * Mathf.Sin(currentTime * Mathf.PI / duration);
+
             if (direction == eDirection.Top || direction == eDirection.Bottom)
             {
                 float newXPosition = Mathf.Lerp(
@@ -52,8 +59,12 @@ public class Ball : MonoBehaviour
                     targetPosition.x,
                     currentTime / duration
                 );
-                float heightOffset = 2 * Mathf.Sin(currentTime * Mathf.PI / duration);
-                transform.position = new Vector2(newXPosition, startPosition.y + heightOffset);
+                offset -= currentTime / duration * Mathf.Abs(targetPosition.y - startPosition.y);
+                if (direction == eDirection.Bottom)
+                {
+                    offset *= -1;
+                }
+                transform.position = new Vector2(newXPosition, startPosition.y + offset);
             }
             else
             {
@@ -62,8 +73,12 @@ public class Ball : MonoBehaviour
                     targetPosition.y,
                     currentTime / duration
                 );
-                float heightOffset = 2 * Mathf.Sin(currentTime * Mathf.PI / duration);
-                transform.position = new Vector2(startPosition.y + heightOffset, newYPosition);
+                offset -= currentTime / duration * Mathf.Abs(targetPosition.x - startPosition.x);
+                if (direction == eDirection.Right)
+                {
+                    offset *= -1;
+                }
+                transform.position = new Vector2(startPosition.x - offset, newYPosition);
             }
             currentTime += Time.deltaTime * _speed;
             yield return null;

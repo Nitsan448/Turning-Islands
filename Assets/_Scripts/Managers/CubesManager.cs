@@ -26,19 +26,47 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            UpdateSelectedCube(SelectedCube.TopCube);
+            if (SelectedCube.TopCube.IsSelectable)
+            {
+                UpdateSelectedCube(SelectedCube.TopCube);
+            }
+            else
+            {
+                UpdateSelectedCube(SelectedCube.TopCube.TopCube);
+            }
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            UpdateSelectedCube(SelectedCube.RightCube);
+            if (SelectedCube.RightCube.IsSelectable)
+            {
+                UpdateSelectedCube(SelectedCube.RightCube);
+            }
+            else
+            {
+                UpdateSelectedCube(SelectedCube.RightCube.RightCube);
+            }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            UpdateSelectedCube(SelectedCube.LeftCube);
+            if (SelectedCube.LeftCube.IsSelectable)
+            {
+                UpdateSelectedCube(SelectedCube.LeftCube);
+            }
+            else
+            {
+                UpdateSelectedCube(SelectedCube.LeftCube.LeftCube);
+            }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            UpdateSelectedCube(SelectedCube.BottomCube);
+            if (SelectedCube.BottomCube.IsSelectable)
+            {
+                UpdateSelectedCube(SelectedCube.BottomCube);
+            }
+            else
+            {
+                UpdateSelectedCube(SelectedCube.BottomCube.BottomCube);
+            }
         }
     }
 

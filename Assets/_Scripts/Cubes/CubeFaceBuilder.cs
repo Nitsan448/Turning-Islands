@@ -32,7 +32,7 @@ public class CubeFaceBuilder : MonoBehaviour
         ChangeColliderPosition(0);
         if (transform.parent.GetComponentInChildren<WinFlag>() == null)
         {
-            MakeCubeSelectable();
+            transform.parent.GetComponent<Cube>().IsSelectable = true;
         }
     }
 
@@ -153,65 +153,12 @@ public class CubeFaceBuilder : MonoBehaviour
         );
         ChangeGraphicsPosition(0.8f, winFlagGraphics);
         ChangeColliderPosition(-0.2f);
-        if (transform.parent.GetComponentInChildren<WinFlag>() == null)
-        {
-            MakeCubeNotSelectable();
-        }
+        transform.parent.GetComponent<Cube>().IsSelectable = false;
 
         WinFlag createdWinFlag = gameObject.AddComponent<WinFlag>();
         createdWinFlag.Direction = _cubeFaceDirection;
         gameObject.name = _cubeFaceDirection + ": Win flag";
         EditorUtility.SetDirty(createdWinFlag);
-    }
-
-    private void MakeCubeNotSelectable()
-    {
-        Cube cube = transform.parent.GetComponent<Cube>();
-        if (cube.RightCube != null)
-        {
-            cube.RightCube.LeftCube = cube.LeftCube;
-            EditorUtility.SetDirty(cube.RightCube);
-        }
-        if (cube.TopCube != null)
-        {
-            cube.TopCube.BottomCube = cube.BottomCube;
-            EditorUtility.SetDirty(cube.TopCube);
-        }
-        if (cube.LeftCube != null)
-        {
-            cube.LeftCube.RightCube = cube.RightCube;
-            EditorUtility.SetDirty(cube.LeftCube);
-        }
-        if (cube.BottomCube != null)
-        {
-            cube.BottomCube.TopCube = cube.TopCube;
-            EditorUtility.SetDirty(cube.BottomCube);
-        }
-    }
-
-    private void MakeCubeSelectable()
-    {
-        Cube cube = transform.parent.GetComponent<Cube>();
-        if (cube.RightCube != null)
-        {
-            cube.RightCube.LeftCube = cube;
-            EditorUtility.SetDirty(cube.RightCube);
-        }
-        if (cube.TopCube != null)
-        {
-            cube.TopCube.BottomCube = cube;
-            EditorUtility.SetDirty(cube.TopCube);
-        }
-        if (cube.LeftCube != null)
-        {
-            cube.LeftCube.RightCube = cube;
-            EditorUtility.SetDirty(cube.LeftCube);
-        }
-        if (cube.BottomCube != null)
-        {
-            cube.BottomCube.TopCube = cube;
-            EditorUtility.SetDirty(cube.BottomCube);
-        }
     }
 
     private void ChangeGraphicsPosition(float newYPosition, GameObject objectGraphics)
@@ -291,6 +238,7 @@ public class CubeFaceBuilder : MonoBehaviour
         Trampoline createdTrampoline = gameObject.AddComponent<Trampoline>();
         createdTrampoline.TrampolineDirection = trampolineDirection;
         createdTrampoline.Direction = _cubeFaceDirection;
+        gameObject.name = _cubeFaceDirection + ": Trampoline";
 
         ChangeColliderPosition(0.8f);
     }
