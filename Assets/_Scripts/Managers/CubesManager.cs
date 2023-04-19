@@ -44,7 +44,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void FindCubeToSelect(Cube cube, eDirection direction)
     {
-        Cube adjacentCube = FindAdjacentCube(cube, direction);
+        Cube adjacentCube = CubeExtensions.FindAdjacentCubeByDirection(cube, direction);
 
         if (adjacentCube != null)
         {
@@ -57,28 +57,6 @@ public class CubesManager : MonoBehaviour, IGameManager
                 FindCubeToSelect(adjacentCube, direction);
             }
         }
-    }
-
-    private Cube FindAdjacentCube(Cube cube, eDirection direction)
-    {
-        Cube adjacentCube = null;
-        switch (direction)
-        {
-            case eDirection.Top:
-                adjacentCube = cube.TopCube;
-                break;
-            case eDirection.Right:
-                adjacentCube = cube.RightCube;
-                break;
-            case eDirection.Bottom:
-                adjacentCube = cube.BottomCube;
-                break;
-            case eDirection.Left:
-                adjacentCube = cube.LeftCube;
-                break;
-        }
-
-        return adjacentCube;
     }
 
     private void UpdateSelectedCube(Cube cubeToSelect)

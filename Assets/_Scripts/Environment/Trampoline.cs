@@ -12,27 +12,53 @@ public class Trampoline : CubeFace
         Vector2 cubeFaceVelocity = GetComponent<CubeFace>().GetVelocity();
         ball.ChangeVelocity(Vector2.zero);
 
-        Vector2 targetPosition = getTargetPosition(ball);
+        Vector2 targetPosition = getTargetPosition();
 
         ball.GetComponent<Animator>().Play("Squish");
         StartCoroutine(ball.MoveTowardInArc(8, targetPosition, Direction));
     }
 
-    private Vector2 getTargetPosition(Ball ball)
+    private Vector2 getTargetPosition()
     {
-        Cube neighborCube = FindNeighborCube();
+        eDirection movementDirection = GetMovementDirection();
 
-        if (neighborCube == null)
+        Vector2 targetPosition = GetTargetPositionWithoutOffset(movementDirection);
+
+        Cube neighborCube = CubeExtensions.FindAdjacentCubeByDirection(
+            transform.parent.GetComponent<Cube>(),
+            movementDirection
+        );
+        if (neighborCube != null)
         {
-            // TODO: get position trampoline should send to even if neighbor cube is null
-            Managers.Game.GameOver();
-            return ball.transform.position;
+            AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
+        }
+        return targetPosition;
+    }
+
+    private Vector2 GetTargetPositionWithoutOffset(eDirection movementDirection)
+    {
+        Vector2 targetPosition = transform.position;
+        switch (movementDirection)
+        {
+            case eDirection.Top:
+                targetPosition.y += 8;
+                break;
+            case eDirection.Right:
+                targetPosition.x += 8;
+                break;
+            case eDirection.Bottom:
+                targetPosition.y -= 8;
+                break;
+            case eDirection.Left:
+                targetPosition.x -= 8;
+                break;
         }
 
-        Vector2 targetPosition = neighborCube
-            .GetCubeFaceObjectByDirection(Direction)
-            .transform.position;
+        return targetPosition;
+    }
 
+    private void AddTargetFaceColliderOffset(ref Vector2 targetPosition, Cube neighborCube)
+    {
         Vector2 targetFaceColliderOffset = neighborCube
             .GetCubeFaceObjectByDirection(Direction)
             .GetComponent<BoxCollider2D>()
@@ -53,39 +79,26 @@ public class Trampoline : CubeFace
                 targetPosition.x -= targetFaceColliderOffset.y;
                 break;
         }
-        return targetPosition;
     }
 
-    private Cube FindNeighborCube()
+    private eDirection GetMovementDirection()
     {
-        Dictionary<(eDirection, eDirection), Cube> neighborMap = new Dictionary<
+        Dictionary<(eDirection, eDirection), eDirection> directionMap = new Dictionary<
             (eDirection, eDirection),
-            Cube
+            eDirection
         >
         {
-            { (eDirection.Right, eDirection.Top), transform.parent.GetComponent<Cube>().RightCube },
-            {
-                (eDirection.Left, eDirection.Bottom),
-                transform.parent.GetComponent<Cube>().RightCube
-            },
-            { (eDirection.Left, eDirection.Top), transform.parent.GetComponent<Cube>().LeftCube },
-            {
-                (eDirection.Right, eDirection.Bottom),
-                transform.parent.GetComponent<Cube>().LeftCube
-            },
-            {
-                (eDirection.Left, eDirection.Left),
-                transform.parent.GetComponent<Cube>().BottomCube
-            },
-            {
-                (eDirection.Right, eDirection.Right),
-                transform.parent.GetComponent<Cube>().BottomCube
-            },
-            { (eDirection.Right, eDirection.Left), transform.parent.GetComponent<Cube>().TopCube },
-            { (eDirection.Left, eDirection.Right), transform.parent.GetComponent<Cube>().TopCube },
+            { (eDirection.Right, eDirection.Top), eDirection.Right },
+            { (eDirection.Left, eDirection.Bottom), eDirection.Right },
+            { (eDirection.Left, eDirection.Top), eDirection.Left },
+            { (eDirection.Right, eDirection.Bottom), eDirection.Left },
+            { (eDirection.Left, eDirection.Left), eDirection.Bottom },
+            { (eDirection.Right, eDirection.Right), eDirection.Bottom },
+            { (eDirection.Right, eDirection.Left), eDirection.Top },
+            { (eDirection.Left, eDirection.Right), eDirection.Top },
         };
 
-        Cube neighborCube = neighborMap[(TrampolineDirection, Direction)];
-        return neighborCube;
+        eDirection movementDirection = directionMap[(TrampolineDirection, Direction)];
+        return movementDirection;
     }
 }
