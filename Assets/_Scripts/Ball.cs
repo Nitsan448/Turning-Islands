@@ -38,18 +38,12 @@ public class Ball : MonoBehaviour
         _velocity = velocity;
     }
 
-    public IEnumerator MoveTowardInArc(
-        float duration,
-        Vector2 startingTargetPosition,
-        eDirection direction
-    )
+    public IEnumerator MoveTowardInArc(float duration, Vector2 targetPosition, eDirection direction)
     {
         Vector2 startPosition = transform.position;
-        Vector2 targetPosition = startingTargetPosition;
         float currentTime = 0;
         while (currentTime < duration)
         {
-            targetPosition = startingTargetPosition;
             float offset = 2 * Mathf.Sin(currentTime * Mathf.PI / duration);
 
             if (direction == eDirection.Top || direction == eDirection.Bottom)

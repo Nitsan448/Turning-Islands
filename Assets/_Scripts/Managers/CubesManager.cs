@@ -26,48 +26,59 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (SelectedCube.TopCube.IsSelectable)
-            {
-                UpdateSelectedCube(SelectedCube.TopCube);
-            }
-            else
-            {
-                UpdateSelectedCube(SelectedCube.TopCube.TopCube);
-            }
+            FindCubeToSelect(SelectedCube, eDirection.Top);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (SelectedCube.RightCube.IsSelectable)
-            {
-                UpdateSelectedCube(SelectedCube.RightCube);
-            }
-            else
-            {
-                UpdateSelectedCube(SelectedCube.RightCube.RightCube);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (SelectedCube.LeftCube.IsSelectable)
-            {
-                UpdateSelectedCube(SelectedCube.LeftCube);
-            }
-            else
-            {
-                UpdateSelectedCube(SelectedCube.LeftCube.LeftCube);
-            }
+            FindCubeToSelect(SelectedCube, eDirection.Right);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (SelectedCube.BottomCube.IsSelectable)
+            FindCubeToSelect(SelectedCube, eDirection.Bottom);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            FindCubeToSelect(SelectedCube, eDirection.Left);
+        }
+    }
+
+    private void FindCubeToSelect(Cube cube, eDirection direction)
+    {
+        Cube adjacentCube = FindAdjacentCube(cube, direction);
+
+        if (adjacentCube != null)
+        {
+            if (adjacentCube.IsSelectable)
             {
-                UpdateSelectedCube(SelectedCube.BottomCube);
+                UpdateSelectedCube(adjacentCube);
             }
             else
             {
-                UpdateSelectedCube(SelectedCube.BottomCube.BottomCube);
+                FindCubeToSelect(adjacentCube, direction);
             }
         }
+    }
+
+    private Cube FindAdjacentCube(Cube cube, eDirection direction)
+    {
+        Cube adjacentCube = null;
+        switch (direction)
+        {
+            case eDirection.Top:
+                adjacentCube = cube.TopCube;
+                break;
+            case eDirection.Right:
+                adjacentCube = cube.RightCube;
+                break;
+            case eDirection.Bottom:
+                adjacentCube = cube.BottomCube;
+                break;
+            case eDirection.Left:
+                adjacentCube = cube.LeftCube;
+                break;
+        }
+
+        return adjacentCube;
     }
 
     private void UpdateSelectedCube(Cube cubeToSelect)
