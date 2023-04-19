@@ -44,39 +44,38 @@ public class Ball : MonoBehaviour
         float currentTime = 0;
         while (currentTime < duration)
         {
-            float offset = 2 * Mathf.Sin(currentTime * Mathf.PI / duration);
-
+            float progress = currentTime / duration;
             if (direction == eDirection.Top || direction == eDirection.Bottom)
             {
-                float newXPosition = Mathf.Lerp(
-                    startPosition.x,
-                    targetPosition.x,
-                    currentTime / duration
-                );
-                offset -= currentTime / duration * Mathf.Abs(targetPosition.y - startPosition.y);
-                if (direction == eDirection.Bottom)
-                {
-                    offset *= -1;
-                }
-                transform.position = new Vector2(newXPosition, startPosition.y + offset);
+                float newXPosition = Mathf.Lerp(startPosition.x, targetPosition.x, progress);
+                float distance = Mathf.Abs(targetPosition.y - startPosition.y);
+                bool isOffSetPositive = direction != eDirection.Bottom;
+                float yOffset = calculateOffset(progress, duration, distance, isOffSetPositive);
+                transform.position = new Vector2(newXPosition, startPosition.y + yOffset);
             }
             else
             {
-                float newYPosition = Mathf.Lerp(
-                    startPosition.y,
-                    targetPosition.y,
-                    currentTime / duration
-                );
-                offset -= currentTime / duration * Mathf.Abs(targetPosition.x - startPosition.x);
-                if (direction == eDirection.Right)
-                {
-                    offset *= -1;
-                }
-                transform.position = new Vector2(startPosition.x - offset, newYPosition);
+                float newYPosition = Mathf.Lerp(startPosition.y, targetPosition.y, progress);
+                float distance = Mathf.Abs(targetPosition.x - startPosition.x);
+                bool isOffSetPositive = direction != eDirection.Left;
+                float xOffset = calculateOffset(progress, duration, distance, isOffSetPositive);
+                transform.position = new Vector2(startPosition.x + xOffset, newYPosition);
             }
             currentTime += Time.deltaTime * _speed;
             yield return null;
         }
         transform.position = targetPosition;
+    }
+
+    private float calculateOffset(float progress, float duration, float distance, bool isPositive)
+    {
+        float offset = 2 * Mathf.Sin(progress * Mathf.PI);
+        offset -= progress * distance;
+        if (!isPositive)
+        {
+            offset *= -1;
+        }
+
+        return offset;
     }
 }

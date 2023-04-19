@@ -76,33 +76,41 @@ public class SceneBuilder : MonoBehaviour
     private void InstantiateCubes()
     {
         _cubes = new Cube[_numberOfRows, _numberOfColumns];
-        float topLeftCubeXPosition;
-        float topLeftCubeYPosition;
-        topLeftCubeXPosition = -(_distanceBetweenCubes.x * (_numberOfColumns / 2));
-        topLeftCubeYPosition = (_distanceBetweenCubes.y * (_numberOfRows / 2));
-
-        if (_numberOfColumns % 2 == 0)
-        {
-            topLeftCubeXPosition += _distanceBetweenCubes.x / 2;
-        }
-        if (_numberOfRows % 2 == 0)
-        {
-            topLeftCubeYPosition -= _distanceBetweenCubes.y / 2;
-        }
+        Vector2 topLeftCubePosition = GetTopLeftCubePosition();
 
         for (int row = 0; row < _numberOfRows; row++)
         {
             for (int column = 0; column < _numberOfColumns; column++)
             {
                 GameObject cube = PrefabUtility.InstantiatePrefab(_cube) as GameObject;
-                float cubeXPosition = topLeftCubeXPosition + _distanceBetweenCubes.x * column;
-                float cubeYPosition = topLeftCubeYPosition - _distanceBetweenCubes.y * row;
+                float cubeXPosition = topLeftCubePosition.x + _distanceBetweenCubes.x * column;
+                float cubeYPosition = topLeftCubePosition.y - _distanceBetweenCubes.y * row;
                 cube.transform.position = new Vector2(cubeXPosition, cubeYPosition);
                 cube.transform.parent = _cubesManager.transform;
                 _cubes[row, column] = cube.GetComponent<Cube>();
                 cube.name = "Cube: " + (row + 1) + ", " + (column + 1);
             }
         }
+    }
+
+    private Vector2 GetTopLeftCubePosition()
+    {
+        Vector2 topLeftCubePosition;
+        topLeftCubePosition = new Vector2(
+            -(_distanceBetweenCubes.x * (_numberOfColumns / 2)),
+            _distanceBetweenCubes.y * (_numberOfRows / 2)
+        );
+
+        if (_numberOfColumns % 2 == 0)
+        {
+            topLeftCubePosition.x += _distanceBetweenCubes.x / 2;
+        }
+        if (_numberOfRows % 2 == 0)
+        {
+            topLeftCubePosition.y -= _distanceBetweenCubes.y / 2;
+        }
+
+        return topLeftCubePosition;
     }
 
     private void ConnectCubes()

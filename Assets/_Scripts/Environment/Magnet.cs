@@ -7,7 +7,8 @@ public class Magnet : CubeFace
     private bool ballHitMagnet;
     private float currentTime = 0;
     private float timeInterval = 0.3f;
-    private int velocitySign = 1;
+
+    // private int velocitySign = 1;
     private Ball _ball;
     protected override string SoundName { get; set; } = "Magnet";
 

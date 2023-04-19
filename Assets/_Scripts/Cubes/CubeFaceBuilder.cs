@@ -29,7 +29,7 @@ public class CubeFaceBuilder : MonoBehaviour
     {
         _cubeFaceDirection = GetComponent<CubeFace>().Direction;
         DestroyExistingCubeFace();
-        ChangeColliderPosition(0);
+        ChangeColliderHeight(0);
         if (transform.parent.GetComponentInChildren<WinFlag>() == null)
         {
             transform.parent.GetComponent<Cube>().IsSelectable = true;
@@ -124,7 +124,7 @@ public class CubeFaceBuilder : MonoBehaviour
             magnetRotation.y,
             magnetRotation.z + 90
         );
-        ChangeColliderPosition(0.6f);
+        ChangeColliderHeight(0.6f);
         GetComponent<BoxCollider2D>().isTrigger = true;
 
         Magnet createdMagnet = gameObject.AddComponent<Magnet>();
@@ -133,7 +133,7 @@ public class CubeFaceBuilder : MonoBehaviour
         EditorUtility.SetDirty(createdMagnet);
     }
 
-    private void ChangeColliderPosition(float newYOffset)
+    private void ChangeColliderHeight(float newYOffset)
     {
         if (_cubeFaceDirection == eDirection.Right || _cubeFaceDirection == eDirection.Left)
         {
@@ -152,7 +152,7 @@ public class CubeFaceBuilder : MonoBehaviour
             _cubeFacesPrefabsFolder + "/WinFlag.prefab"
         );
         ChangeGraphicsPosition(0.8f, winFlagGraphics);
-        ChangeColliderPosition(-0.2f);
+        // ChangeColliderHeight(-0.2f);
         transform.parent.GetComponent<Cube>().IsSelectable = false;
 
         WinFlag createdWinFlag = gameObject.AddComponent<WinFlag>();
@@ -240,7 +240,7 @@ public class CubeFaceBuilder : MonoBehaviour
         createdTrampoline.Direction = _cubeFaceDirection;
         gameObject.name = _cubeFaceDirection + ": Trampoline";
 
-        ChangeColliderPosition(0.8f);
+        ChangeColliderHeight(0.8f);
     }
 
     public void CreateBall()
