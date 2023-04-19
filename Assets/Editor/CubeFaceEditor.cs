@@ -11,47 +11,48 @@ public class CubeFaceBuilderEditor : Editor
         base.OnInspectorGUI();
         CubeFaceBuilder cubeFaceBuilder = (CubeFaceBuilder)target;
 
+        GUILayout.Label("Change cube face", EditorStyles.boldLabel);
         GUILayout.Label("Portals", EditorStyles.boldLabel);
-        if (GUILayout.Button("Create Portal"))
+        if (GUILayout.Button("Portal"))
         {
             cubeFaceBuilder.CreatePortal();
         }
-        if (GUILayout.Button("Create Portal Button"))
+        if (GUILayout.Button("Portal Button"))
         {
             cubeFaceBuilder.CreatePortalButton();
         }
         GUILayout.Label("Tubes", EditorStyles.boldLabel);
-        if (GUILayout.Button("Create Straight Tube"))
+        if (GUILayout.Button("Straight Tube"))
         {
             cubeFaceBuilder.CreateTube(true, false);
         }
-        if (GUILayout.Button("Create Turned Tube"))
+        if (GUILayout.Button("Turned Tube"))
         {
             cubeFaceBuilder.CreateTube(true, true);
         }
         GUILayout.Label("Trampolines", EditorStyles.boldLabel);
-        if (GUILayout.Button("Create Right Trampoline"))
+        if (GUILayout.Button("Right Trampoline"))
         {
             cubeFaceBuilder.CreateTrampoline(eDirection.Right);
         }
-        if (GUILayout.Button("Create Left Trampoline"))
+        if (GUILayout.Button("Left Trampoline"))
         {
             cubeFaceBuilder.CreateTrampoline(eDirection.Left);
         }
         GUILayout.Label("Other", EditorStyles.boldLabel);
-        if (GUILayout.Button("Create Bouncy Surface"))
+        if (GUILayout.Button("Bouncy Surface"))
         {
             cubeFaceBuilder.CreateBouncySurface();
         }
-        if (GUILayout.Button("Create Magnet"))
+        if (GUILayout.Button("Magnet"))
         {
             cubeFaceBuilder.CreateMagnet();
         }
-        if (GUILayout.Button("Create Win Flag"))
+        if (GUILayout.Button("Win Flag"))
         {
             cubeFaceBuilder.CreateWinFlag();
         }
-        if (GUILayout.Button("Create Ball"))
+        if (GUILayout.Button("Ball"))
         {
             cubeFaceBuilder.CreateBall();
         }

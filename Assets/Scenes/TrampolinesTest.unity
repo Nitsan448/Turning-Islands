@@ -409,7 +409,6 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 1737041398}
   IsOpen: 1
   PortalIndex: 1
-  TimeInsidePortal: 0
 --- !u!1001 &490995761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -777,7 +776,6 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 1737041388}
   IsOpen: 0
   PortalIndex: 0
-  TimeInsidePortal: 0
 --- !u!114 &756659966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,7 +1336,6 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 756659960}
   IsOpen: 0
   PortalIndex: 0
-  TimeInsidePortal: 0
 --- !u!114 &1737041389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1374,7 +1371,6 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 398425353}
   IsOpen: 1
   PortalIndex: 1
-  TimeInsidePortal: 0
 --- !u!1001 &1927075121
 PrefabInstance:
   m_ObjectHideFlags: 0
