@@ -9,7 +9,6 @@ public class Portal : CubeFace
     public Portal ConnectedPortal;
     public bool IsOpen = true;
     public int PortalIndex = -1;
-    public float TimeInsidePortal = 0;
     private float portalDisableTime = 1;
     private GameObject _portalSprite;
     protected override string SoundName { get; set; } = "Portal";
@@ -20,10 +19,14 @@ public class Portal : CubeFace
         _portalSprite.GetComponentInChildren<Light2D>().enabled = IsOpen;
     }
 
-    public void ChangeOpenState()
+    public void ChangeOpenState(bool changeConnected)
     {
         IsOpen = !IsOpen;
         GetComponentInChildren<Light2D>().enabled = IsOpen;
+        if (ConnectedPortal != null && changeConnected)
+        {
+            ConnectedPortal.ChangeOpenState(false);
+        }
     }
 
     protected override void OnCollisionOrTrigger(Ball ball)

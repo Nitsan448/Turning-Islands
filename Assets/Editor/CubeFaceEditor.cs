@@ -11,6 +11,7 @@ public class CubeFaceBuilderEditor : Editor
         base.OnInspectorGUI();
         CubeFaceBuilder cubeFaceBuilder = (CubeFaceBuilder)target;
 
+        GUILayout.Label("Portals", EditorStyles.boldLabel);
         if (GUILayout.Button("Create Portal"))
         {
             cubeFaceBuilder.CreatePortal();
@@ -19,17 +20,28 @@ public class CubeFaceBuilderEditor : Editor
         {
             cubeFaceBuilder.CreatePortalButton();
         }
-        if (GUILayout.Button("Create Bouncy Surface"))
+        GUILayout.Label("Tubes", EditorStyles.boldLabel);
+        if (GUILayout.Button("Create Straight Tube"))
         {
-            cubeFaceBuilder.CreateBouncySurface();
+            cubeFaceBuilder.CreateTube(true, false);
         }
         if (GUILayout.Button("Create Turned Tube"))
         {
             cubeFaceBuilder.CreateTube(true, true);
         }
-        if (GUILayout.Button("Create Straight Tube"))
+        GUILayout.Label("Trampolines", EditorStyles.boldLabel);
+        if (GUILayout.Button("Create Right Trampoline"))
         {
-            cubeFaceBuilder.CreateTube(true, false);
+            cubeFaceBuilder.CreateTrampoline(eDirection.Right);
+        }
+        if (GUILayout.Button("Create Left Trampoline"))
+        {
+            cubeFaceBuilder.CreateTrampoline(eDirection.Left);
+        }
+        GUILayout.Label("Other", EditorStyles.boldLabel);
+        if (GUILayout.Button("Create Bouncy Surface"))
+        {
+            cubeFaceBuilder.CreateBouncySurface();
         }
         if (GUILayout.Button("Create Magnet"))
         {
@@ -38,14 +50,6 @@ public class CubeFaceBuilderEditor : Editor
         if (GUILayout.Button("Create Win Flag"))
         {
             cubeFaceBuilder.CreateWinFlag();
-        }
-        if (GUILayout.Button("Create Right Trampoline"))
-        {
-            cubeFaceBuilder.CreateTrampoline(eDirection.Right);
-        }
-        if (GUILayout.Button("Create Left Trampoline"))
-        {
-            cubeFaceBuilder.CreateTrampoline(eDirection.Left);
         }
         if (GUILayout.Button("Create Ball"))
         {

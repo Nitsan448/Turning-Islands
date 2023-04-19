@@ -5,9 +5,6 @@ using UnityEditor;
 
 public class CubeFaceBuilder : MonoBehaviour
 {
-    [SerializeField]
-    private bool _portalOpenState = true;
-
     [Range(0, 4)]
     [SerializeField]
     private int _createdPortalIndex;
@@ -68,10 +65,6 @@ public class CubeFaceBuilder : MonoBehaviour
     private void SetPortalFields(Portal createdPortal)
     {
         createdPortal.Direction = _cubeFaceDirection;
-        if (_portalOpenState == false)
-        {
-            createdPortal.ChangeOpenState();
-        }
         createdPortal.PortalIndex = _createdPortalIndex;
         createdPortal.GetComponentInChildren<SpriteRenderer>().color = PortalColors.ColorByIndex[
             _createdPortalIndex
