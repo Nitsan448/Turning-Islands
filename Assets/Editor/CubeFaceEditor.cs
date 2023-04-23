@@ -9,8 +9,20 @@ public class CubeFaceBuilderEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        CubeFaceBuilder cubeFaceBuilder = (CubeFaceBuilder)target;
+        CubeFaceBuilder CubeFaceBuilder = (CubeFaceBuilder)target;
+        Transform parentCube = CubeFaceBuilder.transform.parent;
 
+        ChangeCubeFaceSection(CubeFaceBuilder);
+        GUILayout.Space(10);
+
+        SelectCubeFaceSection(parentCube);
+        GUILayout.Space(10);
+
+        SelectNeighborCubeSection(parentCube);
+    }
+
+    public void ChangeCubeFaceSection(CubeFaceBuilder cubeFaceBuilder)
+    {
         GUILayout.Label("Change cube face", EditorStyles.boldLabel);
         GUILayout.Label("Portals", EditorStyles.boldLabel);
         if (GUILayout.Button("Portal"))
@@ -56,5 +68,51 @@ public class CubeFaceBuilderEditor : Editor
         {
             cubeFaceBuilder.CreateBall();
         }
+    }
+
+    public void SelectCubeFaceSection(Transform parentCube)
+    {
+        GUILayout.Label("Select a cube face", EditorStyles.boldLabel);
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Top"))
+        {
+            Selection.activeObject = parentCube.GetChild(0);
+        }
+        if (GUILayout.Button("Right"))
+        {
+            Selection.activeObject = parentCube.GetChild(1);
+        }
+        if (GUILayout.Button("Bottom"))
+        {
+            Selection.activeObject = parentCube.GetChild(2);
+        }
+        if (GUILayout.Button("Left"))
+        {
+            Selection.activeObject = parentCube.GetChild(3);
+        }
+        GUILayout.EndHorizontal();
+    }
+
+    public void SelectNeighborCubeSection(Transform parentCube)
+    {
+        GUILayout.Label("Select a neighbor cube", EditorStyles.boldLabel);
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Top") && parentCube.GetComponent<Cube>().TopCube)
+        {
+            Selection.activeObject = parentCube.GetComponent<Cube>().TopCube.gameObject;
+        }
+        if (GUILayout.Button("Right") && parentCube.GetComponent<Cube>().RightCube)
+        {
+            Selection.activeObject = parentCube.GetComponent<Cube>().RightCube.gameObject;
+        }
+        if (GUILayout.Button("Bottom") && parentCube.GetComponent<Cube>().BottomCube)
+        {
+            Selection.activeObject = parentCube.GetComponent<Cube>().BottomCube.gameObject;
+        }
+        if (GUILayout.Button("Left") && parentCube.GetComponent<Cube>().LeftCube)
+        {
+            Selection.activeObject = parentCube.GetComponent<Cube>().LeftCube.gameObject;
+        }
+        GUILayout.EndHorizontal();
     }
 }

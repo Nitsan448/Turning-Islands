@@ -25,7 +25,7 @@ public class SceneBuilder : MonoBehaviour
     private GameObject _cube;
     private GameObject _musicPlayer;
 
-    private Cube[,] _cubes;
+    public Cube[,] Cubes;
 
     public void BuildScene()
     {
@@ -75,7 +75,7 @@ public class SceneBuilder : MonoBehaviour
 
     private void InstantiateCubes()
     {
-        _cubes = new Cube[_numberOfRows, _numberOfColumns];
+        Cubes = new Cube[_numberOfRows, _numberOfColumns];
         Vector2 topLeftCubePosition = GetTopLeftCubePosition();
 
         for (int row = 0; row < _numberOfRows; row++)
@@ -83,12 +83,30 @@ public class SceneBuilder : MonoBehaviour
             for (int column = 0; column < _numberOfColumns; column++)
             {
                 GameObject cube = PrefabUtility.InstantiatePrefab(_cube) as GameObject;
-                float cubeXPosition = topLeftCubePosition.x + _distanceBetweenCubes.x * column;
-                float cubeYPosition = topLeftCubePosition.y - _distanceBetweenCubes.y * row;
-                cube.transform.position = new Vector2(cubeXPosition, cubeYPosition);
+                Cubes[row, column] = cube.GetComponent<Cube>();
+                SetCubePosition(row, column, topLeftCubePosition);
                 cube.transform.parent = _cubesManager.transform;
-                _cubes[row, column] = cube.GetComponent<Cube>();
                 cube.name = "Cube: " + (row + 1) + ", " + (column + 1);
+            }
+        }
+    }
+
+    private void SetCubePosition(int cubeRow, int cubeColumn, Vector2 topLeftCubePosition)
+    {
+        float cubeXPosition = topLeftCubePosition.x + _distanceBetweenCubes.x * cubeColumn;
+        float cubeYPosition = topLeftCubePosition.y - _distanceBetweenCubes.y * cubeRow;
+        Cubes[cubeRow, cubeColumn].transform.position = new Vector2(cubeXPosition, cubeYPosition);
+    }
+
+    public void ChangeCubesPositions()
+    {
+        Vector2 topLeftCubePosition = GetTopLeftCubePosition();
+
+        for (int row = 0; row < _numberOfRows; row++)
+        {
+            for (int column = 0; column < _numberOfColumns; column++)
+            {
+                SetCubePosition(row, column, topLeftCubePosition);
             }
         }
     }
@@ -131,8 +149,8 @@ public class SceneBuilder : MonoBehaviour
     {
         if (columnIndex > 0)
         {
-            _cubes[rowIndex, columnIndex].LeftCube = _cubes[rowIndex, columnIndex - 1];
-            _cubes[rowIndex, columnIndex - 1].RightCube = _cubes[rowIndex, columnIndex];
+            Cubes[rowIndex, columnIndex].LeftCube = Cubes[rowIndex, columnIndex - 1];
+            Cubes[rowIndex, columnIndex - 1].RightCube = Cubes[rowIndex, columnIndex];
         }
     }
 
@@ -140,8 +158,8 @@ public class SceneBuilder : MonoBehaviour
     {
         if (columnIndex != _numberOfColumns - 1)
         {
-            _cubes[rowIndex, columnIndex].RightCube = _cubes[rowIndex, columnIndex + 1];
-            _cubes[rowIndex, columnIndex + 1].LeftCube = _cubes[rowIndex, columnIndex];
+            Cubes[rowIndex, columnIndex].RightCube = Cubes[rowIndex, columnIndex + 1];
+            Cubes[rowIndex, columnIndex + 1].LeftCube = Cubes[rowIndex, columnIndex];
         }
     }
 
@@ -149,8 +167,8 @@ public class SceneBuilder : MonoBehaviour
     {
         if (rowIndex != _numberOfRows - 1)
         {
-            _cubes[rowIndex, columnIndex].BottomCube = _cubes[rowIndex + 1, columnIndex];
-            _cubes[rowIndex + 1, columnIndex].TopCube = _cubes[rowIndex, columnIndex];
+            Cubes[rowIndex, columnIndex].BottomCube = Cubes[rowIndex + 1, columnIndex];
+            Cubes[rowIndex + 1, columnIndex].TopCube = Cubes[rowIndex, columnIndex];
         }
     }
 
@@ -158,14 +176,14 @@ public class SceneBuilder : MonoBehaviour
     {
         if (rowIndex != 0)
         {
-            _cubes[rowIndex, columnIndex].TopCube = _cubes[rowIndex - 1, columnIndex];
-            _cubes[rowIndex - 1, columnIndex].BottomCube = _cubes[rowIndex, columnIndex];
+            Cubes[rowIndex, columnIndex].TopCube = Cubes[rowIndex - 1, columnIndex];
+            Cubes[rowIndex - 1, columnIndex].BottomCube = Cubes[rowIndex, columnIndex];
         }
     }
 
     private void HandleReferences()
     {
-        _cubesManager.GetComponent<CubesManager>().SelectedCube = _cubes[0, 0];
+        _cubesManager.GetComponent<CubesManager>().SelectedCube = Cubes[0, 0];
         _mainCamera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D =
             _background.GetComponent<PolygonCollider2D>();
     }

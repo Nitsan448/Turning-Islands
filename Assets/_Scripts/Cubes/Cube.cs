@@ -91,4 +91,25 @@ public class Cube : MonoBehaviour
         }
         return null;
     }
+
+    public void DeleteCube()
+    {
+        if (RightCube)
+        {
+            RightCube.LeftCube = null;
+        }
+        if (BottomCube)
+        {
+            BottomCube.TopCube = null;
+        }
+        if (LeftCube)
+        {
+            LeftCube.RightCube = null;
+        }
+        if (TopCube)
+        {
+            TopCube.BottomCube = null;
+        }
+        DestroyImmediate(gameObject);
+    }
 }

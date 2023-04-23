@@ -11,23 +11,62 @@ public class CubeEditor : Editor
         base.OnInspectorGUI();
         Cube Cube = (Cube)target;
 
+        GUILayout.Space(10);
+
+        SelectCubeFaceSection(Cube);
+        GUILayout.Space(10);
+
+        SelectNeighborCubeSection(Cube);
+        GUILayout.Space(10);
+
+        if (GUILayout.Button("Delete Cube"))
+        {
+            Cube.DeleteCube();
+        }
+    }
+
+    public void SelectCubeFaceSection(Cube cube)
+    {
         GUILayout.Label("Select a cube face", EditorStyles.boldLabel);
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Top"))
         {
-            Selection.activeObject = Cube.transform.GetChild(0);
+            Selection.activeObject = cube.transform.GetChild(0);
         }
         if (GUILayout.Button("Right"))
         {
-            Selection.activeObject = Cube.transform.GetChild(1);
+            Selection.activeObject = cube.transform.GetChild(1);
         }
         if (GUILayout.Button("Bottom"))
         {
-            Selection.activeObject = Cube.transform.GetChild(2);
+            Selection.activeObject = cube.transform.GetChild(2);
         }
         if (GUILayout.Button("Left"))
         {
-            Selection.activeObject = Cube.transform.GetChild(3);
+            Selection.activeObject = cube.transform.GetChild(3);
+        }
+        GUILayout.EndHorizontal();
+    }
+
+    public void SelectNeighborCubeSection(Cube cube)
+    {
+        GUILayout.Label("Select a neighbor cube", EditorStyles.boldLabel);
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Top") && cube.TopCube)
+        {
+            Selection.activeObject = cube.TopCube.gameObject;
+        }
+        if (GUILayout.Button("Right") && cube.RightCube)
+        {
+            Selection.activeObject = cube.RightCube.gameObject;
+        }
+        if (GUILayout.Button("Bottom") && cube.BottomCube)
+        {
+            Selection.activeObject = cube.BottomCube.gameObject;
+        }
+        if (GUILayout.Button("Left") && cube.LeftCube)
+        {
+            Selection.activeObject = cube.LeftCube.gameObject;
         }
         GUILayout.EndHorizontal();
     }

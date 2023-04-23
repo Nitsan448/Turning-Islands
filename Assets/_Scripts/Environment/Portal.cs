@@ -25,7 +25,10 @@ public class Portal : CubeFace
         GetComponentInChildren<Light2D>().enabled = IsOpen;
         if (ConnectedPortal != null && changeConnected)
         {
-            ConnectedPortal.ChangeOpenState(false);
+            if (ConnectedPortal.IsOpen != IsOpen)
+            {
+                ConnectedPortal.ChangeOpenState(false);
+            }
         }
     }
 

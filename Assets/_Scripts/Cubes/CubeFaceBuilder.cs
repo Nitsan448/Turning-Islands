@@ -152,6 +152,7 @@ public class CubeFaceBuilder : MonoBehaviour
         createdWinFlag.Direction = _cubeFaceDirection;
         gameObject.name = _cubeFaceDirection + ": Win flag";
         EditorUtility.SetDirty(createdWinFlag);
+        EditorUtility.SetDirty(transform.parent.GetComponent<Cube>());
     }
 
     private void ChangeGraphicsPosition(float newYPosition, GameObject objectGraphics)
