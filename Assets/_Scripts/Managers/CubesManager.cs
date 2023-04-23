@@ -6,6 +6,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 {
     public Cube SelectedCube;
     private AudioSource _selectionAudio;
+    public Vector2 DistanceBetweenCubes;
 
     public void Startup()
     {

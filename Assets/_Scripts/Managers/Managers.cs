@@ -18,7 +18,7 @@ public class Managers : MonoBehaviour
         StartUpManagers();
     }
 
-    private void GetManagers()
+    public void GetManagers()
     {
         Game = GetComponentInChildren<GameManager>();
         UI = GetComponentInChildren<UIManager>();

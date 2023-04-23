@@ -112,4 +112,22 @@ public class Cube : MonoBehaviour
         }
         DestroyImmediate(gameObject);
     }
+
+    public void Turn(eDirection turnDirection)
+    {
+        // CubeFace[] cubeFaces = new CubeFace[]
+        // {
+        //     transform.GetChild(0).GetComponent<CubeFace>(),
+        //     transform.GetChild(1).GetComponent<CubeFace>(),
+        //     transform.GetChild(2).GetComponent<CubeFace>(),
+        //     transform.GetChild(3).GetComponent<CubeFace>()
+        // };
+
+        // for (int i = 0; i < 4; i++)
+        // {
+        //     cubeFaces[i].gameObject.GetComponent<CubeFaceBuilder>().CreateBouncySurface();
+        // }
+        // Quaternion targetRotation = getTargetRotation(turnDirection);
+        // transform.rotation = targetRotation;
+    }
 }

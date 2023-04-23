@@ -41,16 +41,16 @@ public class Trampoline : CubeFace
         switch (movementDirection)
         {
             case eDirection.Top:
-                targetPosition.y += 8;
+                targetPosition.y += Managers.Cubes.DistanceBetweenCubes.y;
                 break;
             case eDirection.Right:
-                targetPosition.x += 8;
+                targetPosition.x += Managers.Cubes.DistanceBetweenCubes.x;
                 break;
             case eDirection.Bottom:
-                targetPosition.y -= 8;
+                targetPosition.y -= Managers.Cubes.DistanceBetweenCubes.y;
                 break;
             case eDirection.Left:
-                targetPosition.x -= 8;
+                targetPosition.x -= Managers.Cubes.DistanceBetweenCubes.x;
                 break;
         }
 

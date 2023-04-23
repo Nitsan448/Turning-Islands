@@ -19,6 +19,9 @@ public class CubeEditor : Editor
         SelectNeighborCubeSection(Cube);
         GUILayout.Space(10);
 
+        TurnCubeSection(Cube);
+        GUILayout.Space(10);
+
         if (GUILayout.Button("Delete Cube"))
         {
             Cube.DeleteCube();
@@ -67,6 +70,22 @@ public class CubeEditor : Editor
         if (GUILayout.Button("Left") && cube.LeftCube)
         {
             Selection.activeObject = cube.LeftCube.gameObject;
+        }
+        GUILayout.EndHorizontal();
+    }
+
+    public void TurnCubeSection(Cube cube)
+    {
+        // TODO: change cube faces instead of turning cube
+        GUILayout.Label("Turn Cube", EditorStyles.boldLabel);
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Right"))
+        {
+            cube.Turn(eDirection.Right);
+        }
+        if (GUILayout.Button("Left"))
+        {
+            cube.Turn(eDirection.Left);
         }
         GUILayout.EndHorizontal();
     }

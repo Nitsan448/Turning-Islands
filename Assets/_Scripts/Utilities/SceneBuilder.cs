@@ -69,6 +69,7 @@ public class SceneBuilder : MonoBehaviour
         _mainCamera = PrefabUtility.InstantiatePrefab(_mainCamera) as GameObject;
         _background = PrefabUtility.InstantiatePrefab(_background) as GameObject;
         _cubesManager = PrefabUtility.InstantiatePrefab(_cubesManager) as GameObject;
+        _cubesManager.GetComponent<CubesManager>().DistanceBetweenCubes = _distanceBetweenCubes;
         _globalLight = PrefabUtility.InstantiatePrefab(_globalLight) as GameObject;
         _musicPlayer = PrefabUtility.InstantiatePrefab(_musicPlayer) as GameObject;
     }
@@ -101,6 +102,7 @@ public class SceneBuilder : MonoBehaviour
     public void ChangeCubesPositions()
     {
         Vector2 topLeftCubePosition = GetTopLeftCubePosition();
+        FindObjectOfType<CubesManager>().DistanceBetweenCubes = _distanceBetweenCubes;
 
         for (int row = 0; row < _numberOfRows; row++)
         {
