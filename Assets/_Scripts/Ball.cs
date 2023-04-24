@@ -9,6 +9,9 @@ public class Ball : MonoBehaviour
     [SerializeField]
     private float _speed = 4;
 
+    private float _startingTimeUntilGameOver = 2;
+    private float _timeUntilGameOver = 2;
+
     private Vector2 _velocity;
 
     private void OnEnable()
@@ -31,6 +34,23 @@ public class Ball : MonoBehaviour
         float xPosition = transform.position.x + _velocity.x * Time.deltaTime * _speed;
         float yPosition = transform.position.y + _velocity.y * Time.deltaTime * _speed;
         transform.position = new Vector2(xPosition, yPosition);
+    }
+
+    private void Update()
+    {
+        if (Managers.Game.GameState == eGameState.GameRunning)
+        {
+            _timeUntilGameOver -= Time.deltaTime;
+            if (_timeUntilGameOver <= 0)
+            {
+                Managers.Game.GameOver();
+            }
+        }
+    }
+
+    public void ResetTimeUntilGameOver()
+    {
+        _timeUntilGameOver = _startingTimeUntilGameOver;
     }
 
     public void ChangeVelocity(Vector2 velocity)

@@ -1518,6 +1518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 6231330219833552534, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
+      propertyPath: ballsNotInFlag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6507199032463636305, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
       propertyPath: _sounds.Array.data[0].AudioClip
       value: 

@@ -38,7 +38,7 @@ public abstract class CubeFace : MonoBehaviour
         Ball ball = collision.gameObject.GetComponent<Ball>();
         if (ball != null)
         {
-            Managers.Game.ResetTimeUntilGameOver();
+            ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
             if (GetComponentInChildren<AudioSource>() != null)
             {
@@ -53,7 +53,7 @@ public abstract class CubeFace : MonoBehaviour
         Ball ball = collision.GetComponent<Ball>();
         if (ball != null)
         {
-            Managers.Game.ResetTimeUntilGameOver();
+            ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
             if (GetComponentInChildren<AudioSource>() != null)
             {
