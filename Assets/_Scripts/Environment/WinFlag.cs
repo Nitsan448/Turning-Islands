@@ -10,6 +10,7 @@ public class WinFlag : CubeFace
     {
         GetComponentInChildren<Animator>().Play("Sploosh");
         Managers.Game.ballsNotInFlag--;
+        ball.BallInFlag = true;
         if (Managers.Game.ballsNotInFlag == 0)
         {
             Managers.Game.LevelWon();

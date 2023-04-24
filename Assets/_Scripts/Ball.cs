@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour
     private float _startingTimeUntilGameOver = 2;
     private float _timeUntilGameOver = 2;
     public Coroutine ArcMovementCoroutine;
+    public bool BallInFlag = false;
 
     private Vector2 _velocity;
 
@@ -39,7 +40,7 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        if (Managers.Game.GameState == eGameState.GameRunning)
+        if (Managers.Game.GameState == eGameState.GameRunning && !BallInFlag)
         {
             _timeUntilGameOver -= Time.deltaTime;
             if (_timeUntilGameOver <= 0)
