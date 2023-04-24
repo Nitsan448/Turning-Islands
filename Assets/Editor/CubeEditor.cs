@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEditor;
 
 [CustomEditor(typeof(Cube))]
@@ -11,6 +12,9 @@ public class CubeEditor : Editor
         base.OnInspectorGUI();
         Cube Cube = (Cube)target;
 
+        GUILayout.Space(10);
+
+        ChangeCubeFaceSection(Cube);
         GUILayout.Space(10);
 
         SelectCubeFaceSection(Cube);
@@ -26,6 +30,134 @@ public class CubeEditor : Editor
         {
             Cube.DeleteCube();
         }
+    }
+
+    private void CreateButtonSection(
+        string sectionName,
+        string[] buttonLabels,
+        Action<int> buttonAction
+    )
+    {
+        GUIStyle centeredText = GUI.skin.GetStyle("Label");
+        centeredText.alignment = TextAnchor.UpperCenter;
+        centeredText.font = EditorStyles.boldFont;
+        GUILayout.Label(sectionName, centeredText);
+        GUILayout.BeginHorizontal();
+        for (int i = 0; i < buttonLabels.Length; i++)
+        {
+            if (GUILayout.Button(buttonLabels[i]))
+            {
+                buttonAction(i);
+            }
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.Space(10);
+    }
+
+    public void ChangeCubeFaceSection(Cube cube)
+    {
+        GUILayout.Label("Change cube face", EditorStyles.boldLabel);
+
+        string[] buttonLabels = { "Top", "Right", "Bottom", "Left" };
+
+        CreateButtonSection(
+            "Portals",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreatePortal();
+            }
+        );
+
+        CreateButtonSection(
+            "Portal buttons",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreatePortalButton();
+            }
+        );
+
+        CreateButtonSection(
+            "Straight Tubes",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateTube(true, false);
+            }
+        );
+
+        CreateButtonSection(
+            "Turned Tubes",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateTube(true, true);
+            }
+        );
+
+        CreateButtonSection(
+            "Right Trampolines",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateTrampoline(eDirection.Right);
+            }
+        );
+
+        CreateButtonSection(
+            "Left Trampolines",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateTrampoline(eDirection.Left);
+            }
+        );
+
+        CreateButtonSection(
+            "Bouncy Surfaces",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateBouncySurface(true);
+            }
+        );
+
+        CreateButtonSection(
+            "Win Flags",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateWinFlag();
+            }
+        );
+
+        CreateButtonSection(
+            "Balls",
+            buttonLabels,
+            childIndex =>
+            {
+                cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateBall();
+            }
+        );
     }
 
     public void SelectCubeFaceSection(Cube cube)
@@ -83,10 +215,10 @@ public class CubeEditor : Editor
         {
             cube.Turn(eDirection.Right);
         }
-        if (GUILayout.Button("Left"))
-        {
-            cube.Turn(eDirection.Left);
-        }
+        // if (GUILayout.Button("Left"))
+        // {
+        //     cube.Turn(eDirection.Left);
+        // }
         GUILayout.EndHorizontal();
     }
 }

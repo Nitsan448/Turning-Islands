@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Cube : MonoBehaviour
 {
@@ -115,19 +116,53 @@ public class Cube : MonoBehaviour
 
     public void Turn(eDirection turnDirection)
     {
-        // CubeFace[] cubeFaces = new CubeFace[]
-        // {
-        //     transform.GetChild(0).GetComponent<CubeFace>(),
-        //     transform.GetChild(1).GetComponent<CubeFace>(),
-        //     transform.GetChild(2).GetComponent<CubeFace>(),
-        //     transform.GetChild(3).GetComponent<CubeFace>()
-        // };
+        CubeFace[] cubeFaces = new CubeFace[]
+        {
+            transform.GetChild(0).GetComponent<CubeFace>(),
+            transform.GetChild(1).GetComponent<CubeFace>(),
+            transform.GetChild(2).GetComponent<CubeFace>(),
+            transform.GetChild(3).GetComponent<CubeFace>()
+        };
 
-        // for (int i = 0; i < 4; i++)
-        // {
-        //     cubeFaces[i].gameObject.GetComponent<CubeFaceBuilder>().CreateBouncySurface();
-        // }
-        // Quaternion targetRotation = getTargetRotation(turnDirection);
-        // transform.rotation = targetRotation;
+        for (int i = 0; i < 4; i++)
+        {
+            Transform childTransform = transform.GetChild(i + 1);
+            if (i == 3)
+            {
+                childTransform = transform.GetChild(0);
+            }
+            if (cubeFaces[i] is Portal)
+            {
+                childTransform.GetComponent<CubeFaceBuilder>().CreatePortal();
+            }
+            else if (cubeFaces[i] is PortalButton)
+            {
+                childTransform.GetComponent<CubeFaceBuilder>().CreatePortalButton();
+            }
+            else if (cubeFaces[i] is Tube)
+            {
+                childTransform
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateTube(true, (cubeFaces[i] as Tube).Turned);
+            }
+            else if (cubeFaces[i] is Trampoline)
+            {
+                childTransform
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateTrampoline((cubeFaces[i] as Trampoline).TrampolineDirection);
+            }
+            else if (cubeFaces[i] is BouncySurface)
+            {
+                childTransform.GetComponent<CubeFaceBuilder>().CreateBouncySurface(true);
+            }
+            else if (cubeFaces[i] is Magnet)
+            {
+                childTransform.GetComponent<CubeFaceBuilder>().CreateMagnet();
+            }
+            else if (cubeFaces[i] is WinFlag)
+            {
+                childTransform.GetComponent<CubeFaceBuilder>().CreateWinFlag();
+            }
+        }
     }
 }

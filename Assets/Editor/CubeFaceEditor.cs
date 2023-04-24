@@ -54,7 +54,7 @@ public class CubeFaceBuilderEditor : Editor
         GUILayout.Label("Other", EditorStyles.boldLabel);
         if (GUILayout.Button("Bouncy Surface"))
         {
-            cubeFaceBuilder.CreateBouncySurface();
+            cubeFaceBuilder.CreateBouncySurface(true);
         }
         if (GUILayout.Button("Magnet"))
         {

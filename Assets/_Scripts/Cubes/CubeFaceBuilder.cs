@@ -95,8 +95,13 @@ public class CubeFaceBuilder : MonoBehaviour
         EditorUtility.SetDirty(createdPortalButton);
     }
 
-    public void CreateBouncySurface()
+    public void CreateBouncySurface(bool updateConnectedTube)
     {
+        Tube tube = GetComponent<Tube>();
+        if (tube != null && updateConnectedTube)
+        {
+            tube.ConnectedTube.GetComponent<CubeFaceBuilder>().CreateBouncySurface(false);
+        }
         ResetCubeFace();
         BouncySurface createdBouncySurface = gameObject.AddComponent<BouncySurface>();
         createdBouncySurface.Direction = _cubeFaceDirection;
