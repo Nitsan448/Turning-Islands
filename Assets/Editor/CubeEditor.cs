@@ -51,7 +51,7 @@ public class CubeEditor : Editor
             }
         }
         GUILayout.EndHorizontal();
-        GUILayout.Space(10);
+        GUILayout.Space(5);
     }
 
     public void ChangeCubeFaceSection(Cube cube)

@@ -7,6 +7,7 @@ public abstract class CubeFace : MonoBehaviour
 {
     public eDirection Direction;
     protected abstract string SoundName { get; set; }
+    private float timeUntilNextCollisionPossible = 0;
     protected abstract void OnCollisionOrTrigger(Ball ball);
 
     public Vector2 GetVelocity()
@@ -25,6 +26,14 @@ public abstract class CubeFace : MonoBehaviour
         return Vector2.zero;
     }
 
+    private void Update()
+    {
+        if (timeUntilNextCollisionPossible > 0)
+        {
+            timeUntilNextCollisionPossible -= Time.deltaTime;
+        }
+    }
+
     public void UpdateDirection(eDirection direction)
     {
         Direction = DirectionExtensions.GetNewDirection(
@@ -36,8 +45,13 @@ public abstract class CubeFace : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
-        if (ball != null)
+        if (ball != null && timeUntilNextCollisionPossible <= 0)
         {
+            if (ball.ArcMovementCoroutine != null)
+            {
+                ball.StopCoroutine(ball.ArcMovementCoroutine);
+            }
+            timeUntilNextCollisionPossible = 0.25f;
             ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
             if (GetComponentInChildren<AudioSource>() != null)
@@ -51,8 +65,10 @@ public abstract class CubeFace : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Ball ball = collision.GetComponent<Ball>();
-        if (ball != null)
+        if (ball != null && timeUntilNextCollisionPossible <= 0)
         {
+            ball.StopCoroutine(ball.ArcMovementCoroutine);
+            timeUntilNextCollisionPossible = 0.25f;
             ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
             if (GetComponentInChildren<AudioSource>() != null)

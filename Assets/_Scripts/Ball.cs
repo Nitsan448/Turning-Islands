@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
 
     private float _startingTimeUntilGameOver = 2;
     private float _timeUntilGameOver = 2;
+    public Coroutine ArcMovementCoroutine;
 
     private Vector2 _velocity;
 
@@ -85,6 +86,7 @@ public class Ball : MonoBehaviour
             yield return null;
         }
         transform.position = targetPosition;
+        ArcMovementCoroutine = null;
     }
 
     private float calculateOffset(float progress, float duration, float distance, bool isPositive)

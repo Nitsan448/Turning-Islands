@@ -47,14 +47,11 @@ public class Portal : CubeFace
 
     private IEnumerator SwitchPortals(Ball ball)
     {
-        ball.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         ConnectedPortal.GetComponent<BoxCollider2D>().enabled = false;
-
         Vector3 newPosition = ConnectedPortal.transform.position;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetComponent<CubeFace>().GetVelocity());
 
-        ball.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(portalDisableTime);
         ConnectedPortal.GetComponent<BoxCollider2D>().enabled = true;
     }
