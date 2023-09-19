@@ -92,7 +92,7 @@ public class Cube : MonoBehaviour
         }
         return null;
     }
-
+#if UNITY_EDITOR
     public void DeleteCube()
     {
         if (RightCube)
@@ -165,4 +165,5 @@ public class Cube : MonoBehaviour
             }
         }
     }
+#endif
 }

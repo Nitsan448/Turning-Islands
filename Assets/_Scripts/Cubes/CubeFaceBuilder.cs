@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -276,3 +277,4 @@ public class CubeFaceBuilder : MonoBehaviour
         ball.transform.position = transform.parent.position + ballPostionOffset;
     }
 }
+#endif

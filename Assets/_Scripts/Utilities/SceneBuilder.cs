@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -190,3 +191,4 @@ public class SceneBuilder : MonoBehaviour
             _background.GetComponent<PolygonCollider2D>();
     }
 }
+#endif
