@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonsListenersAdder : MonoBehaviour
@@ -19,7 +20,7 @@ public class ButtonsListenersAdder : MonoBehaviour
         _restartButtonBottomBorder.onClick.AddListener(delegate { Managers.Game.RestartLevel(); });
         _nextLevelButton.onClick.AddListener(delegate { Managers.Game.GoToNextLevel(); });
         _exitControlsMenuButton.onClick.AddListener(delegate { Managers.UI.FadeOutControls(); });
-        _exitButton.onClick.AddListener(delegate { Application.Quit(); });
+        _exitButton.onClick.AddListener(delegate { SceneManager.LoadScene("MainMenu"); });
         _playButton.onClick.AddListener(delegate { Managers.Game.StartGame(); });
         _controlsMenuButton.onClick.AddListener(delegate { Managers.UI.FadeInControls(); });
     }

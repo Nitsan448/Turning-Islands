@@ -23,7 +23,7 @@ public class LevelSelectGrid : MonoBehaviour
             DestroyImmediate(transform.GetChild(0).gameObject);
         }
 
-        for (int levelIndex = 1; levelIndex < SceneManager.sceneCountInBuildSettings + 1; levelIndex++)
+        for (int levelIndex = 1; levelIndex < SceneManager.sceneCountInBuildSettings; levelIndex++)
         {
             //TODO: go over all scenes and add ones who's name starts with level 
             AddButton(levelIndex);
@@ -51,8 +51,7 @@ public class LevelSelectGrid : MonoBehaviour
 
     private static void StartLevel(int levelIndex)
     {
-        SceneManager.LoadScene("BaseScene");
-        SceneManager.LoadSceneAsync("Level" + levelIndex, LoadSceneMode.Additive);
+        SceneManager.LoadScene("Level" + levelIndex);
     }
 
     private void Start()
