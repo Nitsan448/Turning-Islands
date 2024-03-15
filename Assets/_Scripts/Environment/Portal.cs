@@ -9,7 +9,7 @@ public class Portal : CubeFace
     public Portal ConnectedPortal;
     public bool IsOpen = true;
     public int PortalIndex = -1;
-    private float portalDisableTime = 1;
+    private float portalDisableTime = 0.5f;
     private GameObject _portalSprite;
     protected override string SoundName { get; set; } = "Portal";
 
