@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public int ballsNotInFlag = 0;
 
-    public void Startup() { }
+    public void Startup()
+    {
+    }
 
     private void Update()
     {
@@ -63,6 +65,11 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void GoToNextLevel()
     {
+        if (PlayerPrefs.GetInt("CurrentLevel", 1) >= SceneManager.GetActiveScene().buildIndex)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

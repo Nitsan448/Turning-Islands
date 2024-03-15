@@ -56,13 +56,19 @@ public class LevelSelectGrid : MonoBehaviour
 
     private void Start()
     {
-        AddMissingLevels();
+        InitializeGridAndOverrideExisting();
+        // AddMissingLevels();
 
         Button[] buttons = GetComponentsInChildren<Button>();
         for (int index = 0; index < buttons.Length; index++)
         {
-            int index1 = index;
-            buttons[index].onClick.AddListener(delegate { StartLevel(index1 + 1); });
+            int currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+            int levelNumber = index + 1;
+            buttons[index].onClick.AddListener(delegate { StartLevel(levelNumber); });
+            if (levelNumber > currentLevel)
+            {
+                buttons[index].interactable = false;
+            }
         }
     }
 }

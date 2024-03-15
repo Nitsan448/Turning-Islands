@@ -33,7 +33,7 @@ public class MainMenu : MonoBehaviour
         );
 
         _playButton.onClick.AddListener(
-            delegate { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); }
+            delegate { SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentLevel", 1)); }
         );
 
         _controlsButton.onClick.AddListener(
