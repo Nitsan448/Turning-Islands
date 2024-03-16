@@ -432,7 +432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670794a796627634ebac0af53277db61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitsToDestroy: 3
+  hitsToDestroy: 2
+  _sprites:
+  - {fileID: 21300000, guid: 8ff4b1c190a29c94eb30516722a13667, type: 3}
+  - {fileID: 21300000, guid: ee3148ee77e38a44c813692bde6b817d, type: 3}
+  _destructionParticlesPrefab: {fileID: 7570184643386733253, guid: dcc5c146014167d408c2353c6d2e83b5, type: 3}
 --- !u!1001 &548978975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -822,15 +826,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 135855699}
     - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ff4b1c190a29c94eb30516722a13667, type: 3}
+    - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Color.b
-      value: 0.26100624
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Color.g
-      value: 0.731455
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6099208306448587380, guid: ca29d46185919944cb4a1df5544be179, type: 3}
