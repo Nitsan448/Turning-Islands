@@ -6,9 +6,7 @@ using UnityEditor;
 
 public class CubeFaceBuilder : MonoBehaviour
 {
-    [Range(0, 4)]
-    [SerializeField]
-    private int _createdPortalIndex;
+    [Range(0, 4)] [SerializeField] private int _createdPortalIndex;
     private string _cubeFacesPrefabsFolder = "Assets/Prefabs/CubeFaces";
     private eDirection _cubeFaceDirection;
 
@@ -40,6 +38,7 @@ public class CubeFaceBuilder : MonoBehaviour
         {
             DestroyImmediate(GetComponent<CubeFace>());
         }
+
         if (transform.childCount > 0)
         {
             DestroyImmediate(transform.GetChild(0).gameObject);
@@ -60,6 +59,7 @@ public class CubeFaceBuilder : MonoBehaviour
         {
             createdObject.transform.localEulerAngles = Vector3.zero;
         }
+
         return createdObject;
     }
 
@@ -103,6 +103,7 @@ public class CubeFaceBuilder : MonoBehaviour
         {
             tube.ConnectedTube.GetComponent<CubeFaceBuilder>().CreateBouncySurface(false);
         }
+
         ResetCubeFace();
         BouncySurface createdBouncySurface = gameObject.AddComponent<BouncySurface>();
         createdBouncySurface.Direction = _cubeFaceDirection;
@@ -183,6 +184,7 @@ public class CubeFaceBuilder : MonoBehaviour
             tubePrefabPath = _cubeFacesPrefabsFolder + "/TurnedTube.prefab";
             gameObject.name = _cubeFaceDirection + ": Turned Tube";
         }
+
         Tube createdTube = CreateTubeOnThisFace();
 
         if (startTubeOnThisFace)
@@ -192,6 +194,7 @@ public class CubeFaceBuilder : MonoBehaviour
             createdTube.ConnectedTube = neighborTube;
             neighborTube.ConnectedTube = createdTube;
         }
+
         createdTube.Turned = turned;
         EditorUtility.SetDirty(createdTube);
     }
@@ -215,6 +218,7 @@ public class CubeFaceBuilder : MonoBehaviour
         {
             neighborCubeDirection = DirectionExtensions.GetNewDirection(neighborCubeDirection, 1);
         }
+
         CubeFaceBuilder neighborCubeBuilder = transform.parent
             .GetComponent<Cube>()
             .GetCubeFaceObjectByDirection(neighborCubeDirection)
@@ -254,7 +258,6 @@ public class CubeFaceBuilder : MonoBehaviour
         GameObject ball = PrefabUtility.InstantiatePrefab(ballPrefab) as GameObject;
         float ballPositionOffSetAmount = 3;
         Vector3 ballPostionOffset = Vector3.zero;
-        Debug.Log(_cubeFaceDirection);
         switch (_cubeFaceDirection)
         {
             case eDirection.Top:
@@ -274,7 +277,24 @@ public class CubeFaceBuilder : MonoBehaviour
                 ball.GetComponent<Ball>().StartingVelocity = new Vector2(1, 0);
                 break;
         }
+
         ball.transform.position = transform.parent.position + ballPostionOffset;
+    }
+
+    public void CreateCubeTurner()
+    {
+        ResetCubeFace();
+        GameObject cubeTurnerGraphics = InstantiateObjectGraphicsPrefab(
+            _cubeFacesPrefabsFolder + "/CubeTurner.prefab"
+        );
+        // cubeTurnerGraphics.transform.rotation = Quaternion.Euler(new Vector3(cubeTurnerGraphics.transform.rotation.x,
+        //     cubeTurnerGraphics.transform.rotation.y, cubeTurnerGraphics.transform.rotation.z));
+
+        CubeTurner createdCubeTurner = gameObject.AddComponent<CubeTurner>();
+        createdCubeTurner.Direction = _cubeFaceDirection;
+        gameObject.name = _cubeFaceDirection + ": Cube Turner";
+
+        ChangeColliderHeight(0.2f);
     }
 }
 #endif

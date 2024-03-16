@@ -50,6 +50,7 @@ public class CubeEditor : Editor
                 buttonAction(i);
             }
         }
+
         GUILayout.EndHorizontal();
         GUILayout.Space(5);
     }
@@ -63,10 +64,7 @@ public class CubeEditor : Editor
         CreateButtonSection(
             "Portals",
             buttonLabels,
-            childIndex =>
-            {
-                cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreatePortal();
-            }
+            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreatePortal(); }
         );
 
         CreateButtonSection(
@@ -142,21 +140,27 @@ public class CubeEditor : Editor
         );
 
         CreateButtonSection(
-            "Win Flags",
+            "Cube Turners",
             buttonLabels,
             childIndex =>
             {
-                cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateWinFlag();
+                cube.transform
+                    .GetChild(childIndex)
+                    .GetComponent<CubeFaceBuilder>()
+                    .CreateCubeTurner();
             }
+        );
+
+        CreateButtonSection(
+            "Win Flags",
+            buttonLabels,
+            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateWinFlag(); }
         );
 
         CreateButtonSection(
             "Balls",
             buttonLabels,
-            childIndex =>
-            {
-                cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateBall();
-            }
+            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateBall(); }
         );
     }
 
@@ -168,18 +172,22 @@ public class CubeEditor : Editor
         {
             Selection.activeObject = cube.transform.GetChild(0);
         }
+
         if (GUILayout.Button("Right"))
         {
             Selection.activeObject = cube.transform.GetChild(1);
         }
+
         if (GUILayout.Button("Bottom"))
         {
             Selection.activeObject = cube.transform.GetChild(2);
         }
+
         if (GUILayout.Button("Left"))
         {
             Selection.activeObject = cube.transform.GetChild(3);
         }
+
         GUILayout.EndHorizontal();
     }
 
@@ -191,18 +199,22 @@ public class CubeEditor : Editor
         {
             Selection.activeObject = cube.TopCube.gameObject;
         }
+
         if (GUILayout.Button("Right") && cube.RightCube)
         {
             Selection.activeObject = cube.RightCube.gameObject;
         }
+
         if (GUILayout.Button("Bottom") && cube.BottomCube)
         {
             Selection.activeObject = cube.BottomCube.gameObject;
         }
+
         if (GUILayout.Button("Left") && cube.LeftCube)
         {
             Selection.activeObject = cube.LeftCube.gameObject;
         }
+
         GUILayout.EndHorizontal();
     }
 
@@ -215,6 +227,7 @@ public class CubeEditor : Editor
         {
             cube.Turn(eDirection.Right);
         }
+
         // if (GUILayout.Button("Left"))
         // {
         //     cube.Turn(eDirection.Left);
