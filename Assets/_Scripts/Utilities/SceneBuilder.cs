@@ -7,14 +7,11 @@ using Cinemachine;
 
 public class SceneBuilder : MonoBehaviour
 {
-    [SerializeField]
-    private int _numberOfRows;
+    [SerializeField] private int _numberOfRows;
 
-    [SerializeField]
-    private int _numberOfColumns;
+    [SerializeField] private int _numberOfColumns;
 
-    [SerializeField]
-    private Vector2 _distanceBetweenCubes = new Vector2(8, 8);
+    [SerializeField] private Vector2 _distanceBetweenCubes = new Vector2(8, 8);
 
     private string _sceneBuilderPrefabsPath = "Assets/Prefabs/SceneBuilder/";
     private GameObject _cubesManager;
@@ -22,7 +19,7 @@ public class SceneBuilder : MonoBehaviour
     private GameObject _ui;
     private GameObject _mainCamera;
     private GameObject _background;
-    private GameObject _globalLight;
+    private GameObject _light;
     private GameObject _cube;
     private GameObject _musicPlayer;
 
@@ -49,8 +46,8 @@ public class SceneBuilder : MonoBehaviour
         _background = AssetDatabase.LoadAssetAtPath<GameObject>(
             _sceneBuilderPrefabsPath + "/Background.prefab"
         );
-        _globalLight = AssetDatabase.LoadAssetAtPath<GameObject>(
-            _sceneBuilderPrefabsPath + "/GlobalLight.prefab"
+        _light = AssetDatabase.LoadAssetAtPath<GameObject>(
+            _sceneBuilderPrefabsPath + "/Light.prefab"
         );
         _cubesManager = AssetDatabase.LoadAssetAtPath<GameObject>(
             _sceneBuilderPrefabsPath + "/CubesManager.prefab"
@@ -71,7 +68,7 @@ public class SceneBuilder : MonoBehaviour
         _background = PrefabUtility.InstantiatePrefab(_background) as GameObject;
         _cubesManager = PrefabUtility.InstantiatePrefab(_cubesManager) as GameObject;
         _cubesManager.GetComponent<CubesManager>().DistanceBetweenCubes = _distanceBetweenCubes;
-        _globalLight = PrefabUtility.InstantiatePrefab(_globalLight) as GameObject;
+        _light = PrefabUtility.InstantiatePrefab(_light) as GameObject;
         _musicPlayer = PrefabUtility.InstantiatePrefab(_musicPlayer) as GameObject;
     }
 
@@ -126,6 +123,7 @@ public class SceneBuilder : MonoBehaviour
         {
             topLeftCubePosition.x += _distanceBetweenCubes.x / 2;
         }
+
         if (_numberOfRows % 2 == 0)
         {
             topLeftCubePosition.y -= _distanceBetweenCubes.y / 2;

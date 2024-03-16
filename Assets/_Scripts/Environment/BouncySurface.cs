@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BouncySurface : CubeFace
 {
-	protected override string SoundName { get; set; } = "Bounce";	
+    protected override string SoundName { get; set; } = "Bounce";
 
-	protected override void OnCollisionOrTrigger(Ball ball)
-	{
-		ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-		ball.GetComponent<Animator>().Play("Squish");
-	}
+    protected override void OnCollisionOrTrigger(Ball ball)
+    {
+        ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+        ball.GetComponent<Animator>().Play("Squish");
+        if (transform.parent.GetComponent<DestroyableCube>() != null)
+        {
+            transform.parent.GetComponent<DestroyableCube>().TakeDamage();
+        }
+    }
 }
