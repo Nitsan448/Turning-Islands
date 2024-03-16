@@ -7,11 +7,10 @@ public class Ball : MonoBehaviour
 {
     public Vector2 StartingVelocity = new Vector2(0, -1);
 
-    [SerializeField]
-    private float _speed = 4;
+    [SerializeField] private float _speed = 4;
 
-    private float _startingTimeUntilGameOver = 2;
-    private float _timeUntilGameOver = 2;
+    private float _startingTimeUntilGameOver = 3;
+    private float _timeUntilGameOver = 3;
     public Coroutine ArcMovementCoroutine;
     public bool BallInFlag = false;
 
@@ -84,9 +83,11 @@ public class Ball : MonoBehaviour
                 float xOffset = calculateOffset(progress, duration, distance, isOffSetPositive);
                 transform.position = new Vector2(startPosition.x + xOffset, newYPosition);
             }
+
             currentTime += Time.deltaTime * _speed;
             yield return null;
         }
+
         transform.position = targetPosition;
         ArcMovementCoroutine = null;
     }
