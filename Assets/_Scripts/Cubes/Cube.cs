@@ -12,8 +12,7 @@ public class Cube : MonoBehaviour
 
     public GameObject SelectedSprite;
 
-    [SerializeField]
-    private float _rotationTime = 0.5f;
+    [SerializeField] private float _rotationTime = 0.5f;
 
     private bool _coroutineActive = false;
     private CubeFace[] _cubeFaces;
@@ -66,6 +65,7 @@ public class Cube : MonoBehaviour
         {
             zRotationIncrement = -90;
         }
+
         return Quaternion.Euler(
             transform.eulerAngles.x,
             transform.eulerAngles.y,
@@ -90,6 +90,7 @@ public class Cube : MonoBehaviour
                 return cubeFace.gameObject;
             }
         }
+
         return null;
     }
 #if UNITY_EDITOR
@@ -99,18 +100,22 @@ public class Cube : MonoBehaviour
         {
             RightCube.LeftCube = null;
         }
+
         if (BottomCube)
         {
             BottomCube.TopCube = null;
         }
+
         if (LeftCube)
         {
             LeftCube.RightCube = null;
         }
+
         if (TopCube)
         {
             TopCube.BottomCube = null;
         }
+
         DestroyImmediate(gameObject);
     }
 
@@ -131,6 +136,7 @@ public class Cube : MonoBehaviour
             {
                 childTransform = transform.GetChild(0);
             }
+
             if (cubeFaces[i] is Portal)
             {
                 childTransform.GetComponent<CubeFaceBuilder>().CreatePortal();
@@ -141,6 +147,7 @@ public class Cube : MonoBehaviour
             }
             else if (cubeFaces[i] is Tube)
             {
+                //This doesn't work with tubes, since they take two faces
                 childTransform
                     .GetComponent<CubeFaceBuilder>()
                     .CreateTube(true, (cubeFaces[i] as Tube).Turned);
@@ -154,6 +161,10 @@ public class Cube : MonoBehaviour
             else if (cubeFaces[i] is BouncySurface)
             {
                 childTransform.GetComponent<CubeFaceBuilder>().CreateBouncySurface(true);
+            }
+            else if (cubeFaces[i] is CubeTurner)
+            {
+                childTransform.GetComponent<CubeFaceBuilder>().CreateCubeTurner();
             }
             else if (cubeFaces[i] is Magnet)
             {
