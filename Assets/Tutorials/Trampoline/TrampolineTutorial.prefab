@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 504820649066008032, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1431758637908484731, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
       value: 'Right: Turned Tube'
@@ -17,8 +21,16 @@ PrefabInstance:
       value: TrampolineTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 1827972803018960817, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827972803018960817, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Offset.y
       value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283145787784837496, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2666719429906616184, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,6 +72,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3001697470346701668, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532524950297550844, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032713788207499573, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098294409601457133, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4253667285299859993, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -68,9 +96,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Right: Trampoline'
       objectReference: {fileID: 0}
+    - target: {fileID: 4746649440829131282, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681026437111151242, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5942758476604761673, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
       value: 'Bottom: Trampoline'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6410883038935460739, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7245295418790743008, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -83,6 +123,14 @@ PrefabInstance:
     - target: {fileID: 7347288210942271836, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
       value: 'Top: Turned Tube'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031656198069939350, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525692803047197959, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8525692803047197959, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Offset.y
@@ -135,7 +183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847706374010233927}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b24db9601784bda43b95ca62680a8017, type: 3}
   m_Name: 
@@ -156,7 +204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3966843815896171203}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88811d5bfc1d84841aaf4ec369c938db, type: 3}
   m_Name: 
@@ -175,7 +223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6341653852509233269}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88811d5bfc1d84841aaf4ec369c938db, type: 3}
   m_Name: 
@@ -204,7 +252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8037852753262421856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b24db9601784bda43b95ca62680a8017, type: 3}
   m_Name: 
