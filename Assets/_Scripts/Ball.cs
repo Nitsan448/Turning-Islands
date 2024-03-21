@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        if (Managers.Game.GameState == eGameState.GameRunning && !BallInFlag)
+        if (Managers.Game.GameState == EGameState.GameRunning && !BallInFlag)
         {
             _timeUntilGameOver -= Time.deltaTime;
             if (_timeUntilGameOver <= 0)

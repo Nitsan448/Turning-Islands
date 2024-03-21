@@ -16,7 +16,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     void Update()
     {
-        if (Managers.Game.GameState == eGameState.Editing)
+        if (Managers.Game.GameState == EGameState.Editing)
         {
             HandleSelectionInput();
             HandleRotationInput();
@@ -29,14 +29,17 @@ public class CubesManager : MonoBehaviour, IGameManager
         {
             FindCubeToSelect(SelectedCube, eDirection.Top);
         }
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             FindCubeToSelect(SelectedCube, eDirection.Right);
         }
+
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             FindCubeToSelect(SelectedCube, eDirection.Bottom);
         }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             FindCubeToSelect(SelectedCube, eDirection.Left);
@@ -77,6 +80,7 @@ public class CubesManager : MonoBehaviour, IGameManager
         {
             SelectedCube.RotateCube(eDirection.Left);
         }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             SelectedCube.RotateCube(eDirection.Right);
@@ -112,6 +116,7 @@ public class CubesManager : MonoBehaviour, IGameManager
                 return portal;
             }
         }
+
         return null;
     }
 }

@@ -8,13 +8,23 @@ using System;
 public class GameManager : MonoBehaviour, IGameManager
 {
     public event Action GameStarted;
-    public eGameState GameState { get; private set; } = eGameState.Editing;
+    public EGameState GameState { get; private set; } = EGameState.Editing;
     private float _timeUntilLevelEndedScreen = 0.5f;
 
     public int ballsNotInFlag = 0;
 
     public void Startup()
     {
+    }
+
+    public void SetStateToTutorial()
+    {
+        GameState = EGameState.Tutorial;
+    }
+
+    public void SetStateToEditing()
+    {
+        GameState = EGameState.Editing;
     }
 
     private void Update()
@@ -27,11 +37,11 @@ public class GameManager : MonoBehaviour, IGameManager
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
-            if (GameState == eGameState.Editing)
+            if (GameState == EGameState.Editing)
             {
                 StartGame();
             }
-            else if (GameState == eGameState.GameEnded)
+            else if (GameState == EGameState.GameEnded)
             {
                 GoToNextLevel();
             }
@@ -48,13 +58,13 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void LevelWon()
     {
-        GameState = eGameState.GameEnded;
+        GameState = EGameState.GameEnded;
         Managers.UI.Invoke("FadeInWinScreen", _timeUntilLevelEndedScreen);
     }
 
     public void GameOver()
     {
-        GameState = eGameState.GameEnded;
+        GameState = EGameState.GameEnded;
         Managers.UI.Invoke("FadeInLoseScreen", _timeUntilLevelEndedScreen);
     }
 
@@ -75,7 +85,7 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void StartGame()
     {
-        GameState = eGameState.GameRunning;
+        GameState = EGameState.GameRunning;
         Managers.Cubes.SelectedCube.SelectedSprite.SetActive(false);
         GameStarted?.Invoke();
         ChangeToGameCamera();
