@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,18 @@ public class Trampoline : CubeFace
 {
     protected override string SoundName { get; set; } = "No sound";
     public eDirection TrampolineDirection = eDirection.Right;
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+    }
 
     protected override void OnCollisionOrTrigger(Ball ball)
     {
         Vector2 cubeFaceVelocity = GetComponent<CubeFace>().GetVelocity();
         ball.ChangeVelocity(Vector2.zero);
+        _animator.SetTrigger("TrampolineHit");
 
         Vector2 targetPosition = getTargetPosition();
 
@@ -34,6 +42,7 @@ public class Trampoline : CubeFace
         {
             AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
         }
+
         return targetPosition;
     }
 
