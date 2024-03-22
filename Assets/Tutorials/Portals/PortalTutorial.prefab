@@ -92,6 +92,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4171766426670532279, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ae44135d5c7294046b0a80f19a1c6109, type: 2}
+    - target: {fileID: 4171766426670532279, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171766426670532279, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].key
+      value: 
+      objectReference: {fileID: 2662188960913274452, guid: ae44135d5c7294046b0a80f19a1c6109, type: 2}
+    - target: {fileID: 4171766426670532279, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].value
+      value: 
+      objectReference: {fileID: 8157820327682439742}
     - target: {fileID: 4253667285299859993, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -120,6 +136,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8899085745504185814, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e9dc7c8dbb0583441ad9b1647664b745, type: 2}
     m_RemovedComponents:
     - {fileID: 5681026437111151242, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
     - {fileID: 6017533437073220570, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
@@ -191,6 +211,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8853427663001000427, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
   m_PrefabInstance: {fileID: 741265501052475368}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8157820327682439742 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8899085745504185814, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+  m_PrefabInstance: {fileID: 741265501052475368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7724942617059362337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,19 +238,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0016500354
+      value: -0.0023499727
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.06519999
+      value: 0.065749995
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.0051501
+      value: 1.00455
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.2905
+      value: 0.29105
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -335,19 +360,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0019999743
+      value: -0.0024499893
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.065299995
+      value: 0.0648
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.0056
+      value: 1.00555
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.291
+      value: 0.2908
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
