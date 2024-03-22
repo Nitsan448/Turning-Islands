@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6458745761956385, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: _tutorialName
+      value: Tubes
+      objectReference: {fileID: 0}
     - target: {fileID: 504820649066008032, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Enabled
       value: 0
