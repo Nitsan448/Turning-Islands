@@ -50,6 +50,7 @@ public class Trampoline : CubeFace
     {
         Vector2 targetPosition = transform.position;
         float distanceToAdd = 0.5f;
+        distanceToAdd = 0;
         switch (movementDirection)
         {
             case eDirection.Top:
