@@ -22,7 +22,7 @@ public class Trampoline : CubeFace
 
         Vector2 targetPosition = getTargetPosition();
 
-        ball.GetComponent<Animator>().Play("Squish");
+        ball.Animator.Play("Squish");
         ball.ArcMovementCoroutine = StartCoroutine(
             ball.MoveTowardInArc(8, targetPosition, Direction)
         );
@@ -49,19 +49,20 @@ public class Trampoline : CubeFace
     private Vector2 GetTargetPositionWithoutOffset(eDirection movementDirection)
     {
         Vector2 targetPosition = transform.position;
+        float distanceToAdd = 0.5f;
         switch (movementDirection)
         {
             case eDirection.Top:
-                targetPosition.y += Managers.Cubes.DistanceBetweenCubes.y;
+                targetPosition.y += Managers.Cubes.DistanceBetweenCubes.y + distanceToAdd;
                 break;
             case eDirection.Right:
-                targetPosition.x += Managers.Cubes.DistanceBetweenCubes.x;
+                targetPosition.x += Managers.Cubes.DistanceBetweenCubes.x + distanceToAdd;
                 break;
             case eDirection.Bottom:
-                targetPosition.y -= Managers.Cubes.DistanceBetweenCubes.y;
+                targetPosition.y -= Managers.Cubes.DistanceBetweenCubes.y - distanceToAdd;
                 break;
             case eDirection.Left:
-                targetPosition.x -= Managers.Cubes.DistanceBetweenCubes.x;
+                targetPosition.x -= Managers.Cubes.DistanceBetweenCubes.x - distanceToAdd;
                 break;
         }
 

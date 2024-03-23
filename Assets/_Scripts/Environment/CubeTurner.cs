@@ -9,7 +9,7 @@ public class CubeTurner : CubeFace
     protected override void OnCollisionOrTrigger(Ball ball)
     {
         ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-        ball.GetComponent<Animator>().Play("Squish");
+        ball.Animator.Play("Squish");
         transform.parent.GetComponent<Cube>().RotateCube(eDirection.Right);
     }
 }

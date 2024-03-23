@@ -35,6 +35,7 @@ public class Cube : MonoBehaviour
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
     {
         _coroutineActive = true;
+
         Managers.Audio.PlaySound("CubeRotation");
         Quaternion currentRotation = transform.rotation;
         Quaternion targetRotation = getTargetRotation(direction);
