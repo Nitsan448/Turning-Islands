@@ -23,6 +23,7 @@ public abstract class CubeFace : MonoBehaviour
             case eDirection.Left:
                 return new Vector2(-1, 0);
         }
+
         return Vector2.zero;
     }
 
@@ -51,6 +52,7 @@ public abstract class CubeFace : MonoBehaviour
             {
                 ball.StopCoroutine(ball.ArcMovementCoroutine);
             }
+
             timeUntilNextCollisionPossible = 0.25f;
             ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
@@ -58,6 +60,7 @@ public abstract class CubeFace : MonoBehaviour
             {
                 GetComponentInChildren<AudioSource>().Play();
             }
+
             OnCollisionOrTrigger(ball);
         }
     }
@@ -67,7 +70,11 @@ public abstract class CubeFace : MonoBehaviour
         Ball ball = collision.GetComponent<Ball>();
         if (ball != null && timeUntilNextCollisionPossible <= 0)
         {
-            ball.StopCoroutine(ball.ArcMovementCoroutine);
+            if (ball.ArcMovementCoroutine != null)
+            {
+                ball.StopCoroutine(ball.ArcMovementCoroutine);
+            }
+
             timeUntilNextCollisionPossible = 0.25f;
             ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
@@ -75,6 +82,7 @@ public abstract class CubeFace : MonoBehaviour
             {
                 GetComponentInChildren<AudioSource>().Play();
             }
+
             OnCollisionOrTrigger(ball);
         }
     }

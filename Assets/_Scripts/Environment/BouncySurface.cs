@@ -9,7 +9,7 @@ public class BouncySurface : CubeFace
     protected override void OnCollisionOrTrigger(Ball ball)
     {
         ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-        ball.GetComponent<Animator>().Play("Squish");
+        ball.Animator.Play("Squish");
         if (transform.parent.GetComponent<DestroyableCube>() != null)
         {
             transform.parent.GetComponent<DestroyableCube>().TakeDamage();

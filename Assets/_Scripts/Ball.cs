@@ -15,6 +15,13 @@ public class Ball : MonoBehaviour
     public bool BallInFlag = false;
 
     private Vector2 _velocity;
+    private Animator _animator;
+    public Animator Animator => _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+    }
 
     private void OnEnable()
     {
@@ -102,10 +109,5 @@ public class Ball : MonoBehaviour
         }
 
         return offset;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log(other.gameObject.name);
     }
 }
