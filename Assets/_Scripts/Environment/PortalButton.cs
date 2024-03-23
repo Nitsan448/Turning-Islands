@@ -12,6 +12,6 @@ public class PortalButton : CubeFace
     {
         ConnectedPortal.ChangeOpenState(true);
         ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-        ball.GetComponent<Animator>().Play("Squish");
+        ball.Animator.Play("Squish");
     }
 }

@@ -41,7 +41,7 @@ public class Portal : CubeFace
         else
         {
             ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
-            ball.GetComponent<Animator>().Play("Squish");
+            ball.Animator.Play("Squish");
         }
     }
 
