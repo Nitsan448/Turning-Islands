@@ -256,7 +256,7 @@ public class CubeFaceBuilder : MonoBehaviour
         FindObjectOfType<GameManager>().BallsNotInFlag++;
         EditorUtility.SetDirty(FindObjectOfType<GameManager>());
         GameObject ball = PrefabUtility.InstantiatePrefab(ballPrefab) as GameObject;
-        float ballPositionOffSetAmount = 3;
+        float ballPositionOffSetAmount = FindObjectOfType<CubesManager>().DistanceBetweenCubes.x / 2 - 0.5f;
         Vector3 ballPostionOffset = Vector3.zero;
         switch (_cubeFaceDirection)
         {
@@ -278,6 +278,7 @@ public class CubeFaceBuilder : MonoBehaviour
                 break;
         }
 
+        ball.GetComponent<Ball>().SetVelocityIndicatorRotation();
         ball.transform.position = transform.parent.position + ballPostionOffset;
     }
 

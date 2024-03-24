@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -9,6 +10,7 @@ public class Ball : MonoBehaviour
     private Vector2 _startingPosition;
 
     [SerializeField] private float _speed = 4;
+    [SerializeField] private GameObject _velocityIndicator;
 
     private float _startingTimeUntilGameOver = 3;
     private float _timeUntilGameOver = 3;
@@ -33,6 +35,7 @@ public class Ball : MonoBehaviour
     {
         transform.position = _startingPosition;
         _timeUntilGameOver = _startingTimeUntilGameOver;
+        _velocityIndicator.SetActive(true);
         _velocity = Vector2.zero;
     }
 
@@ -49,6 +52,7 @@ public class Ball : MonoBehaviour
     public void StartMoving()
     {
         _velocity = StartingVelocity;
+        _velocityIndicator.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -78,6 +82,27 @@ public class Ball : MonoBehaviour
     public void ChangeVelocity(Vector2 velocity)
     {
         _velocity = velocity;
+    }
+
+    [Button]
+    public void SetVelocityIndicatorRotation()
+    {
+        if (StartingVelocity == new Vector2(0, 1))
+        {
+            _velocityIndicator.transform.eulerAngles = new Vector3(0, 0, 180);
+        }
+        else if (StartingVelocity == new Vector2(1, 0))
+        {
+            _velocityIndicator.transform.eulerAngles = new Vector3(0, 0, 90);
+        }
+        else if (StartingVelocity == new Vector2(-1, 0))
+        {
+            _velocityIndicator.transform.eulerAngles = new Vector3(0, 0, 270);
+        }
+        else
+        {
+            _velocityIndicator.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 
     public IEnumerator MoveTowardInArc(float duration, Vector2 targetPosition, eDirection direction)

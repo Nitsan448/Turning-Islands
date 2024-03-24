@@ -25,22 +25,22 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void HandleSelectionInput()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             FindCubeToSelect(SelectedCube, eDirection.Top);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             FindCubeToSelect(SelectedCube, eDirection.Right);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             FindCubeToSelect(SelectedCube, eDirection.Bottom);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             FindCubeToSelect(SelectedCube, eDirection.Left);
         }
