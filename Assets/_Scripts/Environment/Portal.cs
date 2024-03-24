@@ -11,18 +11,19 @@ public class Portal : CubeFace
     public int PortalIndex = -1;
     private float portalDisableTime = 0.5f;
     private GameObject _portalSprite;
+    private BoxCollider2D _collider;
     protected override string SoundName { get; set; } = "Portal";
 
     private void Awake()
     {
         _portalSprite = GetComponentInChildren<Light2D>().gameObject;
-        _portalSprite.GetComponentInChildren<Light2D>().enabled = IsOpen;
+        _portalSprite.GetComponent<Light2D>().enabled = IsOpen;
     }
 
     public void ChangeOpenState(bool changeConnected)
     {
         IsOpen = !IsOpen;
-        GetComponentInChildren<Light2D>().enabled = IsOpen;
+        _portalSprite.GetComponent<Light2D>().enabled = IsOpen;
         if (ConnectedPortal != null && changeConnected)
         {
             if (ConnectedPortal.IsOpen != IsOpen)
@@ -40,7 +41,7 @@ public class Portal : CubeFace
         }
         else
         {
-            ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
+            ball.ChangeVelocity(GetVelocity());
             ball.Animator.Play("Squish");
         }
     }
@@ -50,7 +51,7 @@ public class Portal : CubeFace
         ConnectedPortal.GetComponent<BoxCollider2D>().enabled = false;
         Vector3 newPosition = ConnectedPortal.transform.position;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
-        ball.ChangeVelocity(ConnectedPortal.GetComponent<CubeFace>().GetVelocity());
+        ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 
         yield return new WaitForSeconds(portalDisableTime);
         ConnectedPortal.GetComponent<BoxCollider2D>().enabled = true;
