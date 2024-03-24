@@ -11,5 +11,6 @@ public class CubeTurner : CubeFace
         ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
         ball.Animator.Play("Squish");
         transform.parent.GetComponent<Cube>().RotateCube(eDirection.Right);
+        
     }
 }

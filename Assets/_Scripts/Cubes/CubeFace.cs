@@ -56,10 +56,6 @@ public abstract class CubeFace : MonoBehaviour
             timeUntilNextCollisionPossible = 0.25f;
             ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
-            if (GetComponentInChildren<AudioSource>() != null)
-            {
-                GetComponentInChildren<AudioSource>().Play();
-            }
 
             OnCollisionOrTrigger(ball);
         }
@@ -78,10 +74,6 @@ public abstract class CubeFace : MonoBehaviour
             timeUntilNextCollisionPossible = 0.25f;
             ball.ResetTimeUntilGameOver();
             Managers.Audio.PlaySound(SoundName);
-            if (GetComponentInChildren<AudioSource>() != null)
-            {
-                GetComponentInChildren<AudioSource>().Play();
-            }
 
             OnCollisionOrTrigger(ball);
         }
