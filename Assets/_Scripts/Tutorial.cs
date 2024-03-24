@@ -1,29 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FinishTutorialButton : MonoBehaviour
+public class Tutorial : MonoBehaviour
 {
     [SerializeField] private string _tutorialName;
+    [SerializeField] private Button _finishTutorialButton;
 
     void Start()
     {
         if (PlayerPrefs.GetInt(_tutorialName, 0) == 1)
         {
-            Destroy(transform.parent.parent.gameObject);
+            Destroy(gameObject);
             return;
         }
 
-        Managers.Game.SetStateToTutorial();
-        GetComponent<Button>().onClick.AddListener(OnClick);
+        Managers.Game.SetStateToTutorial(this);
+        _finishTutorialButton.onClick.AddListener(OnTutorialFinished);
     }
 
-    private void OnClick()
+    public void OnTutorialFinished()
     {
         Managers.Game.SetStateToEditing();
-        transform.parent.parent.gameObject.SetActive(false);
         PlayerPrefs.SetInt(_tutorialName, 1);
+        gameObject.SetActive(false);
     }
 }

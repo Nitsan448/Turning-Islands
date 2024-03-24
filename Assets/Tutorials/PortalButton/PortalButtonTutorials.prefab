@@ -16,9 +16,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1480479663530004702, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: _tutorialName
+      value: PortalButton
+      objectReference: {fileID: 0}
     - target: {fileID: 1809807993239528073, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
-      value: PortalButtonsTutorials
+      value: PortalButtonTutorials
       objectReference: {fileID: 0}
     - target: {fileID: 1827972803018960817, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Enabled
@@ -104,10 +108,6 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
       objectReference: {fileID: 8143942557018090474}
-    - target: {fileID: 4171766426670532279, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
-      propertyPath: m_SceneBindings.Array.data[1].value
-      value: 
-      objectReference: {fileID: 5774655991345263937}
     - target: {fileID: 4253667285299859993, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -216,11 +216,6 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 0}
   IsOpen: 1
   PortalIndex: 0
---- !u!95 &5774655991345263937 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6510319167756579709, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
-  m_PrefabInstance: {fileID: 755197145094227516}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6341653852509233269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5942758476604761673, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
@@ -299,19 +294,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0020999908
+      value: -0.001949966
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.065050006
+      value: 0.066
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.0043
+      value: 1.00495
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.29115
+      value: 0.2905
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -429,19 +424,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.002399981
+      value: -0.0021499991
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.06505
+      value: 0.06585
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.0055001
+      value: 1.0051501
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.29075
+      value: 0.29095
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size

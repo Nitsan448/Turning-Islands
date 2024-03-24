@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2491029962609328656}
   - component: {fileID: 4372312168924491356}
   - component: {fileID: 2753098124271374716}
-  - component: {fileID: 6458745761956385}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -121,19 +120,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6458745761956385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648227676236506785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dff88768ce15f3499bdfc5c7c27f7c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tutorialName: 
 --- !u!1 &1809807993239528073
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +131,7 @@ GameObject:
   - component: {fileID: 2666719429906616184}
   - component: {fileID: 4171766426670532279}
   - component: {fileID: 8899085745504185814}
+  - component: {fileID: 1480479663530004702}
   m_Layer: 0
   m_Name: Tutorial
   m_TagString: Untagged
@@ -209,6 +196,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1480479663530004702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809807993239528073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61226ffa245812b4a912e8e6a4e13812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialName: 
+  _finishTutorialButton: {fileID: 2753098124271374716}
 --- !u!1 &2410376096295526521
 GameObject:
   m_ObjectHideFlags: 0

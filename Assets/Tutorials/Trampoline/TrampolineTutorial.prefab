@@ -358,6 +358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Right: Turned Tube'
       objectReference: {fileID: 0}
+    - target: {fileID: 1480479663530004702, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: _tutorialName
+      value: Trampoline
+      objectReference: {fileID: 0}
     - target: {fileID: 1809807993239528073, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
       value: TrampolineTutorial
@@ -551,7 +555,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 2757692930874612885, guid: e846764093b771b47b0168881d6a5123, type: 2}
-    value: {fileID: 5774655991345263937}
+    value: {fileID: 0}
   - key: {fileID: 444381319174977135, guid: e846764093b771b47b0168881d6a5123, type: 2}
     value: {fileID: 8143942557018090474}
   - key: {fileID: 4403466423793524615, guid: e846764093b771b47b0168881d6a5123, type: 2}
@@ -600,11 +604,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 1
   TrampolineDirection: 1
---- !u!95 &5774655991345263937 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6510319167756579709, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
-  m_PrefabInstance: {fileID: 755197145094227516}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6341653852509233269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5942758476604761673, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}

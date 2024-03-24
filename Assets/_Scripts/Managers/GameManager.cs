@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour, IGameManager
     public event Action GameStarted;
     public EGameState GameState { get; private set; } = EGameState.Editing;
     private float _timeUntilLevelEndedScreen = 0.5f;
+    private Tutorial _tutorial;
 
     public int ballsNotInFlag = 0;
 
@@ -17,9 +18,10 @@ public class GameManager : MonoBehaviour, IGameManager
     {
     }
 
-    public void SetStateToTutorial()
+    public void SetStateToTutorial(Tutorial tutorial)
     {
         GameState = EGameState.Tutorial;
+        _tutorial = tutorial;
     }
 
     public void SetStateToEditing()
@@ -40,6 +42,10 @@ public class GameManager : MonoBehaviour, IGameManager
             if (GameState == EGameState.Editing)
             {
                 StartGame();
+            }
+            else if (GameState == EGameState.Tutorial)
+            {
+                _tutorial.OnTutorialFinished();
             }
             else if (GameState == EGameState.GameEnded)
             {
@@ -70,6 +76,11 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void RestartLevel()
     {
+        if (GameState == EGameState.Tutorial)
+        {
+            return;
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -85,10 +96,15 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void StartGame()
     {
+        if (GameState == EGameState.Tutorial)
+        {
+            return;
+        }
+
         GameState = EGameState.GameRunning;
         Managers.Cubes.SelectedCube.SelectedSprite.SetActive(false);
         GameStarted?.Invoke();
-        ChangeToGameCamera();
+        // ChangeToGameCamera();
     }
 
     private void ChangeToGameCamera()

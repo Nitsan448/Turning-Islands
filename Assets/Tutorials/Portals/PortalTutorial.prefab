@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Right: Portal'
       objectReference: {fileID: 0}
+    - target: {fileID: 1480479663530004702, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: _tutorialName
+      value: Portals
+      objectReference: {fileID: 0}
     - target: {fileID: 1605886536550399337, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -242,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0023499727
+      value: -0.0024999976
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
@@ -250,11 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.00545
+      value: 1.0053
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.29035
+      value: 0.29105
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -364,19 +368,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0022500157
+      value: -0.0019999743
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.0657
+      value: 0.065450005
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.00575
+      value: 1.0056
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.2912
+      value: 0.29145
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size

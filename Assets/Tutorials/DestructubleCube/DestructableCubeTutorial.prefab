@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8ff4b1c190a29c94eb30516722a13667, type: 3}
+    - target: {fileID: 1480479663530004702, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: _tutorialName
+      value: DestructableCube
+      objectReference: {fileID: 0}
     - target: {fileID: 1809807993239528073, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
       value: DestructableCubeTutorial

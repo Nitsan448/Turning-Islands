@@ -74,7 +74,7 @@ public class Ball : MonoBehaviour
         while (currentTime < duration)
         {
             float progress = currentTime / duration;
-            if (direction == eDirection.Top || direction == eDirection.Bottom)
+            if (direction is eDirection.Top or eDirection.Bottom)
             {
                 float newXPosition = Mathf.Lerp(startPosition.x, targetPosition.x, progress);
                 float distance = Mathf.Abs(targetPosition.y - startPosition.y);
