@@ -6,6 +6,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public Vector2 StartingVelocity = new Vector2(0, -1);
+    private Vector2 _startingPosition;
 
     [SerializeField] private float _speed = 4;
 
@@ -21,6 +22,18 @@ public class Ball : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+    }
+
+    private void Start()
+    {
+        _startingPosition = transform.position;
+    }
+
+    public void ResetToStartingState()
+    {
+        transform.position = _startingPosition;
+        _timeUntilGameOver = _startingTimeUntilGameOver;
+        _velocity = Vector2.zero;
     }
 
     private void OnEnable()

@@ -253,7 +253,7 @@ public class CubeFaceBuilder : MonoBehaviour
         GameObject ballPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(
             "Assets/Prefabs/Ball.prefab"
         );
-        FindObjectOfType<GameManager>().ballsNotInFlag++;
+        FindObjectOfType<GameManager>().BallsNotInFlag++;
         EditorUtility.SetDirty(FindObjectOfType<GameManager>());
         GameObject ball = PrefabUtility.InstantiatePrefab(ballPrefab) as GameObject;
         float ballPositionOffSetAmount = 3;

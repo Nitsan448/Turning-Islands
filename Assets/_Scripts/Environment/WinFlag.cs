@@ -9,9 +9,9 @@ public class WinFlag : CubeFace
     protected override void OnCollisionOrTrigger(Ball ball)
     {
         GetComponentInChildren<Animator>().Play("Sploosh");
-        Managers.Game.ballsNotInFlag--;
+        Managers.Game.BallsNotInFlag--;
         ball.BallInFlag = true;
-        if (Managers.Game.ballsNotInFlag == 0)
+        if (Managers.Game.BallsNotInFlag == 0)
         {
             Managers.Game.LevelWon();
         }

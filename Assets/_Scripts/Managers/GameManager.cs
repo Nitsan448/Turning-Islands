@@ -4,6 +4,8 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 using System;
+using Sirenix.OdinInspector;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour, IGameManager
 {
@@ -12,10 +14,14 @@ public class GameManager : MonoBehaviour, IGameManager
     private float _timeUntilLevelEndedScreen = 0.5f;
     private Tutorial _tutorial;
 
-    public int ballsNotInFlag = 0;
+    [FormerlySerializedAs("ballsNotInFlag")]
+    public int BallsNotInFlag = 0;
+
+    private int _ballsNotInFlagAtStart;
 
     public void Startup()
     {
+        _ballsNotInFlagAtStart = BallsNotInFlag;
     }
 
     public void SetStateToTutorial(Tutorial tutorial)
@@ -60,6 +66,21 @@ public class GameManager : MonoBehaviour, IGameManager
         {
             RestartLevel();
         }
+    }
+
+    [Button]
+    private void SoftRestart()
+    {
+        //Add a button to soft restart - restarts but keeps cubes placement
+        GameState = EGameState.Editing;
+        foreach (Ball ball in FindObjectsOfType<Ball>())
+        {
+            ball.ResetToStartingState();
+        }
+
+        Managers.Cubes.SelectedCube.SelectedSprite.SetActive(true);
+        Managers.UI.FadeOutLoseScreen();
+        BallsNotInFlag = _ballsNotInFlagAtStart;
     }
 
     public void LevelWon()
