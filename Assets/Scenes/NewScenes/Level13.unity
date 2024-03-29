@@ -214,6 +214,26 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.002300024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.065349996
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 1.1056
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39115
+      objectReference: {fileID: 0}
     - target: {fileID: 7705354976166963490, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -288,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 3
   ConnectedPortal: {fileID: 2146068404}
-  IsOpen: 1
+  IsOpen: 0
   PortalIndex: 0
   _portalSprite: {fileID: 1236917875}
   _collider: {fileID: 200084950}
@@ -1161,6 +1181,26 @@ PrefabInstance:
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.002750039
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.06480001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 1.10525
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39090002
       objectReference: {fileID: 0}
     - target: {fileID: 7705354976166963490, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalScale.x
@@ -2069,7 +2109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 0
   ConnectedPortal: {fileID: 203423884}
-  IsOpen: 1
+  IsOpen: 0
   PortalIndex: 0
   _portalSprite: {fileID: 56158404}
   _collider: {fileID: 148234}
