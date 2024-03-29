@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
 
+[ExecuteInEditMode]
 public class Portal : CubeFace
 {
     public Portal ConnectedPortal;
@@ -68,10 +69,20 @@ public class Portal : CubeFace
 
     public void UpdatePortalColors()
     {
+        if (PortalIndex == -1)
+        {
+            return;
+        }
+
         MaterialPropertyBlock materialPropertyBlock = new();
         materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
         materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
         materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * 4);
+        if (_portalSprite == null)
+        {
+            _portalSprite = GetComponentInChildren<SpriteRenderer>();
+        }
+
         _portalSprite.GetComponent<Light2D>().color = PortalColors.ColorByIndex[PortalIndex];
         _portalSprite.SetPropertyBlock(materialPropertyBlock);
     }
