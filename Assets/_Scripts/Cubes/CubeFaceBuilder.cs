@@ -70,12 +70,7 @@ public class CubeFaceBuilder : MonoBehaviour
         createdPortal.PortalIndex = _createdPortalIndex;
         createdPortal._collider = createdPortal.GetComponent<BoxCollider2D>();
         createdPortal._portalSprite = createdPortal.GetComponentInChildren<SpriteRenderer>();
-        createdPortal.GetComponentInChildren<Light2D>().color = PortalColors.ColorByIndex[createdPortal.PortalIndex];
-        MaterialPropertyBlock materialPropertyBlock = new();
-        materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[createdPortal.PortalIndex]);
-        materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[createdPortal.PortalIndex] * 4);
-        materialPropertyBlock.SetInt("_IsOpen", 1);
-        createdPortal._portalSprite.SetPropertyBlock(materialPropertyBlock);
+        createdPortal.UpdatePortalColors();
     }
 
     public void CreatePortalButton()

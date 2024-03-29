@@ -15,5 +15,10 @@ public class PortalEditor : Editor
         {
             portal.ChangeOpenState(true);
         }
+
+        if (GUILayout.Button("Update Portal Colors"))
+        {
+            portal.UpdatePortalColors();
+        }
     }
 }

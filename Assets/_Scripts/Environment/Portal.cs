@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
@@ -19,8 +20,7 @@ public class Portal : CubeFace
     {
         Light2D portalLight = GetComponentInChildren<Light2D>();
         portalLight.enabled = IsOpen;
-        _portalSprite.material
-            .SetInt("_IsOpen", IsOpen ? 1 : 0);
+        UpdatePortalColors();
     }
 
     public void ChangeOpenState(bool changeConnected)
@@ -64,5 +64,15 @@ public class Portal : CubeFace
 
         yield return new WaitForSeconds(portalDisableTime);
         ConnectedPortal._collider.enabled = true;
+    }
+
+    public void UpdatePortalColors()
+    {
+        MaterialPropertyBlock materialPropertyBlock = new();
+        materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
+        materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
+        materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * 4);
+        _portalSprite.GetComponent<Light2D>().color = PortalColors.ColorByIndex[PortalIndex];
+        _portalSprite.SetPropertyBlock(materialPropertyBlock);
     }
 }
