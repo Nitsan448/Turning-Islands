@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 public class Portal : CubeFace
 {
@@ -10,14 +11,16 @@ public class Portal : CubeFace
     public bool IsOpen = true;
     public int PortalIndex = -1;
     private float portalDisableTime = 0.5f;
-    private GameObject _portalSprite;
-    private BoxCollider2D _collider;
+    public SpriteRenderer _portalSprite;
+    public BoxCollider2D _collider;
     protected override string SoundName { get; set; } = "Portal";
 
     private void Awake()
     {
-        _portalSprite = GetComponentInChildren<Light2D>().gameObject;
-        _portalSprite.GetComponent<Light2D>().enabled = IsOpen;
+        Light2D portalLight = GetComponentInChildren<Light2D>();
+        portalLight.enabled = IsOpen;
+        _portalSprite.material
+            .SetInt("_IsOpen", IsOpen ? 1 : 0);
     }
 
     public void ChangeOpenState(bool changeConnected)
@@ -31,6 +34,12 @@ public class Portal : CubeFace
                 ConnectedPortal.ChangeOpenState(false);
             }
         }
+
+        MaterialPropertyBlock materialPropertyBlock = new();
+        materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
+        materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
+        materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * 4);
+        _portalSprite.SetPropertyBlock(materialPropertyBlock);
     }
 
     protected override void OnCollisionOrTrigger(Ball ball)
@@ -48,12 +57,12 @@ public class Portal : CubeFace
 
     private IEnumerator SwitchPortals(Ball ball)
     {
-        ConnectedPortal.GetComponent<BoxCollider2D>().enabled = false;
+        ConnectedPortal._collider.enabled = false;
         Vector3 newPosition = ConnectedPortal.transform.position;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 
         yield return new WaitForSeconds(portalDisableTime);
-        ConnectedPortal.GetComponent<BoxCollider2D>().enabled = true;
+        ConnectedPortal._collider.enabled = true;
     }
 }
