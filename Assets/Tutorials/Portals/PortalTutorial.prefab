@@ -246,6 +246,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8112162184839466499}
     m_Modifications:
+    - target: {fileID: 970345190, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345190, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1492732759
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345191, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345191, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2115019439148978219, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -268,15 +284,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0019000173
+      value: -0.0026000142
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.06535001
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.1054001
+      value: 1.1043999
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.39105
+      value: 0.39145
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -369,6 +389,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2888231873574529952}
     m_Modifications:
+    - target: {fileID: 970345190, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345190, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1492732759
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345191, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345191, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2115019439148978219, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -391,19 +427,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0029500127
+      value: -0.0027999878
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.06570001
+      value: 0.06485
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.10495
+      value: 1.1048
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.3911
+      value: 0.39045
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
