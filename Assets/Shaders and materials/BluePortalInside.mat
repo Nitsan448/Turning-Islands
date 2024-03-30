@@ -47,7 +47,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 1, a: 0}
     - _GlowColor: {r: 0, g: 0, b: 21.361254, a: 1}
-    - _ScrollSpeed: {r: 0.05, g: 0, b: 0, a: 0}
+    - _ScrollSpeed: {r: 0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1487711003621849933
 MonoBehaviour:

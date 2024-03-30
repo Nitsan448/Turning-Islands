@@ -505,6 +505,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1159396944}
     m_Modifications:
+    - target: {fileID: 1107678560670249148, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.0022500157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.065850005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 1.1047499
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39075
+      objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name
       value: RedPortal
@@ -1418,7 +1442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 1
   ConnectedPortal: {fileID: 2012888598}
-  IsOpen: 1
+  IsOpen: 0
   PortalIndex: 0
   PortalGraphics: {fileID: 599925864}
   Collider: {fileID: 298845684}
@@ -1868,6 +1892,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1844587111}
     m_Modifications:
+    - target: {fileID: 1107678560670249148, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.002550006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.06604999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 1.10535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39085
+      objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name
       value: RedPortal
@@ -2105,7 +2153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 0
   ConnectedPortal: {fileID: 1159396949}
-  IsOpen: 1
+  IsOpen: 0
   PortalIndex: 0
   PortalGraphics: {fileID: 1825954290}
   Collider: {fileID: 2012888597}

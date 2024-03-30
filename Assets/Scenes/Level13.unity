@@ -1067,15 +1067,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0020499825
+      value: -0.0024999976
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.065500006
+      value: 0.06485
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.10485
+      value: 1.1052
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39095
       objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name
@@ -1389,19 +1393,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.002399981
+      value: -0.0016999841
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.0652
+      value: 0.0653
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.1053
+      value: 1.1050999
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.3912
+      value: 0.39090002
       objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name

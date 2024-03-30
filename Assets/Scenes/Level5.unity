@@ -674,6 +674,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1072934245}
     m_Modifications:
+    - target: {fileID: 1107678560670249148, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.0020000339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.065349996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 1.1052
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39095
+      objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 6176e869e323c0642905d591ae85c940, type: 3}
       propertyPath: m_Name
       value: BluePortal
@@ -880,7 +904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 0
   ConnectedPortal: {fileID: 1072934246}
-  IsOpen: 1
+  IsOpen: 0
   PortalIndex: 1
   PortalGraphics: {fileID: 988772718}
   Collider: {fileID: 854137614}
@@ -1074,6 +1098,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 176450426}
     m_Modifications:
+    - target: {fileID: 1107678560670249148, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.0029000044
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.06485
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972085923542431631, guid: 6176e869e323c0642905d591ae85c940, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.39045
+      objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 6176e869e323c0642905d591ae85c940, type: 3}
       propertyPath: m_Name
       value: BluePortal
@@ -1181,7 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: 2
   ConnectedPortal: {fileID: 854137615}
-  IsOpen: 1
+  IsOpen: 0
   PortalIndex: 1
   PortalGraphics: {fileID: 664819045}
   Collider: {fileID: 298234964}
