@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 970345191}
   - component: {fileID: 970345190}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: OpenParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5033,8 +5033,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0015000105, y: 0.06529999, z: 0}
-    m_Extent: {x: 1.1051, y: 0.3908, z: 0}
+    m_Center: {x: -0.002550006, y: 0.065699995, z: 0}
+    m_Extent: {x: 1.10535, y: 0.3912, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5058,6 +5058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7705354976166963490}
+  - component: {fileID: 4692352388114312860}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
@@ -5083,3 +5084,19 @@ Transform:
   - {fileID: 2714605010982045558}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4692352388114312860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587858049803450129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b0ed55b26d30a45a459808bc4a5c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OpenParticles: {fileID: 970345191}
+  EnterParticles: {fileID: 0}
+  Sprite: {fileID: 7571135195043862419}
+  Light: {fileID: 6754941260640669143}

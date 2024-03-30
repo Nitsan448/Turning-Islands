@@ -188,6 +188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 244272430}
     m_Modifications:
+    - target: {fileID: 970345188, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6587858049803450129, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_Name
       value: portal
@@ -206,15 +210,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0026000142
+      value: -0.0018000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: 0.064899996
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.1054001
+      value: 1.1052
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.39105
+      value: 0.39069998
       objectReference: {fileID: 0}
     - target: {fileID: 7705354976166963490, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalScale.x
@@ -272,11 +280,6 @@ PrefabInstance:
 --- !u!4 &119410947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7705354976166963490, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
-  m_PrefabInstance: {fileID: 119410946}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &119410948 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7571135195043862419, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
   m_PrefabInstance: {fileID: 119410946}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &128754449 stripped
@@ -531,7 +534,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244272431}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9458c64708b06342bbe2a2778f1839b, type: 3}
   m_Name: 
@@ -540,8 +543,8 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 895733158}
   IsOpen: 1
   PortalIndex: 0
-  _portalSprite: {fileID: 119410948}
-  _collider: {fileID: 244272432}
+  PortalGraphics: {fileID: 648601852}
+  Collider: {fileID: 244272432}
 --- !u!1001 &279093085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,6 +616,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1637287353297208314, guid: 1c2270cc66db88743868afdf18b290e6, type: 3}
   m_PrefabInstance: {fileID: 1624623864}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &648601852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4692352388114312860, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+  m_PrefabInstance: {fileID: 119410946}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b0ed55b26d30a45a459808bc4a5c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &722858899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -812,7 +826,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895733152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9458c64708b06342bbe2a2778f1839b, type: 3}
   m_Name: 
@@ -821,8 +835,8 @@ MonoBehaviour:
   ConnectedPortal: {fileID: 244272435}
   IsOpen: 1
   PortalIndex: 0
-  _portalSprite: {fileID: 1639639330}
-  _collider: {fileID: 128754449}
+  PortalGraphics: {fileID: 1827680777}
+  Collider: {fileID: 128754449}
 --- !u!114 &895733159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,6 +1319,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895733153}
     m_Modifications:
+    - target: {fileID: 970345188, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_Name
+      value: PortalOpenParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 970345188, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6587858049803450129, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_Name
       value: portal
@@ -1323,19 +1345,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0016500354
+      value: -0.0017499924
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.064799994
+      value: 0.0651
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.1047499
+      value: 1.10505
       objectReference: {fileID: 0}
     - target: {fileID: 6754941260640669143, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.3908
+      value: 0.3911
       objectReference: {fileID: 0}
     - target: {fileID: 7705354976166963490, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1385,11 +1407,6 @@ PrefabInstance:
 --- !u!4 &1639639329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7705354976166963490, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
-  m_PrefabInstance: {fileID: 1639639328}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1639639330 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7571135195043862419, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
   m_PrefabInstance: {fileID: 1639639328}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1668578281 stripped
@@ -1459,6 +1476,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66df1c767104acb42b6eb4d9fa5560fa, type: 3}
+--- !u!114 &1827680777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4692352388114312860, guid: 5f351ca5a4c95894c86e713741310623, type: 3}
+  m_PrefabInstance: {fileID: 1639639328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b0ed55b26d30a45a459808bc4a5c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1889118844
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -68,8 +68,7 @@ public class CubeFaceBuilder : MonoBehaviour
     {
         createdPortal.Direction = _cubeFaceDirection;
         createdPortal.PortalIndex = _createdPortalIndex;
-        createdPortal._collider = createdPortal.GetComponent<BoxCollider2D>();
-        createdPortal._portalSprite = createdPortal.GetComponentInChildren<SpriteRenderer>();
+        createdPortal.Collider = createdPortal.GetComponent<BoxCollider2D>();
         createdPortal.UpdatePortalColors();
     }
 

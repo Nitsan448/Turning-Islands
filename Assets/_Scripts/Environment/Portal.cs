@@ -13,21 +13,21 @@ public class Portal : CubeFace
     public bool IsOpen = true;
     public int PortalIndex = -1;
     private float portalDisableTime = 0.5f;
-    public SpriteRenderer _portalSprite;
-    public BoxCollider2D _collider;
+    public PortalGraphics PortalGraphics;
+    [FormerlySerializedAs("_collider")] public BoxCollider2D Collider;
     protected override string SoundName { get; set; } = "Portal";
 
     private void Awake()
     {
-        Light2D portalLight = GetComponentInChildren<Light2D>();
-        portalLight.enabled = IsOpen;
+        PortalGraphics = GetComponentInChildren<PortalGraphics>();
+        PortalGraphics.Light.enabled = IsOpen;
         UpdatePortalColors();
     }
 
     public void ChangeOpenState(bool changeConnected)
     {
         IsOpen = !IsOpen;
-        _portalSprite.GetComponent<Light2D>().enabled = IsOpen;
+        PortalGraphics.Light.enabled = IsOpen;
         if (ConnectedPortal != null && changeConnected)
         {
             if (ConnectedPortal.IsOpen != IsOpen)
@@ -36,11 +36,12 @@ public class Portal : CubeFace
             }
         }
 
+        PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         MaterialPropertyBlock materialPropertyBlock = new();
         materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
         materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
         materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * 4);
-        _portalSprite.SetPropertyBlock(materialPropertyBlock);
+        PortalGraphics.Sprite.SetPropertyBlock(materialPropertyBlock);
     }
 
     protected override void OnCollisionOrTrigger(Ball ball)
@@ -58,13 +59,13 @@ public class Portal : CubeFace
 
     private IEnumerator SwitchPortals(Ball ball)
     {
-        ConnectedPortal._collider.enabled = false;
+        ConnectedPortal.Collider.enabled = false;
         Vector3 newPosition = ConnectedPortal.transform.position;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 
         yield return new WaitForSeconds(portalDisableTime);
-        ConnectedPortal._collider.enabled = true;
+        ConnectedPortal.Collider.enabled = true;
     }
 
     public void UpdatePortalColors()
@@ -78,12 +79,8 @@ public class Portal : CubeFace
         materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
         materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
         materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * 4);
-        if (_portalSprite == null)
-        {
-            _portalSprite = GetComponentInChildren<SpriteRenderer>();
-        }
 
-        _portalSprite.GetComponent<Light2D>().color = PortalColors.ColorByIndex[PortalIndex];
-        _portalSprite.SetPropertyBlock(materialPropertyBlock);
+        PortalGraphics.Light.color = PortalColors.ColorByIndex[PortalIndex];
+        PortalGraphics.Sprite.SetPropertyBlock(materialPropertyBlock);
     }
 }
