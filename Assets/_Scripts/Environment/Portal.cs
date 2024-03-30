@@ -48,6 +48,7 @@ public class Portal : CubeFace
     {
         if (IsOpen)
         {
+            Instantiate(PortalGraphics.EnterParticlesPrefab, PortalGraphics.transform);
             StartCoroutine(SwitchPortals(ball));
         }
         else

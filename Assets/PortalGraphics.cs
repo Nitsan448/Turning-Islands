@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class PortalGraphics : MonoBehaviour
 {
     public ParticleSystem OpenParticles;
-    public ParticleSystem EnterParticles;
+    public GameObject EnterParticlesPrefab;
     public SpriteRenderer Sprite;
     public Light2D Light;
 }
