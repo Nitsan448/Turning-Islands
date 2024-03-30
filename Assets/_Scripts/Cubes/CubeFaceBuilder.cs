@@ -7,14 +7,20 @@ using UnityEngine.Rendering.Universal;
 
 public class CubeFaceBuilder : MonoBehaviour
 {
-    [Range(0, 4)] [SerializeField] private int _createdPortalIndex;
+    [Range(0, 2)] public int CreatedPortalIndex;
     private string _cubeFacesPrefabsFolder = "Assets/Prefabs/CubeFaces";
     private eDirection _cubeFaceDirection;
 
     public void CreatePortal()
     {
         ResetCubeFace();
-        InstantiateObjectGraphicsPrefab(_cubeFacesPrefabsFolder + "/Portal.prefab");
+        string portalColorName = CreatedPortalIndex switch
+        {
+            0 => "Red",
+            1 => "Blue",
+            _ => "Green"
+        };
+        InstantiateObjectGraphicsPrefab(_cubeFacesPrefabsFolder + "/Portals/" + portalColorName + "Portal.prefab");
         Portal createdPortal = gameObject.AddComponent<Portal>();
         SetPortalFields(createdPortal);
         gameObject.name = _cubeFaceDirection + ": Portal";
@@ -67,9 +73,13 @@ public class CubeFaceBuilder : MonoBehaviour
     private void SetPortalFields(Portal createdPortal)
     {
         createdPortal.Direction = _cubeFaceDirection;
-        createdPortal.PortalIndex = _createdPortalIndex;
+        createdPortal.PortalIndex = CreatedPortalIndex;
+        createdPortal.PortalGraphics = GetComponentInChildren<PortalGraphics>();
+        MaterialPropertyBlock materialPropertyBlock = new();
+        materialPropertyBlock.SetInt("_IsOpen", 1);
+        createdPortal.PortalGraphics.PortalInside.SetPropertyBlock(materialPropertyBlock);
+        createdPortal.PortalGraphics.PortalOutside.SetPropertyBlock(materialPropertyBlock);
         createdPortal.Collider = createdPortal.GetComponent<BoxCollider2D>();
-        createdPortal.UpdatePortalColors();
     }
 
     public void CreatePortalButton()
@@ -80,7 +90,7 @@ public class CubeFaceBuilder : MonoBehaviour
         );
         PortalButton createdPortalButton = gameObject.AddComponent<PortalButton>();
         createdPortalButton.Direction = _cubeFaceDirection;
-        createdPortalButton.PortalIndex = _createdPortalIndex;
+        createdPortalButton.PortalIndex = CreatedPortalIndex;
 
         Vector3 portalButtonRotation = portalButtonGraphics.transform.localEulerAngles;
         portalButtonGraphics.transform.localEulerAngles = new Vector3(
@@ -90,7 +100,7 @@ public class CubeFaceBuilder : MonoBehaviour
         );
         ChangeGraphicsPosition(0.4f, portalButtonGraphics);
         createdPortalButton.GetComponentInChildren<SpriteRenderer>().color =
-            PortalColors.ColorByIndex[_createdPortalIndex];
+            PortalColors.ColorByIndex[CreatedPortalIndex];
         gameObject.name = _cubeFaceDirection + ": Portal Button";
         FindObjectOfType<CubesManager>().ConnectAllPortalsAndButtons();
         EditorUtility.SetDirty(createdPortalButton);

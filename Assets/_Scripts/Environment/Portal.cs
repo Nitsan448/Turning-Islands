@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
 
-[ExecuteInEditMode]
 public class Portal : CubeFace
 {
     public Portal ConnectedPortal;
@@ -23,6 +22,8 @@ public class Portal : CubeFace
         PortalGraphics = GetComponentInChildren<PortalGraphics>();
         PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         PortalGraphics.Light.enabled = IsOpen;
+        PortalGraphics.PortalInside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
+        PortalGraphics.PortalOutside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
         UpdatePortalColors();
     }
 
@@ -39,11 +40,11 @@ public class Portal : CubeFace
         }
 
         PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
-        MaterialPropertyBlock materialPropertyBlock = new();
-        materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
-        materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
-        materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * 4);
-        PortalGraphics.Sprite.SetPropertyBlock(materialPropertyBlock);
+        if (Application.isPlaying)
+        {
+            PortalGraphics.PortalInside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
+            PortalGraphics.PortalOutside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
+        }
     }
 
     protected override void OnCollisionOrTrigger(Ball ball)
@@ -51,6 +52,7 @@ public class Portal : CubeFace
         if (IsOpen)
         {
             StartCoroutine(PortalActivatedEffect());
+            StartCoroutine(ConnectedPortal.PortalActivatedEffect());
             StartCoroutine(SwitchPortals(ball));
         }
         else
@@ -63,28 +65,12 @@ public class Portal : CubeFace
     private IEnumerator SwitchPortals(Ball ball)
     {
         ConnectedPortal.Collider.enabled = false;
-        StartCoroutine(ConnectedPortal.PortalActivatedEffect());
         Vector3 newPosition = ConnectedPortal.transform.position;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 
-        float currentTime = 0;
-        while (currentTime < portalDisableTime)
-        {
-            if (currentTime / portalDisableTime < 0.3f)
-            {
-                UpdatePortalColors(Mathf.Lerp(4, 7, currentTime / portalDisableTime));
-            }
-            else
-            {
-                UpdatePortalColors(Mathf.Lerp(7, 4, currentTime / portalDisableTime));
-            }
+        yield return new WaitForSeconds(portalDisableTime);
 
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
-
-        UpdatePortalColors();
         ConnectedPortal.Collider.enabled = true;
     }
 
@@ -95,8 +81,8 @@ public class Portal : CubeFace
         while (currentTime < portalActivatedEffectDuration)
         {
             float t = currentTime / portalActivatedEffectDuration < 0.2f
-                ? Mathf.Lerp(4, 7, currentTime / portalActivatedEffectDuration)
-                : Mathf.Lerp(7, 4, currentTime / portalActivatedEffectDuration);
+                ? Mathf.Lerp(18, 30, currentTime / portalActivatedEffectDuration)
+                : Mathf.Lerp(30, 18, currentTime / portalActivatedEffectDuration);
             UpdatePortalColors(t);
 
             currentTime += Time.deltaTime;
@@ -106,19 +92,13 @@ public class Portal : CubeFace
         UpdatePortalColors();
     }
 
-    public void UpdatePortalColors(float glowIntensity = 4)
+    public void UpdatePortalColors(float glowIntensity = 18)
     {
-        if (PortalIndex == -1)
-        {
-            return;
-        }
-
-        MaterialPropertyBlock materialPropertyBlock = new();
-        materialPropertyBlock.SetInt("_IsOpen", IsOpen ? 1 : 0);
-        materialPropertyBlock.SetColor("_BaseColor", PortalColors.ColorByIndex[PortalIndex]);
-        materialPropertyBlock.SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * glowIntensity);
+        PortalGraphics.PortalInside.material
+            .SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * glowIntensity);
+        PortalGraphics.PortalOutside.material
+            .SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * glowIntensity);
 
         PortalGraphics.Light.color = PortalColors.ColorByIndex[PortalIndex];
-        PortalGraphics.Sprite.SetPropertyBlock(materialPropertyBlock);
     }
 }

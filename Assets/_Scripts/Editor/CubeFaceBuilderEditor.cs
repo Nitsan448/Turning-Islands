@@ -29,41 +29,50 @@ public class CubeFaceBuilderEditor : Editor
         {
             cubeFaceBuilder.CreatePortal();
         }
+
         if (GUILayout.Button("Portal Button"))
         {
             cubeFaceBuilder.CreatePortalButton();
         }
+
         GUILayout.Label("Tubes", EditorStyles.boldLabel);
         if (GUILayout.Button("Straight Tube"))
         {
             cubeFaceBuilder.CreateTube(true, false);
         }
+
         if (GUILayout.Button("Turned Tube"))
         {
             cubeFaceBuilder.CreateTube(true, true);
         }
+
         GUILayout.Label("Trampolines", EditorStyles.boldLabel);
         if (GUILayout.Button("Right Trampoline"))
         {
             cubeFaceBuilder.CreateTrampoline(eDirection.Right);
         }
+
         if (GUILayout.Button("Left Trampoline"))
         {
             cubeFaceBuilder.CreateTrampoline(eDirection.Left);
         }
+
         GUILayout.Label("Other", EditorStyles.boldLabel);
         if (GUILayout.Button("Bouncy Surface"))
         {
             cubeFaceBuilder.CreateBouncySurface(true);
         }
+
         if (GUILayout.Button("Magnet"))
         {
             cubeFaceBuilder.CreateMagnet();
         }
+
         if (GUILayout.Button("Win Flag"))
         {
             cubeFaceBuilder.CreateWinFlag();
         }
+
         if (GUILayout.Button("Ball"))
         {
             cubeFaceBuilder.CreateBall();
@@ -78,18 +87,22 @@ public class CubeFaceBuilderEditor : Editor
         {
             Selection.activeObject = parentCube.GetChild(0);
         }
+
         if (GUILayout.Button("Right"))
         {
             Selection.activeObject = parentCube.GetChild(1);
         }
+
         if (GUILayout.Button("Bottom"))
         {
             Selection.activeObject = parentCube.GetChild(2);
         }
+
         if (GUILayout.Button("Left"))
         {
             Selection.activeObject = parentCube.GetChild(3);
         }
+
         GUILayout.EndHorizontal();
     }
 
@@ -101,18 +114,22 @@ public class CubeFaceBuilderEditor : Editor
         {
             Selection.activeObject = parentCube.GetComponent<Cube>().TopCube.gameObject;
         }
+
         if (GUILayout.Button("Right") && parentCube.GetComponent<Cube>().RightCube)
         {
             Selection.activeObject = parentCube.GetComponent<Cube>().RightCube.gameObject;
         }
+
         if (GUILayout.Button("Bottom") && parentCube.GetComponent<Cube>().BottomCube)
         {
             Selection.activeObject = parentCube.GetComponent<Cube>().BottomCube.gameObject;
         }
+
         if (GUILayout.Button("Left") && parentCube.GetComponent<Cube>().LeftCube)
         {
             Selection.activeObject = parentCube.GetComponent<Cube>().LeftCube.gameObject;
         }
+
         GUILayout.EndHorizontal();
     }
 }

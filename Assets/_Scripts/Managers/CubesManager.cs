@@ -98,6 +98,10 @@ public class CubesManager : MonoBehaviour, IGameManager
             portals[i].PortalIndex = -1;
             portals[i].ConnectedPortal = FindPortalByIndex(portalIndex, portals);
             portals[i].PortalIndex = portalIndex;
+            if (portals[i].ConnectedPortal != null)
+            {
+                portals[i].ConnectedPortal.ConnectedPortal = portals[i];
+            }
         }
 
         for (int i = 0; i < portalButtons.Length; i++)

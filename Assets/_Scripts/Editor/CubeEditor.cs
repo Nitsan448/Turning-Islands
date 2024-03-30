@@ -150,14 +150,11 @@ public class CubeEditor : Editor
                     .CreateCubeTurner();
             }
         );
-                CreateButtonSection(
-                    "Magnets",
-                    buttonLabels,
-                    childIndex =>
-                    {
-                         cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateMagnet(); 
-                    }
-                );
+        CreateButtonSection(
+            "Magnets",
+            buttonLabels,
+            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateMagnet(); }
+        );
 
         CreateButtonSection(
             "Win Flags",

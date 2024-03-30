@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5034,8 +5034,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0019999743, y: 0.06545, z: 0}
-    m_Extent: {x: 1.1055, y: 0.39125, z: 0}
+    m_Center: {x: -0.0026000142, y: 0.065500006, z: 0}
+    m_Extent: {x: 1.1045, y: 0.39130002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5099,7 +5099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenParticles: {fileID: 970345191}
   EnterParticlesPrefab: {fileID: 8551274888716587881, guid: fec60c312b856e24baaf75cd4df202b6, type: 3}
-  Sprite: {fileID: 7571135195043862419}
+  PortalOutside: {fileID: 7571135195043862419}
+  PortalInside: {fileID: 8038873605691034616}
   Light: {fileID: 6754941260640669143}
 --- !u!1 &7937818071409789227
 GameObject:

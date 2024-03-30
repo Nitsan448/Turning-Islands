@@ -8,6 +8,7 @@ public class PortalGraphics : MonoBehaviour
 {
     public ParticleSystem OpenParticles;
     public GameObject EnterParticlesPrefab;
-    public SpriteRenderer Sprite;
+    public SpriteRenderer PortalOutside;
+    public SpriteRenderer PortalInside;
     public Light2D Light;
 }
