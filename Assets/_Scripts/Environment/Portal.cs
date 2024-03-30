@@ -13,6 +13,7 @@ public class Portal : CubeFace
     public bool IsOpen = true;
     public int PortalIndex = -1;
     private float portalDisableTime = 0.5f;
+    private float portalActivatedEffectDuration = 0.7f;
     public PortalGraphics PortalGraphics;
     [FormerlySerializedAs("_collider")] public BoxCollider2D Collider;
     protected override string SoundName { get; set; } = "Portal";
@@ -48,7 +49,7 @@ public class Portal : CubeFace
     {
         if (IsOpen)
         {
-            Instantiate(PortalGraphics.EnterParticlesPrefab, PortalGraphics.transform);
+            StartCoroutine(PortalActivatedEffect());
             StartCoroutine(SwitchPortals(ball));
         }
         else
@@ -61,10 +62,10 @@ public class Portal : CubeFace
     private IEnumerator SwitchPortals(Ball ball)
     {
         ConnectedPortal.Collider.enabled = false;
+        StartCoroutine(ConnectedPortal.PortalActivatedEffect());
         Vector3 newPosition = ConnectedPortal.transform.position;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
-        UpdatePortalColors(5.5f);
 
         float currentTime = 0;
         while (currentTime < portalDisableTime)
@@ -84,6 +85,24 @@ public class Portal : CubeFace
 
         UpdatePortalColors();
         ConnectedPortal.Collider.enabled = true;
+    }
+
+    private IEnumerator PortalActivatedEffect()
+    {
+        Instantiate(PortalGraphics.EnterParticlesPrefab, PortalGraphics.transform);
+        float currentTime = 0;
+        while (currentTime < portalActivatedEffectDuration)
+        {
+            float t = currentTime / portalActivatedEffectDuration < 0.2f
+                ? Mathf.Lerp(4, 7, currentTime / portalActivatedEffectDuration)
+                : Mathf.Lerp(7, 4, currentTime / portalActivatedEffectDuration);
+            UpdatePortalColors(t);
+
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+
+        UpdatePortalColors();
     }
 
     public void UpdatePortalColors(float glowIntensity = 4)
