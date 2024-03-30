@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NewScenes/Level6.unity
     guid: 539b893ffd10f974a9a50b22a3522a11
   - enabled: 1
-    path: Assets/Scenes/NewScenes/Level7.unity
+    path: Assets/Scenes/NewScenes/Old/Magnets first level.unity
     guid: 3855f33f82cb7fc49b63d01be00c8a8e
   - enabled: 1
     path: Assets/Scenes/NewScenes/Level8.unity

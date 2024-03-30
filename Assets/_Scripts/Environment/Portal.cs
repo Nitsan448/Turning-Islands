@@ -21,6 +21,7 @@ public class Portal : CubeFace
     private void Awake()
     {
         PortalGraphics = GetComponentInChildren<PortalGraphics>();
+        PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         PortalGraphics.Light.enabled = IsOpen;
         UpdatePortalColors();
     }
