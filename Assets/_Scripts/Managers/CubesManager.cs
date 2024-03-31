@@ -97,7 +97,9 @@ public class CubesManager : MonoBehaviour, IGameManager
     private void HandleMouseInputs()
     {
         HandleMouseSelectionInput();
+        HandleMouseRotationInput();
     }
+
 
     private void HandleMouseSelectionInput()
     {
@@ -112,6 +114,12 @@ public class CubesManager : MonoBehaviour, IGameManager
         if (cubeToSelect == null || !cubeToSelect.IsSelectable) return;
 
         UpdateSelectedCube(cubeToSelect);
+    }
+
+    private void HandleMouseRotationInput()
+    {
+        if (!Input.GetMouseButtonDown(2)) return;
+        SelectedCube.RotateCube(eDirection.Right);
     }
 
     public void ConnectAllPortalsAndButtons()
