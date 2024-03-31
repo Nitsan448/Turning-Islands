@@ -263,6 +263,14 @@ PrefabInstance:
       value: 'Cube: 1, 1'
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: TopCube
+      value: 
+      objectReference: {fileID: 1610619921}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: LeftCube
+      value: 
+      objectReference: {fileID: 1172929141}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
       objectReference: {fileID: 1172929141}
@@ -712,6 +720,14 @@ PrefabInstance:
       propertyPath: LeftCube
       value: 
       objectReference: {fileID: 1610619921}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: RightCube
+      value: 
+      objectReference: {fileID: 1610619921}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 1172929141}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Portal'
@@ -1192,9 +1208,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2065226922}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: LeftCube
+      value: 
+      objectReference: {fileID: 2111027614}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
       objectReference: {fileID: 2111027614}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 2065226922}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Bouncy Surface'
@@ -1289,7 +1313,15 @@ PrefabInstance:
       value: 'Cube: 1, 2'
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: TopCube
+      value: 
+      objectReference: {fileID: 2111027614}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
+      value: 
+      objectReference: {fileID: 2065226922}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: RightCube
       value: 
       objectReference: {fileID: 2065226922}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}

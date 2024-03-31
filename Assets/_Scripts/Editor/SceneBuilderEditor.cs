@@ -13,9 +13,15 @@ public class SceneBuilderEditor : Editor
         {
             (target as SceneBuilder).BuildScene();
         }
+
         if (GUILayout.Button("Change Cubes Positions"))
         {
             (target as SceneBuilder).ChangeCubesPositions();
+        }
+
+        if (GUILayout.Button("Connect Cubes"))
+        {
+            (target as SceneBuilder).ConnectCubes(true);
         }
     }
 }

@@ -336,6 +336,14 @@ PrefabInstance:
       propertyPath: LeftCube
       value: 
       objectReference: {fileID: 775215139}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: RightCube
+      value: 
+      objectReference: {fileID: 775215139}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 2095132110}
     - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
       value: 0.8
@@ -704,11 +712,19 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2116941878}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: LeftCube
+      value: 
+      objectReference: {fileID: 283640900}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
       objectReference: {fileID: 283640900}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 2116941878}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: IsSelectable
       value: 0
@@ -1936,7 +1952,15 @@ PrefabInstance:
       value: 'Cube: 1, 2'
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: TopCube
+      value: 
+      objectReference: {fileID: 283640900}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
+      value: 
+      objectReference: {fileID: 2116941878}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: RightCube
       value: 
       objectReference: {fileID: 2116941878}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -2131,6 +2155,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Cube: 1, 1'
       objectReference: {fileID: 0}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: TopCube
+      value: 
+      objectReference: {fileID: 775215139}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: LeftCube
+      value: 
+      objectReference: {fileID: 2095132110}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 

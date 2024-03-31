@@ -12,6 +12,7 @@ public class SceneBuilder : MonoBehaviour
     [SerializeField] private int _numberOfColumns;
 
     [SerializeField] private Vector2 _distanceBetweenCubes = new Vector2(8, 8);
+    [SerializeField] private bool _circularCubeConnection;
 
     private string _sceneBuilderPrefabsPath = "Assets/Prefabs/SceneBuilder/";
     private GameObject _cubesManager;
@@ -30,7 +31,7 @@ public class SceneBuilder : MonoBehaviour
         LoadAllPrefabs();
         InstantiateSingletons();
         InstantiateCubes();
-        ConnectCubes();
+        ConnectCubes(false);
         HandleReferences();
     }
 
@@ -132,8 +133,13 @@ public class SceneBuilder : MonoBehaviour
         return topLeftCubePosition;
     }
 
-    private void ConnectCubes()
+    public void ConnectCubes(bool populateCubesArray)
     {
+        if (populateCubesArray)
+        {
+            PopulateCubesArray();
+        }
+
         for (int row = 0; row < _numberOfRows; row++)
         {
             for (int column = 0; column < _numberOfColumns; column++)
@@ -142,6 +148,24 @@ public class SceneBuilder : MonoBehaviour
                 ConnectWithRightCube(row, column);
                 ConnectWithTopCube(row, column);
                 ConnectWithBottomCube(row, column);
+            }
+        }
+
+        foreach (Cube cube in FindObjectOfType<CubesManager>().GetComponentsInChildren<Cube>())
+        {
+            EditorUtility.SetDirty(cube);
+        }
+    }
+
+    private void PopulateCubesArray()
+    {
+        Cubes = new Cube[_numberOfRows, _numberOfColumns];
+        Cube[] cubes = FindObjectOfType<CubesManager>().GetComponentsInChildren<Cube>();
+        for (int row = 0; row < _numberOfRows; row++)
+        {
+            for (int column = 0; column < _numberOfColumns; column++)
+            {
+                Cubes[row, column] = cubes[row * _numberOfColumns + column];
             }
         }
     }
@@ -153,6 +177,11 @@ public class SceneBuilder : MonoBehaviour
             Cubes[rowIndex, columnIndex].LeftCube = Cubes[rowIndex, columnIndex - 1];
             Cubes[rowIndex, columnIndex - 1].RightCube = Cubes[rowIndex, columnIndex];
         }
+        else if (_circularCubeConnection)
+        {
+            Cubes[rowIndex, columnIndex].LeftCube = Cubes[rowIndex, _numberOfColumns - 1];
+            Cubes[rowIndex, _numberOfColumns - 1].RightCube = Cubes[rowIndex, columnIndex];
+        }
     }
 
     private void ConnectWithRightCube(int rowIndex, int columnIndex)
@@ -161,6 +190,11 @@ public class SceneBuilder : MonoBehaviour
         {
             Cubes[rowIndex, columnIndex].RightCube = Cubes[rowIndex, columnIndex + 1];
             Cubes[rowIndex, columnIndex + 1].LeftCube = Cubes[rowIndex, columnIndex];
+        }
+        else if (_circularCubeConnection)
+        {
+            Cubes[rowIndex, columnIndex].RightCube = Cubes[rowIndex, 0];
+            Cubes[rowIndex, 0].LeftCube = Cubes[rowIndex, columnIndex];
         }
     }
 
@@ -171,6 +205,11 @@ public class SceneBuilder : MonoBehaviour
             Cubes[rowIndex, columnIndex].BottomCube = Cubes[rowIndex + 1, columnIndex];
             Cubes[rowIndex + 1, columnIndex].TopCube = Cubes[rowIndex, columnIndex];
         }
+        else if (_circularCubeConnection)
+        {
+            Cubes[rowIndex, columnIndex].BottomCube = Cubes[0, columnIndex];
+            Cubes[0, columnIndex].TopCube = Cubes[rowIndex, columnIndex];
+        }
     }
 
     private void ConnectWithTopCube(int rowIndex, int columnIndex)
@@ -179,6 +218,11 @@ public class SceneBuilder : MonoBehaviour
         {
             Cubes[rowIndex, columnIndex].TopCube = Cubes[rowIndex - 1, columnIndex];
             Cubes[rowIndex - 1, columnIndex].BottomCube = Cubes[rowIndex, columnIndex];
+        }
+        else if (_circularCubeConnection)
+        {
+            Cubes[rowIndex, columnIndex].BottomCube = Cubes[_numberOfRows - 1, columnIndex];
+            Cubes[_numberOfRows - 1, columnIndex].TopCube = Cubes[rowIndex, columnIndex];
         }
     }
 

@@ -48,6 +48,7 @@ MonoBehaviour:
   _numberOfRows: 1
   _numberOfColumns: 3
   _distanceBetweenCubes: {x: 8, y: 8}
+  _circularCubeConnection: 1
 --- !u!114 &3532369075618128140
 MonoBehaviour:
   m_ObjectHideFlags: 0
