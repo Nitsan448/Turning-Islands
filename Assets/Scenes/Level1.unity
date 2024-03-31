@@ -816,6 +816,18 @@ PrefabInstance:
       propertyPath: IsSelectable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890799529151308416, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6099208306448587380, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Left: Win flag'

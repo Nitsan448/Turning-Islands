@@ -5,7 +5,6 @@ using UnityEngine;
 public class CubesManager : MonoBehaviour, IGameManager
 {
     public Cube SelectedCube;
-    private AudioSource _selectionAudio;
     public Vector2 DistanceBetweenCubes;
     [SerializeField] private LayerMask _cubeLayerMask;
     private Cube _previousHoveredCube;
@@ -19,7 +18,6 @@ public class CubesManager : MonoBehaviour, IGameManager
     public void Startup()
     {
         if (Simulation) return;
-        _selectionAudio = GetComponent<AudioSource>();
         SelectedCube.SelectedSprite.SetActive(true);
     }
 
