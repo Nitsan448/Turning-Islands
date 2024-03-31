@@ -49,3 +49,5 @@ MonoBehaviour:
   _cubeLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  _allowMouseInput: 1
+  _hoverToSelect: 1
