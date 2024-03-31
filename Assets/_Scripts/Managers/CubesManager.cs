@@ -8,6 +8,7 @@ public class CubesManager : MonoBehaviour, IGameManager
     private AudioSource _selectionAudio;
     public Vector2 DistanceBetweenCubes;
     [SerializeField] private LayerMask _cubeLayerMask;
+    private Cube _previousHoveredCube;
 
     public void Startup()
     {
@@ -78,6 +79,8 @@ public class CubesManager : MonoBehaviour, IGameManager
             Managers.Audio.PlaySound("CubeSelection");
             SelectedCube = cubeToSelect;
             cubeToSelect.SelectedSprite.SetActive(true);
+            cubeToSelect.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            _previousHoveredCube = null;
         }
     }
 
@@ -98,6 +101,7 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         HandleMouseSelectionInput();
         HandleMouseRotationInput();
+        HandleMouseHover();
     }
 
 
@@ -105,12 +109,7 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (!Input.GetMouseButtonDown(0)) return;
 
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
-            distance: Mathf.Infinity,
-            layerMask: _cubeLayerMask);
-        if (!hit) return;
-
-        Cube cubeToSelect = hit.transform.parent.GetComponent<Cube>();
+        Cube cubeToSelect = GetHoveredCube();
         if (cubeToSelect == null || !cubeToSelect.IsSelectable) return;
 
         UpdateSelectedCube(cubeToSelect);
@@ -118,9 +117,46 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void HandleMouseRotationInput()
     {
-        if (!Input.GetMouseButtonDown(2)) return;
+        if (!Input.GetMouseButtonDown(1)) return;
         SelectedCube.RotateCube(eDirection.Right);
     }
+
+
+    private void HandleMouseHover()
+    {
+        Cube hoveredCube = GetHoveredCube();
+        if (hoveredCube == null || hoveredCube != _previousHoveredCube)
+        {
+            ResetHoveredCube();
+        }
+
+        if (hoveredCube != null && hoveredCube.IsSelectable && hoveredCube != SelectedCube)
+        {
+            hoveredCube.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
+            hoveredCube.SelectedSprite.SetActive(true);
+            _previousHoveredCube = hoveredCube;
+        }
+    }
+
+    private Cube GetHoveredCube()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
+            distance: Mathf.Infinity,
+            layerMask: _cubeLayerMask);
+        if (!hit) return null;
+
+        Cube hoveredCube = hit.transform.parent.GetComponent<Cube>();
+        return hoveredCube;
+    }
+
+    private void ResetHoveredCube()
+    {
+        if (_previousHoveredCube == null && SelectedCube != _previousHoveredCube) return;
+        _previousHoveredCube.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        _previousHoveredCube.SelectedSprite.SetActive(false);
+        _previousHoveredCube = null;
+    }
+
 
     public void ConnectAllPortalsAndButtons()
     {

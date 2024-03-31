@@ -968,6 +968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Right: Turned Tube'
       objectReference: {fileID: 0}
+    - target: {fileID: 6404569531536788408, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5436086089722117074, guid: ca29d46185919944cb4a1df5544be179, type: 3}
     - {fileID: 8749107732030010667, guid: ca29d46185919944cb4a1df5544be179, type: 3}
