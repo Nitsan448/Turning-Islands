@@ -23,7 +23,7 @@ public class Trampoline : CubeFace
         Vector2 targetPosition = getTargetPosition();
 
         ball.Animator.Play("Squish");
-        ball.ArcMovementCoroutine = StartCoroutine(
+        ball.ArcMovementCoroutine = ball.StartCoroutine(
             ball.MoveTowardInArc(8, targetPosition, Direction)
         );
     }
