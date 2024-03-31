@@ -29,12 +29,17 @@ public class Tutorial : MonoBehaviour
     {
         if (_timeSinceTutorialStarted > _tutorialLength)
         {
-            _ball.ResetToStartingState();
-            _ball.StartMoving();
-            _timeSinceTutorialStarted = 0;
+            ResetTutorialState();
         }
 
         _timeSinceTutorialStarted += Time.deltaTime;
+    }
+
+    protected virtual void ResetTutorialState()
+    {
+        _ball.ResetToStartingState();
+        _ball.StartMoving();
+        _timeSinceTutorialStarted = 0;
     }
 
     public void OnTutorialFinished()
