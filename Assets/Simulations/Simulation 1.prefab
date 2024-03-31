@@ -135,19 +135,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0027499795
+      value: -0.0021499991
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.0651
+      value: 0.065500006
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.1047499
+      value: 1.1040499
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.3905
+      value: 0.39130002
       objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name
@@ -232,19 +232,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0022500157
+      value: -0.001850009
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.06580001
+      value: 0.06574999
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.1047499
+      value: 1.10515
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.391
+      value: 0.39125
       objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name
@@ -588,6 +588,10 @@ PrefabInstance:
     - target: {fileID: 3792041840003650203, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
       propertyPath: m_Name
       value: CubesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
+      propertyPath: Simulation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
       propertyPath: _simulation
