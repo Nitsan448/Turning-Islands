@@ -8,7 +8,7 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] private string _tutorialName;
     [SerializeField] private Button _finishTutorialButton;
-    [SerializeField] private Ball _ball;
+    [SerializeField] protected Ball _ball;
     [SerializeField] private float _tutorialLength;
     private float _timeSinceTutorialStarted = 0;
 
