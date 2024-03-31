@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Simulation : MonoBehaviour
 {
-    [SerializeField] protected Ball _ball;
-    [SerializeField] private float _simulationLength;
+    [SerializeField] private Ball _ball;
+    public float SimulationLength;
 
     private void Start()
     {
