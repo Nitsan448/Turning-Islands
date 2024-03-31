@@ -14,15 +14,18 @@ public class CubesManager : MonoBehaviour, IGameManager
     private bool _allowMouseInput;
 
     [SerializeField] private bool _hoverToSelect;
+    [SerializeField] private bool _simulation = false;
 
     public void Startup()
     {
+        if (_simulation) return;
         _selectionAudio = GetComponent<AudioSource>();
         SelectedCube.SelectedSprite.SetActive(true);
     }
 
     void Update()
     {
+        if (_simulation) return;
         if (Managers.Game.GameState == EGameState.Editing)
         {
             HandleKeyboardInputs();
