@@ -16,6 +16,7 @@ public class Ball : MonoBehaviour
     private float _timeUntilGameOver = 3;
     public Coroutine ArcMovementCoroutine;
     public bool BallInFlag = false;
+    [SerializeField] private float _accelerationTime;
 
     private Vector2 _velocity;
     private Animator _animator;
@@ -51,8 +52,21 @@ public class Ball : MonoBehaviour
 
     public void StartMoving()
     {
-        _velocity = StartingVelocity;
+        StartCoroutine(Accelerate());
         _velocityIndicator.SetActive(false);
+    }
+
+    private IEnumerator Accelerate()
+    {
+        float currentTime = 0;
+        while (currentTime < _accelerationTime)
+        {
+            _velocity = Vector2.Lerp(Vector2.zero, StartingVelocity, currentTime / _accelerationTime);
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+
+        _velocity = StartingVelocity;
     }
 
     private void FixedUpdate()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] private string _tutorialName;
     [SerializeField] private Button _finishTutorialButton;
+    [SerializeField] private Ball _ball;
+    [SerializeField] private float _tutorialLength;
+    private float _timeSinceTutorialStarted = 0;
 
     void Start()
     {
@@ -16,8 +20,21 @@ public class Tutorial : MonoBehaviour
             return;
         }
 
+        _ball.StartMoving();
         Managers.Game.SetStateToTutorial(this);
         _finishTutorialButton.onClick.AddListener(OnTutorialFinished);
+    }
+
+    private void Update()
+    {
+        if (_timeSinceTutorialStarted > _tutorialLength)
+        {
+            _ball.ResetToStartingState();
+            _ball.StartMoving();
+            _timeSinceTutorialStarted = 0;
+        }
+
+        _timeSinceTutorialStarted += Time.deltaTime;
     }
 
     public void OnTutorialFinished()
