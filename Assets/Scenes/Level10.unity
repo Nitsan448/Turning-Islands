@@ -1851,6 +1851,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1070798840}
     - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
+      propertyPath: _hoverToSelect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
+      propertyPath: _allowMouseInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
       propertyPath: DistanceBetweenCubes.x
       value: 8
       objectReference: {fileID: 0}

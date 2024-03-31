@@ -10,6 +10,11 @@ public class CubesManager : MonoBehaviour, IGameManager
     [SerializeField] private LayerMask _cubeLayerMask;
     private Cube _previousHoveredCube;
 
+    [Header("Mouse Input")] [SerializeField]
+    private bool _allowMouseInput;
+
+    [SerializeField] private bool _hoverToSelect;
+
     public void Startup()
     {
         _selectionAudio = GetComponent<AudioSource>();
@@ -21,7 +26,10 @@ public class CubesManager : MonoBehaviour, IGameManager
         if (Managers.Game.GameState == EGameState.Editing)
         {
             HandleKeyboardInputs();
-            HandleMouseInputs();
+            if (_allowMouseInput)
+            {
+                HandleMouseInputs();
+            }
         }
     }
 
@@ -117,8 +125,15 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void HandleMouseRotationInput()
     {
-        if (!Input.GetMouseButtonDown(1)) return;
-        SelectedCube.RotateCube(eDirection.Right);
+        if (Input.GetMouseButtonDown(1))
+        {
+            SelectedCube.RotateCube(eDirection.Right);
+        }
+
+        if (_hoverToSelect && Input.GetMouseButtonDown(0))
+        {
+            SelectedCube.RotateCube(eDirection.Left);
+        }
     }
 
 
@@ -135,6 +150,10 @@ public class CubesManager : MonoBehaviour, IGameManager
             hoveredCube.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
             hoveredCube.SelectedSprite.SetActive(true);
             _previousHoveredCube = hoveredCube;
+            if (_hoverToSelect)
+            {
+                UpdateSelectedCube(hoveredCube);
+            }
         }
     }
 
