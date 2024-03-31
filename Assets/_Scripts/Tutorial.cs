@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,5 +48,14 @@ public class Tutorial : MonoBehaviour
         Managers.Game.SetStateToEditing();
         PlayerPrefs.SetInt(_tutorialName, 1);
         gameObject.SetActive(false);
+    }
+
+    [Button]
+    private void SetSortingLayersToTutorial()
+    {
+        foreach (SpriteRenderer spriteRenderer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            spriteRenderer.sortingLayerName = "Tutorial";
+        }
     }
 }

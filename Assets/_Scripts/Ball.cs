@@ -131,7 +131,7 @@ public class Ball : MonoBehaviour
                 float newXPosition = Mathf.Lerp(startPosition.x, targetPosition.x, progress);
                 float distance = Mathf.Abs(targetPosition.y - startPosition.y);
                 bool isOffSetPositive = direction != eDirection.Bottom;
-                float yOffset = calculateOffset(progress, duration, distance, isOffSetPositive);
+                float yOffset = calculateOffset(progress, distance, isOffSetPositive);
                 transform.position = new Vector2(newXPosition, startPosition.y + yOffset);
             }
             else
@@ -139,7 +139,7 @@ public class Ball : MonoBehaviour
                 float newYPosition = Mathf.Lerp(startPosition.y, targetPosition.y, progress);
                 float distance = Mathf.Abs(targetPosition.x - startPosition.x);
                 bool isOffSetPositive = direction != eDirection.Left;
-                float xOffset = calculateOffset(progress, duration, distance, isOffSetPositive);
+                float xOffset = calculateOffset(progress, distance, isOffSetPositive);
                 transform.position = new Vector2(startPosition.x + xOffset, newYPosition);
             }
 
@@ -151,7 +151,7 @@ public class Ball : MonoBehaviour
         ArcMovementCoroutine = null;
     }
 
-    private float calculateOffset(float progress, float duration, float distance, bool isPositive)
+    private float calculateOffset(float progress, float distance, bool isPositive)
     {
         float offset = 2 * Mathf.Sin(progress * Mathf.PI);
         offset -= progress * distance;
