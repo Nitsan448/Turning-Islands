@@ -11,6 +11,7 @@ public class PortalButton : CubeFace
     protected override void OnCollisionOrTrigger(Ball ball)
     {
         ConnectedPortal.ChangeOpenState(true);
+        GetComponentInChildren<Animator>().SetTrigger("Pressed");
         ball.ChangeVelocity(GetComponent<CubeFace>().GetVelocity());
         ball.Animator.Play("Squish");
     }

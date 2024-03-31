@@ -98,6 +98,7 @@ public class CubeFaceBuilder : MonoBehaviour
             portalButtonRotation.y,
             portalButtonRotation.z - 90
         );
+        ChangeColliderHeight(0.5f);
         ChangeGraphicsPosition(0.4f, portalButtonGraphics);
         createdPortalButton.GetComponentInChildren<SpriteRenderer>().color =
             PortalColors.ColorByIndex[CreatedPortalIndex];
