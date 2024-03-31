@@ -144,6 +144,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Portals teleport the ball between each other
       objectReference: {fileID: 0}
+    - target: {fileID: 3968987901792172605, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a3154d7e19661e9488b6ce193951fcb1, type: 2}
+    - target: {fileID: 3968987901792172605, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8675016439153859046, guid: a3154d7e19661e9488b6ce193951fcb1, type: 2}
+    - target: {fileID: 3968987901792172605, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4032713788207499573, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -180,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4372312168924491356, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a73bf97b00854f499cb02d6e0a57d0c, type: 3}
     - target: {fileID: 4429273343782896895, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -263,6 +279,18 @@ PrefabInstance:
     - target: {fileID: 8700190834885379683, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807089394179460452, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807089394179460452, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807089394179460452, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 8899085745504185814, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Enabled
@@ -459,19 +487,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0015499592
+      value: -0.0027000308
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.06539999
+      value: 0.065699995
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.10515
+      value: 1.1053
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.39090002
+      value: 0.3912
       objectReference: {fileID: 0}
     - target: {fileID: 6067340689736060233, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_Name
@@ -600,15 +628,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.0027499795
+      value: -0.0026500225
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.06485
+      value: 0.06555
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 1.10495
+      value: 1.10525
       objectReference: {fileID: 0}
     - target: {fileID: 5972085923542431631, guid: 7f9c2866f26503b43a195417a4ee226c, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
