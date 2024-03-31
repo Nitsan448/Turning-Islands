@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8667499148484135654}
   - component: {fileID: 2386933648805776789}
   m_Layer: 0
-  m_Name: Simulation
+  m_Name: SimulationPrefabsFather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ball: {fileID: 5120901399822404823}
-  _simulationLength: 6
+  SimulationLength: 10
 --- !u!1001 &5375886718674691528
 PrefabInstance:
   m_ObjectHideFlags: 0
