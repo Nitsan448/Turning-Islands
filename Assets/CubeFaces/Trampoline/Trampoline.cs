@@ -40,7 +40,7 @@ public class Trampoline : CubeFace
         );
         if (neighborCube != null)
         {
-            AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
+            // AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
         }
 
         return targetPosition;

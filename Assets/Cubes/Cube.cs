@@ -11,7 +11,6 @@ public class Cube : MonoBehaviour
     public Cube BottomCube;
 
     public GameObject SelectedSprite;
-    public GameObject CantSelectSprite;
 
     [SerializeField] private float _rotationTime = 0.5f;
 

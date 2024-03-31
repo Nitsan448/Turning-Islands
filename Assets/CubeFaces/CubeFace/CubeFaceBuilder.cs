@@ -19,7 +19,7 @@ public class CubeFaceBuilder : MonoBehaviour
             1 => "Blue",
             _ => "Green"
         };
-        InstantiateObjectGraphicsPrefab(FolderPaths.Portal + "/" + portalColorName + "Portal.prefab");
+        InstantiateObjectGraphicsPrefab(FolderPaths.Portal + "/PortalVariants/" + portalColorName + "Portal.prefab");
         Portal createdPortal = gameObject.AddComponent<Portal>();
         SetPortalFields(createdPortal);
         gameObject.name = _cubeFaceDirection + ": Portal";

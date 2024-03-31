@@ -141,6 +141,7 @@ public class CubesManager : MonoBehaviour, IGameManager
     private void HandleMouseHover()
     {
         Cube hoveredCube = GetHoveredCube();
+
         if (hoveredCube == null || hoveredCube != _previousHoveredCube)
         {
             ResetHoveredCube();

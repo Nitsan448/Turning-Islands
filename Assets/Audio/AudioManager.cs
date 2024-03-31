@@ -7,7 +7,7 @@ using System;
 public class AudioManager : MonoBehaviour, IGameManager
 {
     [SerializeField] private Sound[] _sounds;
-    // Start is called before the first frame update
+
     public void Startup()
     {
         foreach(Sound sound in _sounds)
