@@ -420,6 +420,22 @@ PrefabInstance:
       propertyPath: StartingVelocity.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3344206525722983521, guid: 08d41519841f95746b9881107e757d31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344206525722983521, guid: 08d41519841f95746b9881107e757d31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344206525722983521, guid: 08d41519841f95746b9881107e757d31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344206525722983521, guid: 08d41519841f95746b9881107e757d31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5398188339097623127, guid: 08d41519841f95746b9881107e757d31, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.00000004371139

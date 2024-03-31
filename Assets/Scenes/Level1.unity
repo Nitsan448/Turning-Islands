@@ -610,6 +610,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6414098474955057353, guid: c6852305e09f40a4a9a3de626e99a448, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 247
+      objectReference: {fileID: 0}
     - target: {fileID: 8600213034971805918, guid: c6852305e09f40a4a9a3de626e99a448, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -904,6 +908,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1917993927}
     m_Modifications:
+    - target: {fileID: 455629607884901443, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -1291,6 +1299,10 @@ PrefabInstance:
       propertyPath: SelectedCube
       value: 
       objectReference: {fileID: 911914511}
+    - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
+      propertyPath: _cubeLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
       propertyPath: DistanceBetweenCubes.x
       value: 8

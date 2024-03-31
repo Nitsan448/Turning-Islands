@@ -7,6 +7,7 @@ public class CubesManager : MonoBehaviour, IGameManager
     public Cube SelectedCube;
     private AudioSource _selectionAudio;
     public Vector2 DistanceBetweenCubes;
+    [SerializeField] private LayerMask _cubeLayerMask;
 
     public void Startup()
     {
@@ -18,12 +19,18 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (Managers.Game.GameState == EGameState.Editing)
         {
-            HandleSelectionInput();
-            HandleRotationInput();
+            HandleKeyboardInputs();
+            HandleMouseInputs();
         }
     }
 
-    private void HandleSelectionInput()
+    private void HandleKeyboardInputs()
+    {
+        HandleKeyboardSelectionInput();
+        HandleKeyboardRotationInput();
+    }
+
+    private void HandleKeyboardSelectionInput()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
@@ -74,7 +81,7 @@ public class CubesManager : MonoBehaviour, IGameManager
         }
     }
 
-    private void HandleRotationInput()
+    private void HandleKeyboardRotationInput()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -85,6 +92,26 @@ public class CubesManager : MonoBehaviour, IGameManager
         {
             SelectedCube.RotateCube(eDirection.Right);
         }
+    }
+
+    private void HandleMouseInputs()
+    {
+        HandleMouseSelectionInput();
+    }
+
+    private void HandleMouseSelectionInput()
+    {
+        if (!Input.GetMouseButtonDown(0)) return;
+
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
+            distance: Mathf.Infinity,
+            layerMask: _cubeLayerMask);
+        if (!hit) return;
+
+        Cube cubeToSelect = hit.transform.parent.GetComponent<Cube>();
+        if (cubeToSelect == null || !cubeToSelect.IsSelectable) return;
+
+        UpdateSelectedCube(cubeToSelect);
     }
 
     public void ConnectAllPortalsAndButtons()
