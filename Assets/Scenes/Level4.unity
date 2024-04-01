@@ -191,7 +191,15 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1211714024}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: RightCube
+      value: 
+      objectReference: {fileID: 1211714024}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 604676745}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Bouncy Surface'
@@ -554,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 1455058496}
+      objectReference: {fileID: 604676745}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
@@ -895,19 +903,19 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 1455058496}
+      objectReference: {fileID: 1752901595}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 1211714024}
+      objectReference: {fileID: 486745621}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 1211714024}
+      objectReference: {fileID: 1455058496}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 1455058496}
+      objectReference: {fileID: 1752901595}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Turned Tube'
@@ -1307,11 +1315,11 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 604676745}
+      objectReference: {fileID: 1752901595}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 604676745}
+      objectReference: {fileID: 1752901595}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
@@ -1810,11 +1818,11 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 604676745}
+      objectReference: {fileID: 1455058496}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 486745621}
+      objectReference: {fileID: 604676745}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
@@ -1822,7 +1830,7 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 604676745}
+      objectReference: {fileID: 1455058496}
     - target: {fileID: 5932827067642531005, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Right: Bouncy Surface'
@@ -1999,6 +2007,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
   m_PrefabInstance: {fileID: 486745615}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1752901595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+  m_PrefabInstance: {fileID: 162620419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806d718676439fd4392775921669bcf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1778184235
 PrefabInstance:
   m_ObjectHideFlags: 0
