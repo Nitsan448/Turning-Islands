@@ -25,6 +25,8 @@ public class StartingTutorial : MonoBehaviour
             yield return null;
         }
 
+
+        Managers.Cubes.CubeRotated = false;
         _selectCubesTutorial.SetActive(false);
         _rotateCubesTutorial.SetActive(true);
         while (!Managers.Cubes.CubeRotated)
