@@ -13,7 +13,6 @@ public class CubesManager : MonoBehaviour, IGameManager
     [Header("Mouse Input")] [SerializeField]
     private bool _allowMouseInput;
 
-    [SerializeField] private bool _hoverToSelect;
     public bool Simulation = false;
 
     public void Startup()
@@ -76,6 +75,7 @@ public class CubesManager : MonoBehaviour, IGameManager
             }
             else
             {
+                adjacentCube.StartCoroutine(adjacentCube.ShowCantSelectSpriteForDuration(0.1f));
                 FindCubeToSelect(adjacentCube, direction);
             }
         }
@@ -133,7 +133,7 @@ public class CubesManager : MonoBehaviour, IGameManager
             SelectedCube.RotateCube(eDirection.Right);
         }
 
-        if (_hoverToSelect && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             SelectedCube.RotateCube(eDirection.Left);
         }
@@ -144,21 +144,26 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         Cube hoveredCube = GetHoveredCube();
 
-        if (hoveredCube == null || hoveredCube != _previousHoveredCube)
+        if (hoveredCube == null)
         {
-            ResetHoveredCube();
-        }
-
-        if (hoveredCube != null && hoveredCube.IsSelectable && hoveredCube != SelectedCube)
-        {
-            hoveredCube.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
-            hoveredCube.SelectedSprite.SetActive(true);
-            _previousHoveredCube = hoveredCube;
-            if (_hoverToSelect)
+            if (_previousHoveredCube != null)
             {
-                UpdateSelectedCube(hoveredCube);
+                _previousHoveredCube.CantSelectSprite.SetActive(false);
+                _previousHoveredCube = null;
+                // ResetHoveredCube();
             }
         }
+        else if (!hoveredCube.IsSelectable)
+        {
+            hoveredCube.CantSelectSprite.SetActive(true);
+        }
+        else if (hoveredCube != SelectedCube)
+        {
+            UpdateSelectedCube(hoveredCube);
+            // _previousHoveredCube.CantSelectSprite.SetActive(false);
+        }
+
+        _previousHoveredCube = hoveredCube;
     }
 
     private Cube GetHoveredCube()
@@ -177,6 +182,7 @@ public class CubesManager : MonoBehaviour, IGameManager
         if (_previousHoveredCube == null && SelectedCube != _previousHoveredCube) return;
         _previousHoveredCube.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         _previousHoveredCube.SelectedSprite.SetActive(false);
+        _previousHoveredCube.CantSelectSprite.SetActive(false);
         _previousHoveredCube = null;
     }
 

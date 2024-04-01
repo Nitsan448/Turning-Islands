@@ -11,6 +11,7 @@ public class Cube : MonoBehaviour
     public Cube BottomCube;
 
     public GameObject SelectedSprite;
+    public GameObject CantSelectSprite;
 
     [SerializeField] private float _rotationTime = 0.5f;
 
@@ -38,7 +39,7 @@ public class Cube : MonoBehaviour
 
         Managers.Audio.PlaySound("CubeRotation");
         Quaternion currentRotation = transform.rotation;
-        Quaternion targetRotation = getTargetRotation(direction);
+        Quaternion targetRotation = GetTargetRotation(direction);
         float currentTime = 0;
 
         while (currentTime < _rotationTime)
@@ -59,7 +60,7 @@ public class Cube : MonoBehaviour
         yield return null;
     }
 
-    private Quaternion getTargetRotation(eDirection direction)
+    private Quaternion GetTargetRotation(eDirection direction)
     {
         int zRotationIncrement = 90;
         if (direction == eDirection.Right)
@@ -93,6 +94,13 @@ public class Cube : MonoBehaviour
         }
 
         return null;
+    }
+
+    public IEnumerator ShowCantSelectSpriteForDuration(float duration)
+    {
+        CantSelectSprite.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        CantSelectSprite.SetActive(false);
     }
 #if UNITY_EDITOR
     public void DeleteCube()
