@@ -140,6 +140,8 @@ public class Cube : MonoBehaviour
 
             if (cubeFaces[i] is Portal)
             {
+                childTransform.GetComponent<CubeFaceBuilder>().CreatedPortalIndex =
+                    ((Portal)cubeFaces[i]).PortalIndex;
                 childTransform.GetComponent<CubeFaceBuilder>().CreatePortal();
             }
             else if (cubeFaces[i] is PortalButton)
