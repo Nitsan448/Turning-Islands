@@ -19,10 +19,5 @@ public class PortalEditor : Editor
             portal.ChangeOpenState(true);
             EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
         }
-
-        if (GUILayout.Button("Update Portal Colors"))
-        {
-            portal.UpdatePortalColors();
-        }
     }
 }

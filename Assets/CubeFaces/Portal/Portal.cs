@@ -11,11 +11,17 @@ public class Portal : CubeFace
     public Portal ConnectedPortal;
     public bool IsOpen = true;
     public int PortalIndex = -1;
-    private float portalDisableTime = 0.5f;
-    private float portalActivatedEffectDuration = 0.7f;
+    private float _portalDisableTime = 0.5f;
     public PortalGraphics PortalGraphics;
     [FormerlySerializedAs("_collider")] public BoxCollider2D Collider;
     protected override string SoundName { get; set; } = "Portal";
+
+    [Header("Activation Effect")] [SerializeField]
+    private float _activationEffectDuration = 0.7f;
+
+    private readonly float _defaultGlowIntensity = 18;
+    private readonly float _activationGlowIntensity = 36;
+
 
     private void Awake()
     {
@@ -24,7 +30,7 @@ public class Portal : CubeFace
         PortalGraphics.Light.enabled = IsOpen;
         PortalGraphics.PortalInside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
         PortalGraphics.PortalOutside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
-        UpdatePortalColors();
+        UpdatePortalColors(_defaultGlowIntensity);
     }
 
     public void ChangeOpenState(bool changeConnected)
@@ -69,7 +75,7 @@ public class Portal : CubeFace
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 
-        yield return new WaitForSeconds(portalDisableTime);
+        yield return new WaitForSeconds(_portalDisableTime);
 
         ConnectedPortal.Collider.enabled = true;
     }
@@ -78,21 +84,21 @@ public class Portal : CubeFace
     {
         Instantiate(PortalGraphics.EnterParticlesPrefab, PortalGraphics.transform);
         float currentTime = 0;
-        while (currentTime < portalActivatedEffectDuration)
+        while (currentTime < _activationEffectDuration)
         {
-            float t = currentTime / portalActivatedEffectDuration < 0.2f
-                ? Mathf.Lerp(18, 30, currentTime / portalActivatedEffectDuration)
-                : Mathf.Lerp(30, 18, currentTime / portalActivatedEffectDuration);
+            float t = currentTime / _activationEffectDuration < 0.2f
+                ? Mathf.Lerp(_defaultGlowIntensity, _activationGlowIntensity, currentTime / _activationEffectDuration)
+                : Mathf.Lerp(_activationGlowIntensity, _defaultGlowIntensity, currentTime / _activationEffectDuration);
             UpdatePortalColors(t);
 
             currentTime += Time.deltaTime;
             yield return null;
         }
 
-        UpdatePortalColors();
+        UpdatePortalColors(_defaultGlowIntensity);
     }
 
-    public void UpdatePortalColors(float glowIntensity = 18)
+    public void UpdatePortalColors(float glowIntensity)
     {
         PortalGraphics.PortalInside.material
             .SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * glowIntensity);
