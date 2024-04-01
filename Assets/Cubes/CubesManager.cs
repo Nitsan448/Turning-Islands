@@ -126,6 +126,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void HandleMouseRotationInput()
     {
+        if (UIExtensions.IsOverUI()) return;
         if (Input.GetMouseButtonDown(1))
         {
             SelectedCube.RotateCube(eDirection.Right);
