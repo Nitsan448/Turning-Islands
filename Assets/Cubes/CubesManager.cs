@@ -14,6 +14,8 @@ public class CubesManager : MonoBehaviour, IGameManager
     private bool _allowMouseInput;
 
     public bool Simulation = false;
+    public bool SelectedCubeChanged = false;
+    public bool CubeRotated = false;
 
     public void Startup()
     {
@@ -83,13 +85,21 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void UpdateSelectedCube(Cube cubeToSelect)
     {
-        if (cubeToSelect != null)
+        if (cubeToSelect == null) return;
+
+        if (cubeToSelect != SelectedCube)
         {
-            SelectedCube.SelectedSprite.SetActive(false);
-            Managers.Audio.PlaySound("CubeSelection");
-            SelectedCube = cubeToSelect;
-            cubeToSelect.SelectedSprite.SetActive(true);
-            cubeToSelect.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            SelectedCubeChanged = true;
+        }
+
+        SelectedCube.SelectedSprite.SetActive(false);
+        Managers.Audio.PlaySound("CubeSelection");
+        SelectedCube = cubeToSelect;
+        cubeToSelect.SelectedSprite.SetActive(true);
+        cubeToSelect.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        if (_previousHoveredCube != null)
+        {
+            _previousHoveredCube.CantSelectSprite.SetActive(false);
             _previousHoveredCube = null;
         }
     }
@@ -98,13 +108,19 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SelectedCube.RotateCube(eDirection.Left);
+            RotateCube(SelectedCube, eDirection.Left);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SelectedCube.RotateCube(eDirection.Right);
+            RotateCube(SelectedCube, eDirection.Right);
         }
+    }
+
+    private void RotateCube(Cube cube, eDirection direction)
+    {
+        CubeRotated = true;
+        cube.RotateCube(direction);
     }
 
     private void HandleMouseInputs()
@@ -128,14 +144,14 @@ public class CubesManager : MonoBehaviour, IGameManager
     private void HandleMouseRotationInput()
     {
         if (UIExtensions.IsOverUI()) return;
-        if (Input.GetMouseButtonDown(1))
-        {
-            SelectedCube.RotateCube(eDirection.Right);
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
-            SelectedCube.RotateCube(eDirection.Left);
+            RotateCube(SelectedCube, eDirection.Left);
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            RotateCube(SelectedCube, eDirection.Right);
         }
     }
 
