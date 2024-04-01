@@ -132,51 +132,58 @@ public class Cube : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            Transform childTransform = transform.GetChild(i + 1);
-            if (i == 3)
+            Transform childTransform = transform.GetChild(i);
+            CubeFace cubeFace = i == 0 ? cubeFaces[3] : cubeFaces[i - 1];
+            SetChildFace(childTransform, cubeFace);
+            if (cubeFace is Tube && ((Tube)cubeFace).Turned)
             {
-                childTransform = transform.GetChild(0);
+                //Very bad fix, only works when tube is not on left side
+                //Better to live with it?
+                i++;
             }
+        }
+    }
 
-            if (cubeFaces[i] is Portal)
-            {
-                childTransform.GetComponent<CubeFaceBuilder>().CreatedPortalIndex =
-                    ((Portal)cubeFaces[i]).PortalIndex;
-                childTransform.GetComponent<CubeFaceBuilder>().CreatePortal();
-            }
-            else if (cubeFaces[i] is PortalButton)
-            {
-                childTransform.GetComponent<CubeFaceBuilder>().CreatePortalButton();
-            }
-            else if (cubeFaces[i] is Tube)
-            {
-                //This doesn't work with tubes, since they take two faces
-                childTransform
-                    .GetComponent<CubeFaceBuilder>()
-                    .CreateTube(true, (cubeFaces[i] as Tube).Turned);
-            }
-            else if (cubeFaces[i] is Trampoline)
-            {
-                childTransform
-                    .GetComponent<CubeFaceBuilder>()
-                    .CreateTrampoline((cubeFaces[i] as Trampoline).TrampolineDirection);
-            }
-            else if (cubeFaces[i] is BouncySurface)
-            {
-                childTransform.GetComponent<CubeFaceBuilder>().CreateBouncySurface(true);
-            }
-            else if (cubeFaces[i] is CubeTurner)
-            {
-                childTransform.GetComponent<CubeFaceBuilder>().CreateCubeTurner();
-            }
-            else if (cubeFaces[i] is Magnet)
-            {
-                childTransform.GetComponent<CubeFaceBuilder>().CreateMagnet();
-            }
-            else if (cubeFaces[i] is WinFlag)
-            {
-                childTransform.GetComponent<CubeFaceBuilder>().CreateWinFlag();
-            }
+    private void SetChildFace(Transform child, CubeFace cubeFace)
+    {
+        if (cubeFace is Portal)
+        {
+            child.GetComponent<CubeFaceBuilder>().CreatedPortalIndex =
+                ((Portal)cubeFace).PortalIndex;
+            child.GetComponent<CubeFaceBuilder>().CreatePortal();
+        }
+        else if (cubeFace is PortalButton)
+        {
+            child.GetComponent<CubeFaceBuilder>().CreatedPortalIndex =
+                ((PortalButton)cubeFace).PortalIndex;
+            child.GetComponent<CubeFaceBuilder>().CreatePortalButton();
+        }
+        else if (cubeFace is Tube)
+        {
+            //This doesn't work with turned tubes, since they take two faces
+            child.GetComponent<CubeFaceBuilder>().CreateTube(true, ((Tube)cubeFace).Turned);
+        }
+        else if (cubeFace is Trampoline)
+        {
+            child
+                .GetComponent<CubeFaceBuilder>()
+                .CreateTrampoline((cubeFace as Trampoline).TrampolineDirection);
+        }
+        else if (cubeFace is BouncySurface)
+        {
+            child.GetComponent<CubeFaceBuilder>().CreateBouncySurface(true);
+        }
+        else if (cubeFace is CubeTurner)
+        {
+            child.GetComponent<CubeFaceBuilder>().CreateCubeTurner();
+        }
+        else if (cubeFace is Magnet)
+        {
+            child.GetComponent<CubeFaceBuilder>().CreateMagnet();
+        }
+        else if (cubeFace is WinFlag)
+        {
+            child.GetComponent<CubeFaceBuilder>().CreateWinFlag();
         }
     }
 #endif
