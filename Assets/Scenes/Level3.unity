@@ -1402,6 +1402,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 625288264}
   Collider: {fileID: 663611830}
+  _activationEffectDuration: 0.7
 --- !u!114 &1591598354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1865,6 +1866,10 @@ PrefabInstance:
       propertyPath: BottomCube
       value: 
       objectReference: {fileID: 539685604}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: IsSelectable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Win flag'
@@ -1947,6 +1952,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 507847788}
   Collider: {fileID: 1153424827}
+  _activationEffectDuration: 0.7
 --- !u!114 &2134012908
 MonoBehaviour:
   m_ObjectHideFlags: 0

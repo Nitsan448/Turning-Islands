@@ -835,6 +835,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 2118907179}
   Collider: {fileID: 589136385}
+  _activationEffectDuration: 0.7
 --- !u!1001 &604676739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1000,6 +1001,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1071610125}
   Collider: {fileID: 35291681}
+  _activationEffectDuration: 0.7
 --- !u!114 &604676747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,6 +1316,10 @@ PrefabInstance:
       propertyPath: BottomCube
       value: 
       objectReference: {fileID: 486745621}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: IsSelectable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Win flag'
@@ -1911,6 +1917,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 178946061}
   Collider: {fileID: 1455058500}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1470777499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2102,6 +2109,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 544310173}
   Collider: {fileID: 1916117359}
+  _activationEffectDuration: 0.7
 --- !u!4 &1961330977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
