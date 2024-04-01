@@ -418,6 +418,10 @@ PrefabInstance:
       propertyPath: RightCube
       value: 
       objectReference: {fileID: 102901691}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 1155658101}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Portal'
@@ -581,6 +585,10 @@ PrefabInstance:
     - target: {fileID: 418723552891690125, guid: 8cc6077d967e7524ea774a87549e4191, type: 3}
       propertyPath: _numberOfColumns
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 418723552891690125, guid: 8cc6077d967e7524ea774a87549e4191, type: 3}
+      propertyPath: _circularCubeConnection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 418723552891690126, guid: 8cc6077d967e7524ea774a87549e4191, type: 3}
       propertyPath: m_Name
@@ -987,19 +995,19 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 1155658101}
+      objectReference: {fileID: 1070798840}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 1314426835}
+      objectReference: {fileID: 102901691}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 1314426835}
+      objectReference: {fileID: 210683491}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 1155658101}
+      objectReference: {fileID: 1070798840}
     - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
       value: 0
@@ -1384,11 +1392,11 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 1314426835}
+      objectReference: {fileID: 677112498}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 1155658101}
+      objectReference: {fileID: 1314426835}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
@@ -1396,7 +1404,7 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 1314426835}
+      objectReference: {fileID: 677112498}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Portal'
@@ -1650,7 +1658,7 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 677112498}
+      objectReference: {fileID: 210683491}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
@@ -1658,11 +1666,11 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 1070798840}
+      objectReference: {fileID: 1314426835}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 677112498}
+      objectReference: {fileID: 210683491}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: IsSelectable
       value: 1
@@ -2003,6 +2011,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 1048052279}
   Collider: {fileID: 1213596315}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1223899420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,19 +2198,19 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 1070798840}
+      objectReference: {fileID: 102901691}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 677112498}
+      objectReference: {fileID: 1155658101}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 677112498}
+      objectReference: {fileID: 1070798840}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 1070798840}
+      objectReference: {fileID: 102901691}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Portal'
@@ -2362,6 +2371,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 391559834}
   Collider: {fileID: 1433502451}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1613263693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2618,6 +2628,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 920115495}
   Collider: {fileID: 1894280615}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1929320340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2921,6 +2932,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 1766174902}
   Collider: {fileID: 745071563}
+  _activationEffectDuration: 0.7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

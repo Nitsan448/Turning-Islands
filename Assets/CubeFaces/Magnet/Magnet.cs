@@ -5,6 +5,7 @@ using UnityEngine;
 public class Magnet : CubeFace
 {
     protected override string SoundName { get; set; } = "Magnet";
+    [SerializeField] private bool _tutorialMagnet = false;
 
     protected override void OnCollisionOrTrigger(Ball ball)
     {
@@ -15,6 +16,9 @@ public class Magnet : CubeFace
             ball.Animator.SetBool("Horizontal", false);
         }
 
-        Managers.Game.GameOver();
+        if (!_tutorialMagnet)
+        {
+            Managers.Game.GameOver();
+        }
     }
 }

@@ -34,36 +34,36 @@ public class Trampoline : CubeFace
 
         Vector2 targetPosition = GetTargetPositionWithoutOffset(movementDirection);
 
+        Debug.Log(targetPosition);
         Cube neighborCube = CubeExtensions.FindAdjacentCubeByDirection(
             transform.parent.GetComponent<Cube>(),
             movementDirection
         );
         if (neighborCube != null)
         {
-            // AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
+            AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
         }
 
+        Debug.Log(targetPosition);
         return targetPosition;
     }
 
     private Vector2 GetTargetPositionWithoutOffset(eDirection movementDirection)
     {
         Vector2 targetPosition = transform.position;
-        float distanceToAdd = 0.5f;
-        distanceToAdd = 0;
         switch (movementDirection)
         {
             case eDirection.Top:
-                targetPosition.y += Managers.Cubes.DistanceBetweenCubes.y + distanceToAdd;
+                targetPosition.y += Managers.Cubes.DistanceBetweenCubes.y;
                 break;
             case eDirection.Right:
-                targetPosition.x += Managers.Cubes.DistanceBetweenCubes.x + distanceToAdd;
+                targetPosition.x += Managers.Cubes.DistanceBetweenCubes.x;
                 break;
             case eDirection.Bottom:
-                targetPosition.y -= Managers.Cubes.DistanceBetweenCubes.y - distanceToAdd;
+                targetPosition.y -= Managers.Cubes.DistanceBetweenCubes.y;
                 break;
             case eDirection.Left:
-                targetPosition.x -= Managers.Cubes.DistanceBetweenCubes.x - distanceToAdd;
+                targetPosition.x -= Managers.Cubes.DistanceBetweenCubes.x;
                 break;
         }
 
@@ -77,19 +77,20 @@ public class Trampoline : CubeFace
             .GetComponent<BoxCollider2D>()
             .offset;
 
+        Debug.Log(targetFaceColliderOffset.y);
         switch (Direction)
         {
             case eDirection.Top:
-                targetPosition.y += targetFaceColliderOffset.y;
+                targetPosition.y -= targetFaceColliderOffset.y - 0.2f;
                 break;
             case eDirection.Right:
-                targetPosition.x += targetFaceColliderOffset.y;
+                targetPosition.x -= targetFaceColliderOffset.y + 0.2f;
                 break;
             case eDirection.Bottom:
-                targetPosition.y -= targetFaceColliderOffset.y;
+                targetPosition.y += targetFaceColliderOffset.y + 0.2f;
                 break;
             case eDirection.Left:
-                targetPosition.x -= targetFaceColliderOffset.y;
+                targetPosition.x += targetFaceColliderOffset.y - 0.2f;
                 break;
         }
     }
