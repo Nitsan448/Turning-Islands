@@ -1631,6 +1631,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1411216189}
   Collider: {fileID: 200084950}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1593308847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2181,6 +2182,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1298002312}
   Collider: {fileID: 148234}
+  _activationEffectDuration: 0.7
 --- !u!114 &2146068405
 MonoBehaviour:
   m_ObjectHideFlags: 0

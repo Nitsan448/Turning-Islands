@@ -1289,6 +1289,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1842087985}
   Collider: {fileID: 841204242}
+  _activationEffectDuration: 0.7
 --- !u!4 &841204245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1758,6 +1759,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 76116926}
   Collider: {fileID: 1047490549}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1057482061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2522,6 +2524,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 139530586}
   Collider: {fileID: 847767521}
+  _activationEffectDuration: 0.7
 --- !u!61 &1372735561 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -2545,6 +2548,7 @@ MonoBehaviour:
   PortalIndex: 2
   PortalGraphics: {fileID: 1692152280}
   Collider: {fileID: 1372735561}
+  _activationEffectDuration: 0.7
 --- !u!61 &1462217036 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8110154532894716218, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -3159,6 +3163,7 @@ MonoBehaviour:
   PortalIndex: 2
   PortalGraphics: {fileID: 1704359746}
   Collider: {fileID: 2027031640}
+  _activationEffectDuration: 0.7
 --- !u!1001 &2027554554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3324,6 +3329,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 1057482063}
   Collider: {fileID: 1462217036}
+  _activationEffectDuration: 0.7
 --- !u!114 &2027554562
 MonoBehaviour:
   m_ObjectHideFlags: 0

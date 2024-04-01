@@ -34,7 +34,6 @@ public class Trampoline : CubeFace
 
         Vector2 targetPosition = GetTargetPositionWithoutOffset(movementDirection);
 
-        Debug.Log(targetPosition);
         Cube neighborCube = CubeExtensions.FindAdjacentCubeByDirection(
             transform.parent.GetComponent<Cube>(),
             movementDirection
@@ -44,7 +43,6 @@ public class Trampoline : CubeFace
             AddTargetFaceColliderOffset(ref targetPosition, neighborCube);
         }
 
-        Debug.Log(targetPosition);
         return targetPosition;
     }
 
@@ -77,20 +75,20 @@ public class Trampoline : CubeFace
             .GetComponent<BoxCollider2D>()
             .offset;
 
-        Debug.Log(targetFaceColliderOffset.y);
+        int sign = targetFaceColliderOffset.y > 0 ? 1 : -1;
         switch (Direction)
         {
             case eDirection.Top:
-                targetPosition.y -= targetFaceColliderOffset.y - 0.2f;
+                targetPosition.y += targetFaceColliderOffset.y * sign + 0.2f;
                 break;
             case eDirection.Right:
-                targetPosition.x -= targetFaceColliderOffset.y + 0.2f;
+                targetPosition.x += targetFaceColliderOffset.y * sign - 0.2f;
                 break;
             case eDirection.Bottom:
-                targetPosition.y += targetFaceColliderOffset.y + 0.2f;
+                targetPosition.y -= targetFaceColliderOffset.y * sign - 0.2f;
                 break;
             case eDirection.Left:
-                targetPosition.x += targetFaceColliderOffset.y - 0.2f;
+                targetPosition.x -= targetFaceColliderOffset.y * sign + 0.2f;
                 break;
         }
     }

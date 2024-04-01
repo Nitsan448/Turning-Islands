@@ -794,6 +794,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 988772718}
   Collider: {fileID: 854137614}
+  _activationEffectDuration: 0.7
 --- !u!1 &859222967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4421049610665553419, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1131,6 +1132,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 664819045}
   Collider: {fileID: 298234964}
+  _activationEffectDuration: 0.7
 --- !u!4 &1172929139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1390,6 +1392,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1945557464}
   Collider: {fileID: 1270647258}
+  _activationEffectDuration: 0.7
 --- !u!4 &1351742924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3052430400696512897, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
@@ -1423,6 +1426,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 616820984}
   Collider: {fileID: 1232019065}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1433750382
 PrefabInstance:
   m_ObjectHideFlags: 0

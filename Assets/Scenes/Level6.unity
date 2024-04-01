@@ -967,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6231330219833552534, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
       propertyPath: BallsNotInFlag
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1389,6 +1389,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 524420610}
   Collider: {fileID: 2058520154}
+  _activationEffectDuration: 0.7
 --- !u!1001 &2059675758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1522,6 +1523,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 2140738231}
   Collider: {fileID: 2059675763}
+  _activationEffectDuration: 0.7
 --- !u!1001 &2140738229
 PrefabInstance:
   m_ObjectHideFlags: 0

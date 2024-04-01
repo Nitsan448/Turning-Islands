@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 418723552891690125, guid: 8cc6077d967e7524ea774a87549e4191, type: 3}
       propertyPath: _numberOfColumns
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 418723552891690126, guid: 8cc6077d967e7524ea774a87549e4191, type: 3}
       propertyPath: m_Name
@@ -829,19 +829,19 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 1519617066}
+      objectReference: {fileID: 1380447834}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 1486141839}
+      objectReference: {fileID: 852818260}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 1486141839}
+      objectReference: {fileID: 1519617066}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 1519617066}
+      objectReference: {fileID: 1380447834}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Straight Tube'
@@ -1374,7 +1374,7 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 1486141839}
+      objectReference: {fileID: 1799485502}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
@@ -1382,11 +1382,11 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 1519617066}
+      objectReference: {fileID: 452272754}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 1486141839}
+      objectReference: {fileID: 1799485502}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Straight Tube'
@@ -1749,6 +1749,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 1177524584}
   Collider: {fileID: 1204882139}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1229938552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1869,6 +1870,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1644212351}
   Collider: {fileID: 1275223606}
+  _activationEffectDuration: 0.7
 --- !u!1001 &1380447825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1933,6 +1935,14 @@ PrefabInstance:
       propertyPath: LeftCube
       value: 
       objectReference: {fileID: 1799485502}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: RightCube
+      value: 
+      objectReference: {fileID: 1486141839}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 452272754}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Trampoline'
@@ -2267,19 +2277,19 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 852818260}
+      objectReference: {fileID: 1519617066}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 452272754}
+      objectReference: {fileID: 1380447834}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
-      objectReference: {fileID: 452272754}
+      objectReference: {fileID: 1799485502}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 852818260}
+      objectReference: {fileID: 1519617066}
     - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
       value: 0
@@ -2409,6 +2419,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 770129904}
   Collider: {fileID: 553039664}
+  _activationEffectDuration: 0.7
 --- !u!114 &1486141849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2481,11 +2492,11 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: TopCube
       value: 
-      objectReference: {fileID: 452272754}
+      objectReference: {fileID: 1486141839}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: LeftCube
       value: 
-      objectReference: {fileID: 852818260}
+      objectReference: {fileID: 452272754}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: RightCube
       value: 
@@ -2493,7 +2504,7 @@ PrefabInstance:
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: BottomCube
       value: 
-      objectReference: {fileID: 452272754}
+      objectReference: {fileID: 1486141839}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Trampoline'
@@ -2805,6 +2816,10 @@ PrefabInstance:
       propertyPath: RightCube
       value: 
       objectReference: {fileID: 1380447834}
+    - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: BottomCube
+      value: 
+      objectReference: {fileID: 852818260}
     - target: {fileID: 1313518699087958131, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: IsSelectable
       value: 0
@@ -3196,6 +3211,7 @@ MonoBehaviour:
   PortalIndex: 1
   PortalGraphics: {fileID: 745457431}
   Collider: {fileID: 2129559250}
+  _activationEffectDuration: 0.7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
