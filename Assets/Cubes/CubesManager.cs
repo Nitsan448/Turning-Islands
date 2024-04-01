@@ -16,6 +16,7 @@ public class CubesManager : MonoBehaviour, IGameManager
     public bool Simulation = false;
     public bool SelectedCubeChanged = false;
     public bool CubeRotated = false;
+    private bool _allowSelectionUsingMouse = true;
 
     public void Startup()
     {
@@ -28,11 +29,12 @@ public class CubesManager : MonoBehaviour, IGameManager
         if (Simulation) return;
         if (Managers.Game.GameState == EGameState.Editing)
         {
-            HandleKeyboardInputs();
             if (_allowMouseInput)
             {
                 HandleMouseInputs();
             }
+
+            HandleKeyboardInputs();
         }
     }
 
@@ -71,6 +73,7 @@ public class CubesManager : MonoBehaviour, IGameManager
 
         if (adjacentCube != null)
         {
+            _allowSelectionUsingMouse = false;
             if (adjacentCube.IsSelectable)
             {
                 UpdateSelectedCube(adjacentCube);
@@ -125,21 +128,10 @@ public class CubesManager : MonoBehaviour, IGameManager
 
     private void HandleMouseInputs()
     {
-        HandleMouseSelectionInput();
         HandleMouseRotationInput();
-        HandleMouseHover();
+        HandleMouseSelection();
     }
 
-
-    private void HandleMouseSelectionInput()
-    {
-        if (!Input.GetMouseButtonDown(0)) return;
-
-        Cube cubeToSelect = GetHoveredCube();
-        if (cubeToSelect == null || !cubeToSelect.IsSelectable) return;
-
-        UpdateSelectedCube(cubeToSelect);
-    }
 
     private void HandleMouseRotationInput()
     {
@@ -156,9 +148,14 @@ public class CubesManager : MonoBehaviour, IGameManager
     }
 
 
-    private void HandleMouseHover()
+    private void HandleMouseSelection()
     {
         Cube hoveredCube = GetHoveredCube();
+        _allowSelectionUsingMouse |= hoveredCube == null;
+        if (!_allowSelectionUsingMouse)
+        {
+            return;
+        }
 
         if (hoveredCube == null)
         {
