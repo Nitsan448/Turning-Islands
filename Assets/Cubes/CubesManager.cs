@@ -150,7 +150,6 @@ public class CubesManager : MonoBehaviour, IGameManager
             {
                 _previousHoveredCube.CantSelectSprite.SetActive(false);
                 _previousHoveredCube = null;
-                // ResetHoveredCube();
             }
         }
         else if (!hoveredCube.IsSelectable)
@@ -160,7 +159,6 @@ public class CubesManager : MonoBehaviour, IGameManager
         else if (hoveredCube != SelectedCube)
         {
             UpdateSelectedCube(hoveredCube);
-            // _previousHoveredCube.CantSelectSprite.SetActive(false);
         }
 
         _previousHoveredCube = hoveredCube;
@@ -175,15 +173,6 @@ public class CubesManager : MonoBehaviour, IGameManager
 
         Cube hoveredCube = hit.transform.parent.GetComponent<Cube>();
         return hoveredCube;
-    }
-
-    private void ResetHoveredCube()
-    {
-        if (_previousHoveredCube == null && SelectedCube != _previousHoveredCube) return;
-        _previousHoveredCube.SelectedSprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        _previousHoveredCube.SelectedSprite.SetActive(false);
-        _previousHoveredCube.CantSelectSprite.SetActive(false);
-        _previousHoveredCube = null;
     }
 
 
