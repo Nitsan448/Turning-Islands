@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class CubesManager : MonoBehaviour, IGameManager
@@ -215,5 +216,14 @@ public class CubesManager : MonoBehaviour, IGameManager
         }
 
         return null;
+    }
+
+    [Button]
+    public void ResetAllCubeFaces()
+    {
+        foreach (CubeFaceBuilder cubeFaceBuilder in GetComponentsInChildren<CubeFaceBuilder>())
+        {
+            cubeFaceBuilder.CreateBouncySurface(false);
+        }
     }
 }
