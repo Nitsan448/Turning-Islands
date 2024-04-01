@@ -464,6 +464,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1690942774}
   Collider: {fileID: 283640895}
+  _activationEffectDuration: 0.7
 --- !u!61 &317491659 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8110154532894716218, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1316,71 +1317,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 705597243563224201, guid: 887c0a9ea80007e4ba25d97c6862b01d, type: 3}
   m_PrefabInstance: {fileID: 1237912352}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1454311308
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1398162121057854645, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_Name
-      value: TrampolineTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 1398162121057854645, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2229642067093378786, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: _tutorialLength
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420740086815017284, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aea0746bfacd6d147af6f78298d20665, type: 3}
 --- !u!1001 &1475628502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2068,6 +2004,7 @@ MonoBehaviour:
   PortalIndex: 0
   PortalGraphics: {fileID: 1475628504}
   Collider: {fileID: 317491659}
+  _activationEffectDuration: 0.7
 --- !u!114 &2095132112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,5 +2211,4 @@ SceneRoots:
   - {fileID: 1230129272}
   - {fileID: 845524821}
   - {fileID: 230761746}
-  - {fileID: 1454311308}
   - {fileID: 614610005}
