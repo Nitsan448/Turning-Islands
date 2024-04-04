@@ -56,7 +56,7 @@ public class LevelSelectGrid : MonoBehaviour
 
     private void Start()
     {
-        InitializeGridAndOverrideExisting();
+        // InitializeGridAndOverrideExisting();
         // AddMissingLevels();
 
         Button[] buttons = GetComponentsInChildren<Button>();

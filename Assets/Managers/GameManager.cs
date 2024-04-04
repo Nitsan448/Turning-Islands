@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour, IGameManager
 
     public void Startup()
     {
+        Application.targetFrameRate = 144;
         _ballsNotInFlagAtStart = BallsNotInFlag;
     }
 

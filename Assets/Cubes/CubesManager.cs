@@ -247,6 +247,7 @@ public class CubesManager : MonoBehaviour, IGameManager
         return null;
     }
 
+#if UNITY_EDITOR
     [Button]
     public void ResetAllCubeFaces()
     {
@@ -255,4 +256,5 @@ public class CubesManager : MonoBehaviour, IGameManager
             cubeFaceBuilder.CreateBouncySurface(false);
         }
     }
+#endif
 }

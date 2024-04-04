@@ -1025,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 0
+  _tutorialFlag: 0
 --- !u!1001 &1145162303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,6 +1120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 448228798762530400, guid: 3b3b02e64cc095b47b7541f1e913acaa, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 448228798762530403, guid: 3b3b02e64cc095b47b7541f1e913acaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1163,6 +1168,10 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 279093086}
+    - target: {fileID: 448228798762530406, guid: 3b3b02e64cc095b47b7541f1e913acaa, type: 3}
+      propertyPath: m_Antialiasing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 448228798762530459, guid: 3b3b02e64cc095b47b7541f1e913acaa, type: 3}
       propertyPath: m_Name
       value: Main Camera
