@@ -86,7 +86,7 @@ public class Portal : CubeFace
         float currentTime = 0;
         while (currentTime < _activationEffectDuration)
         {
-            float t = currentTime / _activationEffectDuration < 0.2f
+            float t = currentTime / _activationEffectDuration < 0.1f
                 ? Mathf.Lerp(_defaultGlowIntensity, _activationGlowIntensity, currentTime / _activationEffectDuration)
                 : Mathf.Lerp(_activationGlowIntensity, _defaultGlowIntensity, currentTime / _activationEffectDuration);
             UpdatePortalColors(t);

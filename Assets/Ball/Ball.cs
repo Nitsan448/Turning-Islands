@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
     private void Start()
     {
         _startingPosition = transform.position;
-        _animator.SetFloat("HoverBlend", _velocity.y != 0 ? 0 : 1);
+        _animator.SetFloat("HoverBlend", StartingVelocity.y != 0 ? 0 : 1);
     }
 
     public void ResetToStartingState()
