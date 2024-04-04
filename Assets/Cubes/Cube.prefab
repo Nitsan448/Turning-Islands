@@ -177,8 +177,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313518699087958088}
-  - component: {fileID: 4890799529151308416}
   - component: {fileID: 1313518699087958131}
+  - component: {fileID: 8467902547715684540}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Cube
@@ -199,22 +199,96 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1585236170909159849}
-  - {fileID: 7194373619422909070}
-  - {fileID: 925656071225897016}
-  - {fileID: 7288675617421771847}
   - {fileID: 8840209790122003369}
   - {fileID: 4396373431262285856}
   - {fileID: 1862906559429349054}
+  - {fileID: 4092312893754338055}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4890799529151308416
-SpriteRenderer:
+--- !u!114 &1313518699087958131
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313518699087958090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806d718676439fd4392775921669bcf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightCube: {fileID: 0}
+  LeftCube: {fileID: 0}
+  TopCube: {fileID: 0}
+  BottomCube: {fileID: 0}
+  SelectedSprite: {fileID: 455629607884901443}
+  CantSelectSprite: {fileID: 1107045221249077830}
+  _rotationTime: 0.25
+  IsSelectable: 1
+--- !u!95 &8467902547715684540
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313518699087958090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e60646871170534ab7930f61c2c3d42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3210536712631343917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4092312893754338055}
+  - component: {fileID: 5296691427401043434}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4092312893754338055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210536712631343917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1585236170909159849}
+  - {fileID: 7194373619422909070}
+  - {fileID: 925656071225897016}
+  - {fileID: 7288675617421771847}
+  m_Father: {fileID: 1313518699087958088}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5296691427401043434
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210536712631343917}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -260,26 +334,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1313518699087958131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313518699087958090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806d718676439fd4392775921669bcf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RightCube: {fileID: 0}
-  LeftCube: {fileID: 0}
-  TopCube: {fileID: 0}
-  BottomCube: {fileID: 0}
-  SelectedSprite: {fileID: 455629607884901443}
-  CantSelectSprite: {fileID: 1107045221249077830}
-  _rotationTime: 0.25
-  IsSelectable: 1
 --- !u!1 &6557631497913816873
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +417,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1313518699087958088}
+    m_TransformParent: {fileID: 4092312893754338055}
     m_Modifications:
     - target: {fileID: 2367120259427580944, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: _direction
@@ -399,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.y
@@ -475,7 +529,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1313518699087958088}
+    m_TransformParent: {fileID: 4092312893754338055}
     m_Modifications:
     - target: {fileID: 2367120259427580944, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: _direction
@@ -511,11 +565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.z
@@ -587,7 +641,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1313518699087958088}
+    m_TransformParent: {fileID: 4092312893754338055}
     m_Modifications:
     - target: {fileID: 2367120259427580944, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: _direction
@@ -623,11 +677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.z
@@ -699,7 +753,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1313518699087958088}
+    m_TransformParent: {fileID: 4092312893754338055}
     m_Modifications:
     - target: {fileID: 2367120259427580944, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: _velocityWhenLeavingFace
@@ -731,15 +785,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7248642211852521258, guid: c4b385c8f9069664483ed8b5743bde14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

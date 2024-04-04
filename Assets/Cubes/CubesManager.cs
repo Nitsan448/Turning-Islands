@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
@@ -14,14 +15,29 @@ public class CubesManager : MonoBehaviour, IGameManager
     private bool _allowMouseInput;
 
     public bool Simulation = false;
-    public bool SelectedCubeChanged = false;
-    public bool CubeRotated = false;
+    [HideInInspector] public bool SelectedCubeChanged = false;
+    [HideInInspector] public bool CubeRotated = false;
     private bool _allowSelectionUsingMouse = true;
+
+    [SerializeField] private Vector2 _cubesHoverSpeedRange = new Vector2(0.8f, 1.2f);
 
     public void Startup()
     {
         if (Simulation) return;
         SelectedCube.SelectedSprite.SetActive(true);
+        SetCubesAnimatorsSpeed();
+    }
+
+    private void SetCubesAnimatorsSpeed()
+    {
+        Cube[] cubes = GetComponentsInChildren<Cube>();
+
+        for (int i = 0; i < cubes.Length; i++)
+        {
+            float t = (float)i / (cubes.Length - 1);
+            cubes[i].GetComponent<Animator>().speed =
+                Mathf.Lerp(_cubesHoverSpeedRange.x, _cubesHoverSpeedRange.y, t);
+        }
     }
 
     void Update()

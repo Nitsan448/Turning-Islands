@@ -36,6 +36,9 @@ public class Cube : MonoBehaviour
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
     {
         _coroutineActive = true;
+        Animator animator = GetComponent<Animator>();
+        float currentBlend = GetComponent<Animator>().GetFloat("Blend");
+        int blendAdditionSign = currentBlend == 1 ? -1 : 1;
 
         Managers.Audio.PlaySound("CubeRotation");
         Quaternion currentRotation = transform.rotation;
@@ -50,12 +53,14 @@ public class Cube : MonoBehaviour
                 currentTime / _rotationTime
             );
             currentTime += Time.deltaTime;
+            animator.SetFloat("Blend", currentTime / _rotationTime * blendAdditionSign);
             yield return null;
         }
 
         transform.rotation = targetRotation;
         UpdateCubeFacesDirection(direction);
 
+        animator.SetFloat("Blend", blendAdditionSign == 1 ? 1 : 0);
         _coroutineActive = false;
         yield return null;
     }
