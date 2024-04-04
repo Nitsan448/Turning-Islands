@@ -199,10 +199,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4092312893754338055}
   - {fileID: 8840209790122003369}
   - {fileID: 4396373431262285856}
   - {fileID: 1862906559429349054}
-  - {fileID: 4092312893754338055}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1313518699087958131
@@ -224,12 +224,6 @@ MonoBehaviour:
   SelectedSprite: {fileID: 455629607884901443}
   CantSelectSprite: {fileID: 1107045221249077830}
   _rotationTime: 0.25
-  _cubeFaces:
-  - {fileID: 9198474056434557933}
-  - {fileID: 5436086089722117074}
-  - {fileID: 8749107732030010667}
-  - {fileID: 7503887445963965858}
-  _animator: {fileID: 8467902547715684540}
   IsSelectable: 1
 --- !u!95 &8467902547715684540
 Animator:

@@ -72,6 +72,10 @@ public class Portal : CubeFace
     {
         ConnectedPortal.Collider.enabled = false;
         Vector3 newPosition = ConnectedPortal.transform.position;
+        Debug.Log(newPosition);
+        newPosition.x += ConnectedPortal.Direction == eDirection.Left ? -0.5f : ConnectedPortal.Direction == eDirection.Right ? 0.5f : 0;
+        newPosition.y += ConnectedPortal.Direction == eDirection.Top ? 0.5f : ConnectedPortal.Direction == eDirection.Bottom ? -0.5f : 0;
+        Debug.Log(newPosition);
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 

@@ -64,7 +64,7 @@ public class CubeEditor : Editor
         CreateButtonSection(
             "Portals",
             buttonLabels,
-            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreatePortal(); }
+            childIndex => { cube.transform.GetChild(0).GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreatePortal(); }
         );
 
         CreateButtonSection(
@@ -73,7 +73,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreatePortalButton();
             }
@@ -85,7 +85,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreateTube(true, false);
             }
@@ -97,7 +97,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreateTube(true, true);
             }
@@ -109,7 +109,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreateTrampoline(eDirection.Right);
             }
@@ -121,7 +121,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreateTrampoline(eDirection.Left);
             }
@@ -133,7 +133,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreateBouncySurface(true);
             }
@@ -145,7 +145,7 @@ public class CubeEditor : Editor
             childIndex =>
             {
                 cube.transform
-                    .GetChild(childIndex)
+                    .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
                     .CreateCubeTurner();
             }
@@ -153,19 +153,19 @@ public class CubeEditor : Editor
         CreateButtonSection(
             "Magnets",
             buttonLabels,
-            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateMagnet(); }
+            childIndex => { cube.transform.GetChild(0).GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateMagnet(); }
         );
 
         CreateButtonSection(
             "Win Flags",
             buttonLabels,
-            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateWinFlag(); }
+            childIndex => { cube.transform.GetChild(0).GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateWinFlag(); }
         );
 
         CreateButtonSection(
             "Balls",
             buttonLabels,
-            childIndex => { cube.transform.GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateBall(); }
+            childIndex => { cube.transform.GetChild(0).GetChild(childIndex).GetComponent<CubeFaceBuilder>().CreateBall(); }
         );
     }
 
