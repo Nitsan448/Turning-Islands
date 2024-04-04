@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CubesManager : MonoBehaviour, IGameManager
 {
@@ -31,11 +33,14 @@ public class CubesManager : MonoBehaviour, IGameManager
     private void SetCubesAnimatorsSpeed()
     {
         Cube[] cubes = GetComponentsInChildren<Cube>();
+        List<int> cubeIndices = Enumerable.Range(0, cubes.Length).ToList();
 
         for (int i = 0; i < cubes.Length; i++)
         {
+            int cubeIndex = Random.Range(0, cubeIndices.Count);
+            cubeIndices.Remove(cubeIndex);
             float t = (float)i / (cubes.Length - 1);
-            cubes[i].GetComponent<Animator>().speed =
+            cubes[cubeIndex].GetComponent<Animator>().speed =
                 Mathf.Lerp(_cubesHoverSpeedRange.x, _cubesHoverSpeedRange.y, t);
         }
     }

@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17961
+  controlID: 23477
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17962
+  controlID: 23478
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 17963
+  controlID: 23479
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,9 +236,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 28e7ffff
-      m_LastClickedID: 0
-      m_ExpandedIDs: 52efffff5ef1ffff08f6ffff0efbffff
+      m_SelectedIDs: 52c4faff
+      m_LastClickedID: -342958
+      m_ExpandedIDs: 52c4faffecc4faffa6c9faff84cefafffcd1faff7ed5faffded9faff60ddfaff98e0faff52efffff5ef1ffff08f6ffff0efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -621,9 +621,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.7761188, y: 3.6912932, z: 0.42941618}
+    m_Target: {x: 2.2517145, y: 1.1359338, z: 0.37465078}
     speed: 2
-    m_Value: {x: 3.7761188, y: 3.6912932, z: 0.42941618}
+    m_Value: {x: 2.2517145, y: 1.1359338, z: 0.37465078}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -673,9 +673,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.2330213
+    m_Target: 10.094794
     speed: 2
-    m_Value: 6.2330213
+    m_Value: 10.094794
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -797,14 +797,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.80161273
+    - e00: 0.5944073
       e01: 0
       e02: 0
-      e03: -94.082596
+      e03: 40.86309
       e10: 0
-      e11: 0.80161273
+      e11: 0.5944073
       e12: 0
-      e13: 161.14313
+      e13: 231.70403
       e20: 0
       e21: 0
       e22: 1
@@ -813,14 +813,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1.2432052
+    - e00: 0.4703865
       e01: 0
       e02: 0
-      e03: -139.36522
+      e03: 44.79315
       e10: 0
-      e11: 1.2432052
+      e11: 0.4703865
       e12: 0
-      e13: 183.28375
+      e13: 197.6762
       e20: 0
       e21: 0
       e22: 1
@@ -920,7 +920,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Cubes/Animations
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -928,15 +928,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Cubes/Animations
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\nitsa\OneDrive\Desktop\Unity\Nitsan\Turning-Islands
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 147.66669}
-    m_SelectedIDs: 4e6b0000
-    m_LastClickedID: 27470
+    scrollPos: {x: 0, y: 275.6667}
+    m_SelectedIDs: f2660000
+    m_LastClickedID: 26354
     m_ExpandedIDs: 00000000f8650000fa650000fc650000e666000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -990,8 +990,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 28e7ffff
-    m_LastClickedInstanceID: -6360
+    m_SelectedInstanceIDs: 52c4faff
+    m_LastClickedInstanceID: -342958
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ee060100a4b50000f2da00007e9c0000ea6401000c810000fa2502000881000014810000e65e000042970000c85d00008a5d00009a5d00009c960000585f0000125f000070670000826400003263000082900000dc6f00001a630000826600001e640000c8650000c86d00000000000044660000ce65000040660000c0620000946c0000f6030000c4620000f26b000084fd010080fd01002a47020052640000f26d0000
     m_RenameOverlay:

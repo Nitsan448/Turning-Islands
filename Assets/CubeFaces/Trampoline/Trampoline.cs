@@ -8,10 +8,12 @@ public class Trampoline : CubeFace
     protected override string SoundName { get; set; } = "No sound";
     public eDirection TrampolineDirection = eDirection.Right;
     private Animator _animator;
+    private Cube _parentCube;
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        _parentCube = transform.parent.parent.GetComponent<Cube>();
     }
 
     protected override void OnCollisionOrTrigger(Ball ball)
@@ -20,7 +22,7 @@ public class Trampoline : CubeFace
         ball.ChangeVelocity(Vector2.zero);
         _animator.SetTrigger("TrampolineHit");
 
-        Vector2 targetPosition = getTargetPosition();
+        Vector2 targetPosition = GetTargetPosition();
 
         ball.Animator.Play("Squish");
         ball.ArcMovementCoroutine = ball.StartCoroutine(
@@ -28,14 +30,14 @@ public class Trampoline : CubeFace
         );
     }
 
-    private Vector2 getTargetPosition()
+    private Vector2 GetTargetPosition()
     {
         eDirection movementDirection = GetMovementDirection();
 
         Vector2 targetPosition = GetTargetPositionWithoutOffset(movementDirection);
 
         Cube neighborCube = CubeExtensions.FindAdjacentCubeByDirection(
-            transform.parent.GetComponent<Cube>(),
+            _parentCube,
             movementDirection
         );
         if (neighborCube != null)
