@@ -1075,6 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _tutorialFlag: 0
 --- !u!114 &671899884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2154,6 +2155,10 @@ PrefabInstance:
     - target: {fileID: 6231330218636531559, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
       propertyPath: m_Name
       value: Managers
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231330219833552534, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
+      propertyPath: BallsNotInFlag
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6231330219833552534, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
       propertyPath: ballsNotInFlag

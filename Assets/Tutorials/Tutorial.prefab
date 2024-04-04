@@ -186,7 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tutorialName: 
   _finishTutorialButton: {fileID: 7053188337636676543}
-  _ball: {fileID: 4469821320340921543}
+  _balls:
+  - {fileID: 4469821320340921543}
   _tutorialLength: 2
 --- !u!1 &2410376096295526521
 GameObject:

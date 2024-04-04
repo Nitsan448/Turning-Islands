@@ -34,7 +34,7 @@ public class CubeFaceBuilder : MonoBehaviour
         ChangeColliderHeight(0);
         if (transform.parent.GetComponentInChildren<WinFlag>() == null)
         {
-            transform.parent.GetComponent<Cube>().IsSelectable = true;
+            transform.parent.parent.GetComponent<Cube>().IsSelectable = true;
         }
     }
 
@@ -163,13 +163,13 @@ public class CubeFaceBuilder : MonoBehaviour
         );
         ChangeGraphicsPosition(0.8f, winFlagGraphics);
         // ChangeColliderHeight(-0.2f);
-        transform.parent.GetComponent<Cube>().IsSelectable = false;
+        transform.parent.parent.GetComponent<Cube>().IsSelectable = false;
 
         WinFlag createdWinFlag = gameObject.AddComponent<WinFlag>();
         createdWinFlag.Direction = _cubeFaceDirection;
         gameObject.name = _cubeFaceDirection + ": Win flag";
         EditorUtility.SetDirty(createdWinFlag);
-        EditorUtility.SetDirty(transform.parent.GetComponent<Cube>());
+        EditorUtility.SetDirty(transform.parent.parent.GetComponent<Cube>());
     }
 
     private void ChangeGraphicsPosition(float newYPosition, GameObject objectGraphics)
@@ -229,7 +229,7 @@ public class CubeFaceBuilder : MonoBehaviour
             neighborCubeDirection = DirectionExtensions.GetNewDirection(neighborCubeDirection, 1);
         }
 
-        CubeFaceBuilder neighborCubeBuilder = transform.parent
+        CubeFaceBuilder neighborCubeBuilder = transform.parent.parent
             .GetComponent<Cube>()
             .GetCubeFaceObjectByDirection(neighborCubeDirection)
             .GetComponent<CubeFaceBuilder>();

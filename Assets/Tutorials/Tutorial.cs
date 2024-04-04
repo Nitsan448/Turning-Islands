@@ -9,7 +9,7 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] private string _tutorialName;
     [SerializeField] private Button _finishTutorialButton;
-    [SerializeField] protected Ball _ball;
+    [SerializeField] protected Ball[] _balls;
     [SerializeField] private float _tutorialLength;
     private float _timeSinceTutorialStarted = 0;
 
@@ -21,7 +21,11 @@ public class Tutorial : MonoBehaviour
             return;
         }
 
-        _ball.StartMoving();
+        foreach (Ball ball in _balls)
+        {
+            ball.StartMoving();
+        }
+
         Managers.Game.SetStateToTutorial(this);
         _finishTutorialButton.onClick.AddListener(OnTutorialFinished);
     }
@@ -38,8 +42,12 @@ public class Tutorial : MonoBehaviour
 
     protected virtual void ResetTutorialState()
     {
-        _ball.ResetToStartingState();
-        _ball.StartMoving();
+        foreach (Ball ball in _balls)
+        {
+            ball.ResetToStartingState();
+            ball.StartMoving();
+        }
+
         _timeSinceTutorialStarted = 0;
     }
 
