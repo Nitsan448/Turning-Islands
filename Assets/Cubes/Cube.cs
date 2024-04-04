@@ -17,12 +17,14 @@ public class Cube : MonoBehaviour
 
     private bool _coroutineActive = false;
     private CubeFace[] _cubeFaces;
+    private Animator _animator;
 
     public bool IsSelectable = true;
 
     private void Awake()
     {
         _cubeFaces = GetComponentsInChildren<CubeFace>();
+        _animator = GetComponent<Animator>();
     }
 
     public void RotateCube(eDirection direction)
@@ -36,8 +38,7 @@ public class Cube : MonoBehaviour
     private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
     {
         _coroutineActive = true;
-        Animator animator = GetComponent<Animator>();
-        float currentBlend = GetComponent<Animator>().GetFloat("Blend");
+        float currentBlend = _animator.GetFloat("Blend");
         int blendAdditionSign = currentBlend == 1 ? -1 : 1;
 
         Managers.Audio.PlaySound("CubeRotation");
@@ -53,14 +54,14 @@ public class Cube : MonoBehaviour
                 currentTime / _rotationTime
             );
             currentTime += Time.deltaTime;
-            animator.SetFloat("Blend", currentTime / _rotationTime * blendAdditionSign);
+            _animator.SetFloat("Blend", currentTime / _rotationTime * blendAdditionSign);
             yield return null;
         }
 
         transform.rotation = targetRotation;
         UpdateCubeFacesDirection(direction);
 
-        animator.SetFloat("Blend", blendAdditionSign == 1 ? 1 : 0);
+        _animator.SetFloat("Blend", blendAdditionSign == 1 ? 1 : 0);
         _coroutineActive = false;
         yield return null;
     }

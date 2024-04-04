@@ -84,13 +84,13 @@ public class Trampoline : CubeFace
                 targetPosition.y += targetFaceColliderOffset.y * sign + 0.2f;
                 break;
             case eDirection.Right:
-                targetPosition.x += targetFaceColliderOffset.y * sign - 0.2f;
+                targetPosition.x += targetFaceColliderOffset.y * sign + 0.2f;
                 break;
             case eDirection.Bottom:
                 targetPosition.y -= targetFaceColliderOffset.y * sign - 0.2f;
                 break;
             case eDirection.Left:
-                targetPosition.x -= targetFaceColliderOffset.y * sign + 0.2f;
+                targetPosition.x -= targetFaceColliderOffset.y * sign - 0.2f;
                 break;
         }
     }

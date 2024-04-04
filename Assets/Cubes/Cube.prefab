@@ -224,6 +224,12 @@ MonoBehaviour:
   SelectedSprite: {fileID: 455629607884901443}
   CantSelectSprite: {fileID: 1107045221249077830}
   _rotationTime: 0.25
+  _cubeFaces:
+  - {fileID: 9198474056434557933}
+  - {fileID: 5436086089722117074}
+  - {fileID: 8749107732030010667}
+  - {fileID: 7503887445963965858}
+  _animator: {fileID: 8467902547715684540}
   IsSelectable: 1
 --- !u!95 &8467902547715684540
 Animator:
