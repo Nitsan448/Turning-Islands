@@ -848,6 +848,10 @@ PrefabInstance:
       propertyPath: BottomCube
       value: 
       objectReference: {fileID: 1155180544}
+    - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4421049610665553419, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Bottom: Portal'
@@ -1187,6 +1191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 0
+  _tutorialFlag: 0
 --- !u!1001 &1155180543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1195,6 +1200,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 607561300}
     m_Modifications:
+    - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -1413,6 +1422,10 @@ PrefabInstance:
     - target: {fileID: 5932827067642531005, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Right: Portal'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537718780953602035, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9198474056434557933, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -2225,6 +2238,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 607561300}
     m_Modifications:
+    - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

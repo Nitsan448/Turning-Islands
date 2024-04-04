@@ -1254,6 +1254,10 @@ PrefabInstance:
       propertyPath: BottomCube
       value: 
       objectReference: {fileID: 1415015995}
+    - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Bouncy Surface'
@@ -1370,6 +1374,10 @@ PrefabInstance:
       propertyPath: BottomCube
       value: 
       objectReference: {fileID: 1364730683}
+    - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Turned Tube'
@@ -1522,6 +1530,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 79910985}
     m_Modifications:
+    - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2242,6 +2254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 79910985}
     m_Modifications:
+    - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -2589,6 +2605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _tutorialFlag: 0
 --- !u!1 &2041242771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4421049610665553419, guid: ca29d46185919944cb4a1df5544be179, type: 3}

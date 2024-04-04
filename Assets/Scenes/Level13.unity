@@ -871,6 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 0
+  _tutorialFlag: 0
 --- !u!1 &424376775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5932827067642531005, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1075,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110154532894716218, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
-      value: -0
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9198474056434557933, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1563,6 +1564,14 @@ PrefabInstance:
     - target: {fileID: 7320362901191156139, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: CreatedPortalIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110154532894716218, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537718780953602035, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7503887445963965858, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -2395,7 +2404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110154532894716218, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
-      value: -0
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8537718780953602035, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y

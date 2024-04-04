@@ -25,6 +25,7 @@ public class Portal : CubeFace
 
     private void Awake()
     {
+        UpdateColliderOffset();
         PortalGraphics = GetComponentInChildren<PortalGraphics>();
         PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         PortalGraphics.Light.enabled = IsOpen;
@@ -45,6 +46,7 @@ public class Portal : CubeFace
             }
         }
 
+        UpdateColliderOffset();
         PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         if (Application.isPlaying)
         {
@@ -110,5 +112,24 @@ public class Portal : CubeFace
             .SetColor("_GlowColor", PortalColors.ColorByIndex[PortalIndex] * glowIntensity);
 
         PortalGraphics.Light.color = PortalColors.ColorByIndex[PortalIndex];
+    }
+
+    private void UpdateColliderOffset()
+    {
+        if (!IsOpen)
+        {
+            GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x,
+                0);
+            return;
+        }
+
+        float newOffset = 0.4f;
+        if (Direction == eDirection.Left || Direction == eDirection.Right)
+        {
+            newOffset = -0.4f;
+        }
+
+        GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x,
+            newOffset);
     }
 }

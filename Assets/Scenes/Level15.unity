@@ -543,7 +543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110154532894716218, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
-      value: -0
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8749107732030010667, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 2
+  _tutorialFlag: 0
 --- !u!4 &723796974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 803230292033638402, guid: a08b11563ac5b2b42b3a760181233ac6, type: 3}
@@ -1110,7 +1111,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2534,6 +2535,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1225740698}
     m_Modifications:
+    - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -3128,7 +3133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 23783164001084628, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1313518699087958088, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_LocalPosition.x

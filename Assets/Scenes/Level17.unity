@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Left: Turned Tube'
       objectReference: {fileID: 0}
+    - target: {fileID: 8537718780953602035, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9198474056434557933, guid: ca29d46185919944cb4a1df5544be179, type: 3}
     - {fileID: 5436086089722117074, guid: ca29d46185919944cb4a1df5544be179, type: 3}
@@ -1640,6 +1644,10 @@ PrefabInstance:
       propertyPath: BottomCube
       value: 
       objectReference: {fileID: 1581263397}
+    - target: {fileID: 1833820492953617733, guid: ca29d46185919944cb4a1df5544be179, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2629483838688399258, guid: ca29d46185919944cb4a1df5544be179, type: 3}
       propertyPath: m_Name
       value: 'Top: Turned Tube'
