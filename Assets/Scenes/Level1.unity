@@ -634,6 +634,10 @@ PrefabInstance:
       propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2879872862004553234, guid: c6852305e09f40a4a9a3de626e99a448, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -79.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6216311213045820393, guid: c6852305e09f40a4a9a3de626e99a448, type: 3}
       propertyPath: m_Name
       value: StartingTutorial
