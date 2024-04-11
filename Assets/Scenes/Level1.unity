@@ -1370,6 +1370,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1168378706}
     m_Modifications:
+    - target: {fileID: 836918312694746803, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669801408104609770, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856345748528688908, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8194290352631831768, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
       propertyPath: m_Name
       value: StartingTutorial
@@ -1519,7 +1531,7 @@ PrefabInstance:
     - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
       propertyPath: SelectedCube
       value: 
-      objectReference: {fileID: 911914511}
+      objectReference: {fileID: 219728687}
     - target: {fileID: 6000267146186832148, guid: e1c5677eb1ef6404d82435c4d8970f6e, type: 3}
       propertyPath: _cubeLayerMask.m_Bits
       value: 256
