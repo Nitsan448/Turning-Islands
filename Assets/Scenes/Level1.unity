@@ -1378,6 +1378,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1168378706}
     m_Modifications:
+    - target: {fileID: 836918312694746803, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895632076077033829, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895632076077033829, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895632076077033829, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936475129659059559, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936475129659059559, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.50001
+      objectReference: {fileID: 0}
     - target: {fileID: 8194290352631831768, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
       propertyPath: m_Name
       value: StartingTutorial
@@ -1461,6 +1485,26 @@ PrefabInstance:
     - target: {fileID: 8194290352631831771, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218822432709609350, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_margin.y
+      value: 0.15556717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218822432709609350, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218822432709609350, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218822432709609350, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218822432709609350, guid: afe43beb704d3ed4cb234956448494d5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287210924
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

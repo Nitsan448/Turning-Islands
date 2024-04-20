@@ -5,7 +5,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-#if UNITY_EDITOR
 public class DebugManager : MonoBehaviour
 {
     private Dictionary<string, Action> _commands;
@@ -13,7 +12,7 @@ public class DebugManager : MonoBehaviour
 
     private void Start()
     {
-        _commands = new() { { "next", Managers.Game.GoToNextLevel } };
+        _commands = new() { { "next", Managers.Game.GoToNextLevel }, { "clear", PlayerPrefs.DeleteAll } };
         for (int levelIndex = 0; levelIndex < SceneManager.sceneCountInBuildSettings; levelIndex++)
         {
             //TODO: go over all scenes and add ones who's name starts with level
@@ -41,4 +40,3 @@ public class DebugManager : MonoBehaviour
         }
     }
 }
-#endif
