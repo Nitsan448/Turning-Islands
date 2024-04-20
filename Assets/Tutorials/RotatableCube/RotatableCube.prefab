@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: _tutorialName
       value: RotatableCube
       objectReference: {fileID: 0}
+    - target: {fileID: 1480479663530004702, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
+      propertyPath: _tutorialLength
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 1809807993239528073, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
       propertyPath: m_Name
       value: RotatableCube

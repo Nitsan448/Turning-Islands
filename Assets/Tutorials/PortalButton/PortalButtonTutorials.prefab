@@ -284,7 +284,7 @@ MonoBehaviour:
   _finishTutorialButton: {fileID: 7753802870431421827}
   _balls:
   - {fileID: 3782180371921656571}
-  _tutorialLength: 2.7
+  _tutorialLength: 10000
 --- !u!1 &1847706374010233927 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1431758637908484731, guid: 909fef8fbddc29f41b65e9381e20955b, type: 3}
