@@ -1506,6 +1506,10 @@ PrefabInstance:
       propertyPath: ballsNotInFlag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6507199032463636305, guid: 08e9b79110b99a5459d3473f93a2fa11, type: 3}
+      propertyPath: _playAudio
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
