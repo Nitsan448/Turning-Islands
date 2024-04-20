@@ -55,7 +55,7 @@ MonoBehaviour:
     AudioSource: {fileID: 0}
   - Name: CubeSelection
     AudioClip: {fileID: 8300000, guid: 8e72ddf322f728945abdd6afc6fb937c, type: 3}
-    Volume: 0.5
+    Volume: 0.4
     AudioSource: {fileID: 0}
   - Name: CubeRotation
     AudioClip: {fileID: 8300000, guid: 4553f6aad13e6fc499f97ff59aa25736, type: 3}
@@ -71,7 +71,7 @@ MonoBehaviour:
     AudioSource: {fileID: 0}
   - Name: UIClick
     AudioClip: {fileID: 8300000, guid: f8e3e8d6e06b8774cb0a31512a724ecb, type: 3}
-    Volume: 0.7
+    Volume: 0.5
     AudioSource: {fileID: 0}
 --- !u!1 &2860297840819402770
 GameObject:

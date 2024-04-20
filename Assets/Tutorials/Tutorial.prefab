@@ -450,7 +450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I Understand
+  m_text: I understand
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3154d7e19661e9488b6ce193951fcb1, type: 2}
   m_sharedMaterial: {fileID: 8675016439153859046, guid: a3154d7e19661e9488b6ce193951fcb1, type: 2}
