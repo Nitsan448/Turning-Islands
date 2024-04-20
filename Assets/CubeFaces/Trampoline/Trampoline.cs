@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Trampoline : CubeFace
 {
-    protected override string SoundName { get; set; } = "No sound";
+    protected override string SoundName { get; set; } = "Trampoline";
     public eDirection TrampolineDirection = eDirection.Right;
     private Animator _animator;
     private Cube _parentCube;

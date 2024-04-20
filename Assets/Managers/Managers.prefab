@@ -118,8 +118,8 @@ MonoBehaviour:
     Volume: 0.5
     AudioSource: {fileID: 0}
   - Name: Trampoline
-    AudioClip: {fileID: 8300000, guid: f63e1ad165e58d04dae2fa515e4a47bf, type: 3}
-    Volume: 0.7
+    AudioClip: {fileID: 8300000, guid: 3a210f09c94361c4d82eb58d0b9bbf11, type: 3}
+    Volume: 1
     AudioSource: {fileID: 0}
   _playAudio1: 1
 --- !u!1 &2860297840819402770
