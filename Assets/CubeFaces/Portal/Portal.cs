@@ -32,6 +32,7 @@ public class Portal : CubeFace
         PortalGraphics.PortalInside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
         PortalGraphics.PortalOutside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
         UpdatePortalColors(_defaultGlowIntensity);
+        SoundName = IsOpen ? "Portal" : "Bounce";
     }
 
     public void ChangeOpenState(bool changeConnected)
@@ -52,6 +53,7 @@ public class Portal : CubeFace
         {
             PortalGraphics.PortalInside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
             PortalGraphics.PortalOutside.material.SetInt("_IsOpen", IsOpen ? 1 : 0);
+            SoundName = IsOpen ? "Portal" : "Bounce";
         }
     }
 

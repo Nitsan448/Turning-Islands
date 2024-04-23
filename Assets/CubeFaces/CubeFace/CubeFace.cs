@@ -27,6 +27,7 @@ public abstract class CubeFace : MonoBehaviour
         return Vector2.zero;
     }
 
+    //TODO: remove the update method
     private void Update()
     {
         if (timeUntilNextCollisionPossible > 0)
