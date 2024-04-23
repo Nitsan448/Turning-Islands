@@ -21,7 +21,17 @@ public class ButtonsListenersAdder : MonoBehaviour
         _nextLevelButton.onClick.AddListener(delegate { Managers.Game.GoToNextLevel(); });
         _exitControlsMenuButton.onClick.AddListener(delegate { Managers.UI.FadeOutControls(); });
         _exitButton.onClick.AddListener(delegate { SceneManager.LoadScene("MainMenu"); });
-        _playButton.onClick.AddListener(delegate { Managers.Game.StartGame(); });
+        _playButton.onClick.AddListener(delegate
+        {
+            if (Managers.Game.GameState == EGameState.Editing)
+            {
+                Managers.Game.StartGame();
+            }
+            else if (Managers.Game.GameState == EGameState.GameEnded)
+            {
+                Managers.Game.GoToNextLevel();
+            }
+        });
         _controlsMenuButton.onClick.AddListener(delegate { Managers.UI.FadeInControls(); });
     }
 }
