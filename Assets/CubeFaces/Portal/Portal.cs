@@ -25,7 +25,7 @@ public class Portal : CubeFace
 
     private void Awake()
     {
-        // UpdateColliderOffset();
+        UpdateColliderOffset();
         PortalGraphics = GetComponentInChildren<PortalGraphics>();
         PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         PortalGraphics.Light.enabled = IsOpen;
@@ -123,15 +123,6 @@ public class Portal : CubeFace
             return;
         }
 
-        if (!Application.isPlaying)
-        {
-            _startingDirection = Direction;
-        }
-
-        EDirection currentDirection = Direction;
-        Direction = _startingDirection;
-        Vector3 euler = transform.eulerAngles;
-        transform.eulerAngles = _startingDirection.GetEulerAnglesByDirection();
 
         float newOffset = 0.4f;
         if (Direction == EDirection.Left || Direction == EDirection.Right)
@@ -139,8 +130,10 @@ public class Portal : CubeFace
             newOffset = -0.4f;
         }
 
-        Direction = currentDirection;
-        transform.eulerAngles = euler;
+        if (transform.parent.parent.GetComponent<Cube>().NumberOfRotations % 2 != 0)
+        {
+            newOffset *= -1;
+        }
 
         GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x,
             newOffset);

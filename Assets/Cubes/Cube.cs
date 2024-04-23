@@ -21,6 +21,9 @@ public class Cube : MonoBehaviour
 
     public bool IsSelectable = true;
 
+    public int NumberOfRotations => _numberOfRotations;
+    private int _numberOfRotations = 0;
+
     private void Awake()
     {
         _cubeFaces = GetComponentsInChildren<CubeFace>();
@@ -63,6 +66,7 @@ public class Cube : MonoBehaviour
 
         _animator.SetFloat("Blend", blendAdditionSign == 1 ? 1 : 0);
         _coroutineActive = false;
+        _numberOfRotations++;
         yield return null;
     }
 
