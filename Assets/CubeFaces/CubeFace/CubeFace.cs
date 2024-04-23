@@ -9,6 +9,12 @@ public abstract class CubeFace : MonoBehaviour
     protected abstract string SoundName { get; set; }
     private float timeUntilNextCollisionPossible = 0;
     protected abstract void OnCollisionOrTrigger(Ball ball);
+    protected eDirection _startingDirection;
+
+    private void Start()
+    {
+        _startingDirection = Direction;
+    }
 
     public Vector2 GetVelocity()
     {

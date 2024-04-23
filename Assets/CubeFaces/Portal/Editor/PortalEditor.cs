@@ -17,7 +17,10 @@ public class PortalEditor : Editor
         if (GUILayout.Button("Toggle open state"))
         {
             portal.ChangeOpenState(true);
-            EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
+            if (Application.isEditor)
+            {
+                EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
+            }
         }
     }
 }

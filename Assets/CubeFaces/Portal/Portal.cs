@@ -123,11 +123,24 @@ public class Portal : CubeFace
             return;
         }
 
+        if (!Application.isPlaying)
+        {
+            _startingDirection = Direction;
+        }
+
+        eDirection currentDirection = Direction;
+        Direction = _startingDirection;
+        Vector3 euler = transform.eulerAngles;
+        transform.eulerAngles = Vector3.zero;
+
         float newOffset = 0.4f;
         if (Direction == eDirection.Left || Direction == eDirection.Right)
         {
             newOffset = -0.4f;
         }
+
+        Direction = currentDirection;
+        transform.eulerAngles = euler;
 
         GetComponent<BoxCollider2D>().offset = new Vector2(GetComponent<BoxCollider2D>().offset.x,
             newOffset);
