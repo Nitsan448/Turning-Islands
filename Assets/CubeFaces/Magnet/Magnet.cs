@@ -11,7 +11,7 @@ public class Magnet : CubeFace
     {
         ball.ChangeVelocity(Vector2.zero);
         ball.Animator.SetBool("InMagnet", true);
-        if (Direction == eDirection.Bottom || Direction == eDirection.Top)
+        if (Direction == EDirection.Bottom || Direction == EDirection.Top)
         {
             ball.Animator.SetBool("Horizontal", false);
         }

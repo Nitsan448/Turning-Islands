@@ -27,7 +27,7 @@ public class Cube : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void RotateCube(eDirection direction)
+    public void RotateCube(EDirection direction)
     {
         if (!_coroutineActive)
         {
@@ -35,7 +35,7 @@ public class Cube : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateCubeRotationCoroutine(eDirection direction)
+    private IEnumerator UpdateCubeRotationCoroutine(EDirection direction)
     {
         _coroutineActive = true;
         float currentBlend = _animator.GetFloat("Blend");
@@ -66,10 +66,10 @@ public class Cube : MonoBehaviour
         yield return null;
     }
 
-    private Quaternion GetTargetRotation(eDirection direction)
+    private Quaternion GetTargetRotation(EDirection direction)
     {
         int zRotationIncrement = 90;
-        if (direction == eDirection.Right)
+        if (direction == EDirection.Right)
         {
             zRotationIncrement = -90;
         }
@@ -81,7 +81,7 @@ public class Cube : MonoBehaviour
         );
     }
 
-    private void UpdateCubeFacesDirection(eDirection direction)
+    private void UpdateCubeFacesDirection(EDirection direction)
     {
         foreach (CubeFace cubeFace in _cubeFaces)
         {
@@ -89,7 +89,7 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public GameObject GetCubeFaceObjectByDirection(eDirection direction)
+    public GameObject GetCubeFaceObjectByDirection(EDirection direction)
     {
         foreach (CubeFace cubeFace in GetComponentsInChildren<CubeFace>())
         {
@@ -134,7 +134,7 @@ public class Cube : MonoBehaviour
         DestroyImmediate(gameObject);
     }
 
-    public void Turn(eDirection turnDirection)
+    public void Turn(EDirection turnDirection)
     {
         CubeFace[] cubeFaces = new CubeFace[]
         {

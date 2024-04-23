@@ -5,11 +5,11 @@ using System;
 
 public abstract class CubeFace : MonoBehaviour
 {
-    public eDirection Direction;
+    public EDirection Direction;
     protected abstract string SoundName { get; set; }
     private float timeUntilNextCollisionPossible = 0;
     protected abstract void OnCollisionOrTrigger(Ball ball);
-    protected eDirection _startingDirection;
+    protected EDirection _startingDirection;
 
     private void Start()
     {
@@ -20,13 +20,13 @@ public abstract class CubeFace : MonoBehaviour
     {
         switch (Direction)
         {
-            case eDirection.Top:
+            case EDirection.Top:
                 return new Vector2(0, 1);
-            case eDirection.Bottom:
+            case EDirection.Bottom:
                 return new Vector2(0, -1);
-            case eDirection.Right:
+            case EDirection.Right:
                 return new Vector2(1, 0);
-            case eDirection.Left:
+            case EDirection.Left:
                 return new Vector2(-1, 0);
         }
 
@@ -42,7 +42,7 @@ public abstract class CubeFace : MonoBehaviour
         }
     }
 
-    public void UpdateDirection(eDirection direction)
+    public void UpdateDirection(EDirection direction)
     {
         Direction = DirectionExtensions.GetNewDirection(
             Direction,

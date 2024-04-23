@@ -49,12 +49,12 @@ public class CubeFaceBuilderEditor : Editor
         GUILayout.Label("Trampolines", EditorStyles.boldLabel);
         if (GUILayout.Button("Right Trampoline"))
         {
-            cubeFaceBuilder.CreateTrampoline(eDirection.Right);
+            cubeFaceBuilder.CreateTrampoline(EDirection.Right);
         }
 
         if (GUILayout.Button("Left Trampoline"))
         {
-            cubeFaceBuilder.CreateTrampoline(eDirection.Left);
+            cubeFaceBuilder.CreateTrampoline(EDirection.Left);
         }
 
         GUILayout.Label("Other", EditorStyles.boldLabel);

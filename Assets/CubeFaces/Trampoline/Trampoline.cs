@@ -6,7 +6,7 @@ using UnityEngine;
 public class Trampoline : CubeFace
 {
     protected override string SoundName { get; set; } = "Trampoline";
-    public eDirection TrampolineDirection = eDirection.Right;
+    public EDirection TrampolineDirection = EDirection.Right;
     private Animator _animator;
     private Cube _parentCube;
 
@@ -32,7 +32,7 @@ public class Trampoline : CubeFace
 
     private Vector2 GetTargetPosition()
     {
-        eDirection movementDirection = GetMovementDirection();
+        EDirection movementDirection = GetMovementDirection();
 
         Vector2 targetPosition = GetTargetPositionWithoutOffset(movementDirection);
 
@@ -48,21 +48,21 @@ public class Trampoline : CubeFace
         return targetPosition;
     }
 
-    private Vector2 GetTargetPositionWithoutOffset(eDirection movementDirection)
+    private Vector2 GetTargetPositionWithoutOffset(EDirection movementDirection)
     {
         Vector2 targetPosition = transform.position;
         switch (movementDirection)
         {
-            case eDirection.Top:
+            case EDirection.Top:
                 targetPosition.y += Managers.Cubes.DistanceBetweenCubes.y;
                 break;
-            case eDirection.Right:
+            case EDirection.Right:
                 targetPosition.x += Managers.Cubes.DistanceBetweenCubes.x;
                 break;
-            case eDirection.Bottom:
+            case EDirection.Bottom:
                 targetPosition.y -= Managers.Cubes.DistanceBetweenCubes.y;
                 break;
-            case eDirection.Left:
+            case EDirection.Left:
                 targetPosition.x -= Managers.Cubes.DistanceBetweenCubes.x;
                 break;
         }
@@ -80,39 +80,39 @@ public class Trampoline : CubeFace
         int sign = targetFaceColliderOffset.y > 0 ? 1 : -1;
         switch (Direction)
         {
-            case eDirection.Top:
+            case EDirection.Top:
                 targetPosition.y += targetFaceColliderOffset.y * sign + 0.2f;
                 break;
-            case eDirection.Right:
+            case EDirection.Right:
                 targetPosition.x += targetFaceColliderOffset.y * sign + 0.2f;
                 break;
-            case eDirection.Bottom:
+            case EDirection.Bottom:
                 targetPosition.y -= targetFaceColliderOffset.y * sign + 0.2f;
                 break;
-            case eDirection.Left:
+            case EDirection.Left:
                 targetPosition.x -= targetFaceColliderOffset.y * sign + 0.2f;
                 break;
         }
     }
 
-    private eDirection GetMovementDirection()
+    private EDirection GetMovementDirection()
     {
-        Dictionary<(eDirection, eDirection), eDirection> directionMap = new Dictionary<
-            (eDirection, eDirection),
-            eDirection
+        Dictionary<(EDirection, EDirection), EDirection> directionMap = new Dictionary<
+            (EDirection, EDirection),
+            EDirection
         >
         {
-            { (eDirection.Right, eDirection.Top), eDirection.Right },
-            { (eDirection.Left, eDirection.Bottom), eDirection.Right },
-            { (eDirection.Left, eDirection.Top), eDirection.Left },
-            { (eDirection.Right, eDirection.Bottom), eDirection.Left },
-            { (eDirection.Left, eDirection.Left), eDirection.Bottom },
-            { (eDirection.Right, eDirection.Right), eDirection.Bottom },
-            { (eDirection.Right, eDirection.Left), eDirection.Top },
-            { (eDirection.Left, eDirection.Right), eDirection.Top },
+            { (EDirection.Right, EDirection.Top), EDirection.Right },
+            { (EDirection.Left, EDirection.Bottom), EDirection.Right },
+            { (EDirection.Left, EDirection.Top), EDirection.Left },
+            { (EDirection.Right, EDirection.Bottom), EDirection.Left },
+            { (EDirection.Left, EDirection.Left), EDirection.Bottom },
+            { (EDirection.Right, EDirection.Right), EDirection.Bottom },
+            { (EDirection.Right, EDirection.Left), EDirection.Top },
+            { (EDirection.Left, EDirection.Right), EDirection.Top },
         };
 
-        eDirection movementDirection = directionMap[(TrampolineDirection, Direction)];
+        EDirection movementDirection = directionMap[(TrampolineDirection, Direction)];
         return movementDirection;
     }
 }

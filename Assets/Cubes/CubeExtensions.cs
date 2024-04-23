@@ -4,21 +4,21 @@ using UnityEngine;
 
 public static class CubeExtensions
 {
-    public static Cube FindAdjacentCubeByDirection(Cube cube, eDirection direction)
+    public static Cube FindAdjacentCubeByDirection(Cube cube, EDirection direction)
     {
         Cube adjacentCube = null;
         switch (direction)
         {
-            case eDirection.Top:
+            case EDirection.Top:
                 adjacentCube = cube.TopCube;
                 break;
-            case eDirection.Right:
+            case EDirection.Right:
                 adjacentCube = cube.RightCube;
                 break;
-            case eDirection.Bottom:
+            case EDirection.Bottom:
                 adjacentCube = cube.BottomCube;
                 break;
-            case eDirection.Left:
+            case EDirection.Left:
                 adjacentCube = cube.LeftCube;
                 break;
         }

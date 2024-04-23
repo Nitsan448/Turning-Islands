@@ -69,26 +69,26 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            FindCubeToSelect(SelectedCube, eDirection.Top);
+            FindCubeToSelect(SelectedCube, EDirection.Top);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            FindCubeToSelect(SelectedCube, eDirection.Right);
+            FindCubeToSelect(SelectedCube, EDirection.Right);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
-            FindCubeToSelect(SelectedCube, eDirection.Bottom);
+            FindCubeToSelect(SelectedCube, EDirection.Bottom);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            FindCubeToSelect(SelectedCube, eDirection.Left);
+            FindCubeToSelect(SelectedCube, EDirection.Left);
         }
     }
 
-    private void FindCubeToSelect(Cube cube, eDirection direction)
+    private void FindCubeToSelect(Cube cube, EDirection direction)
     {
         Cube adjacentCube = CubeExtensions.FindAdjacentCubeByDirection(cube, direction);
 
@@ -132,16 +132,16 @@ public class CubesManager : MonoBehaviour, IGameManager
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            RotateCube(SelectedCube, eDirection.Left);
+            RotateCube(SelectedCube, EDirection.Left);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RotateCube(SelectedCube, eDirection.Right);
+            RotateCube(SelectedCube, EDirection.Right);
         }
     }
 
-    private void RotateCube(Cube cube, eDirection direction)
+    private void RotateCube(Cube cube, EDirection direction)
     {
         CubeRotated = true;
         cube.RotateCube(direction);
@@ -159,12 +159,12 @@ public class CubesManager : MonoBehaviour, IGameManager
         if (UIExtensions.IsOverUI()) return;
         if (Input.GetMouseButtonDown(0))
         {
-            RotateCube(SelectedCube, eDirection.Left);
+            RotateCube(SelectedCube, EDirection.Left);
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            RotateCube(SelectedCube, eDirection.Right);
+            RotateCube(SelectedCube, EDirection.Right);
         }
     }
 

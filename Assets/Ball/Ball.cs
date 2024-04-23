@@ -120,18 +120,18 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public IEnumerator MoveTowardInArc(float duration, Vector2 targetPosition, eDirection direction)
+    public IEnumerator MoveTowardInArc(float duration, Vector2 targetPosition, EDirection direction)
     {
         Vector2 startPosition = transform.position;
         float currentTime = 0;
         while (currentTime < duration)
         {
             float progress = currentTime / duration;
-            if (direction is eDirection.Top or eDirection.Bottom)
+            if (direction is EDirection.Top or EDirection.Bottom)
             {
                 float newXPosition = Mathf.Lerp(startPosition.x, targetPosition.x, progress);
                 float distance = Mathf.Abs(targetPosition.y - startPosition.y);
-                bool isOffSetPositive = direction != eDirection.Bottom;
+                bool isOffSetPositive = direction != EDirection.Bottom;
                 float yOffset = calculateOffset(progress, distance, isOffSetPositive);
                 transform.position = new Vector2(newXPosition, startPosition.y + yOffset);
             }
@@ -139,7 +139,7 @@ public class Ball : MonoBehaviour
             {
                 float newYPosition = Mathf.Lerp(startPosition.y, targetPosition.y, progress);
                 float distance = Mathf.Abs(targetPosition.x - startPosition.x);
-                bool isOffSetPositive = direction != eDirection.Left;
+                bool isOffSetPositive = direction != EDirection.Left;
                 float xOffset = calculateOffset(progress, distance, isOffSetPositive);
                 transform.position = new Vector2(startPosition.x + xOffset, newYPosition);
             }

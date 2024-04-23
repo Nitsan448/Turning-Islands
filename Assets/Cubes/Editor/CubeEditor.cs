@@ -111,7 +111,7 @@ public class CubeEditor : Editor
                 cube.transform
                     .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
-                    .CreateTrampoline(eDirection.Right);
+                    .CreateTrampoline(EDirection.Right);
             }
         );
 
@@ -123,7 +123,7 @@ public class CubeEditor : Editor
                 cube.transform
                     .GetChild(0).GetChild(childIndex)
                     .GetComponent<CubeFaceBuilder>()
-                    .CreateTrampoline(eDirection.Left);
+                    .CreateTrampoline(EDirection.Left);
             }
         );
 
@@ -230,7 +230,7 @@ public class CubeEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Right"))
         {
-            cube.Turn(eDirection.Right);
+            cube.Turn(EDirection.Right);
         }
 
         // if (GUILayout.Button("Left"))

@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class CubeFaceBuilder : MonoBehaviour
 {
     [Range(0, 2)] public int CreatedPortalIndex;
-    private eDirection _cubeFaceDirection;
+    private EDirection _cubeFaceDirection;
 
     public void CreatePortal()
     {
@@ -58,7 +58,7 @@ public class CubeFaceBuilder : MonoBehaviour
         GameObject createdObject = PrefabUtility.InstantiatePrefab(objectPrefab) as GameObject;
         createdObject.transform.parent = transform;
         createdObject.transform.position = transform.position;
-        if (_cubeFaceDirection == eDirection.Right || _cubeFaceDirection == eDirection.Left)
+        if (_cubeFaceDirection == EDirection.Right || _cubeFaceDirection == EDirection.Left)
         {
             createdObject.transform.localEulerAngles = new Vector3(0, 0, 180);
         }
@@ -146,7 +146,7 @@ public class CubeFaceBuilder : MonoBehaviour
 
     private void ChangeColliderHeight(float newYOffset)
     {
-        if (_cubeFaceDirection == eDirection.Right || _cubeFaceDirection == eDirection.Left)
+        if (_cubeFaceDirection == EDirection.Right || _cubeFaceDirection == EDirection.Left)
         {
             GetComponent<BoxCollider2D>().offset = new Vector2(0, -newYOffset);
         }
@@ -175,7 +175,7 @@ public class CubeFaceBuilder : MonoBehaviour
 
     private void ChangeGraphicsPosition(float newYPosition, GameObject objectGraphics)
     {
-        if (_cubeFaceDirection == eDirection.Right || _cubeFaceDirection == eDirection.Left)
+        if (_cubeFaceDirection == EDirection.Right || _cubeFaceDirection == EDirection.Left)
         {
             objectGraphics.transform.localPosition = new Vector2(0, -newYPosition);
         }
@@ -221,7 +221,7 @@ public class CubeFaceBuilder : MonoBehaviour
 
     private Tube CreateTubeOnNeighborFace(bool turned)
     {
-        eDirection neighborCubeDirection = DirectionExtensions.GetNewDirection(
+        EDirection neighborCubeDirection = DirectionExtensions.GetNewDirection(
             _cubeFaceDirection,
             1
         );
@@ -239,13 +239,13 @@ public class CubeFaceBuilder : MonoBehaviour
         return neighborTube;
     }
 
-    public void CreateTrampoline(eDirection trampolineDirection)
+    public void CreateTrampoline(EDirection trampolineDirection)
     {
         ResetCubeFace();
         GameObject trampolineGraphics = InstantiateObjectGraphicsPrefab(
             FolderPaths.Trampoline + "/Trampoline.prefab"
         );
-        if (trampolineDirection == eDirection.Left)
+        if (trampolineDirection == EDirection.Left)
         {
             trampolineGraphics.GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
@@ -271,19 +271,19 @@ public class CubeFaceBuilder : MonoBehaviour
         Vector3 ballPostionOffset = Vector3.zero;
         switch (_cubeFaceDirection)
         {
-            case eDirection.Top:
+            case EDirection.Top:
                 ballPostionOffset = new Vector2(0, ballPositionOffSetAmount);
                 ball.GetComponent<Ball>().StartingVelocity = new Vector2(0, -1);
                 break;
-            case eDirection.Right:
+            case EDirection.Right:
                 ballPostionOffset = new Vector2(ballPositionOffSetAmount, 0);
                 ball.GetComponent<Ball>().StartingVelocity = new Vector2(-1, 0);
                 break;
-            case eDirection.Bottom:
+            case EDirection.Bottom:
                 ballPostionOffset = new Vector2(0, -ballPositionOffSetAmount);
                 ball.GetComponent<Ball>().StartingVelocity = new Vector2(0, 1);
                 break;
-            case eDirection.Left:
+            case EDirection.Left:
                 ballPostionOffset = new Vector2(-ballPositionOffSetAmount, 0);
                 ball.GetComponent<Ball>().StartingVelocity = new Vector2(1, 0);
                 break;

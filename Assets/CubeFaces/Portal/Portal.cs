@@ -25,7 +25,7 @@ public class Portal : CubeFace
 
     private void Awake()
     {
-        UpdateColliderOffset();
+        // UpdateColliderOffset();
         PortalGraphics = GetComponentInChildren<PortalGraphics>();
         PortalGraphics.OpenParticles.gameObject.SetActive(IsOpen);
         PortalGraphics.Light.enabled = IsOpen;
@@ -76,8 +76,8 @@ public class Portal : CubeFace
     {
         ConnectedPortal.Collider.enabled = false;
         Vector3 newPosition = ConnectedPortal.transform.position;
-        newPosition.x += ConnectedPortal.Direction == eDirection.Left ? -0.5f : ConnectedPortal.Direction == eDirection.Right ? 0.5f : 0;
-        newPosition.y += ConnectedPortal.Direction == eDirection.Top ? 0.5f : ConnectedPortal.Direction == eDirection.Bottom ? -0.5f : 0;
+        newPosition.x += ConnectedPortal.Direction == EDirection.Left ? -0.5f : ConnectedPortal.Direction == EDirection.Right ? 0.5f : 0;
+        newPosition.y += ConnectedPortal.Direction == EDirection.Top ? 0.5f : ConnectedPortal.Direction == EDirection.Bottom ? -0.5f : 0;
         ball.transform.position = new Vector3(newPosition.x, newPosition.y, newPosition.z);
         ball.ChangeVelocity(ConnectedPortal.GetVelocity());
 
@@ -128,13 +128,13 @@ public class Portal : CubeFace
             _startingDirection = Direction;
         }
 
-        eDirection currentDirection = Direction;
+        EDirection currentDirection = Direction;
         Direction = _startingDirection;
         Vector3 euler = transform.eulerAngles;
-        transform.eulerAngles = Vector3.zero;
+        transform.eulerAngles = _startingDirection.GetEulerAnglesByDirection();
 
         float newOffset = 0.4f;
-        if (Direction == eDirection.Left || Direction == eDirection.Right)
+        if (Direction == EDirection.Left || Direction == EDirection.Right)
         {
             newOffset = -0.4f;
         }
